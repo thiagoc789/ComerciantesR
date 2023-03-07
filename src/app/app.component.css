@@ -1,0 +1,37 @@
+.nav-link {
+    color: #ffffff;
+    font-weight: bold;
+    width: auto;
+    height:100%;
+    font-size: large;
+    
+    
+}
+
+.nav-link.active {
+    color: #6e1763;
+    
+}
+
+.nav-item {
+    width: 100%;
+    text-align: center;
+
+}
+
+.navbar {
+    background-color: #000000;
+    padding-top: 0%;
+    padding-bottom: 0%;
+    
+}
+
+.bi {
+    color: aqua;
+    margin-right: 5%;
+}
+
+.imagenTAB{
+    max-width: 50px;
+
+}
