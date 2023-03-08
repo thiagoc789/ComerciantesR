@@ -25,6 +25,7 @@
     "bootstrap-icons": "^1.10.3",
     "firebase": "^9.17.2",
     "jquery": "^3.6.3",
+    "ngx-owl-carousel-o": "^15.0.0",
     "rxjs": "~7.8.0",
     "tslib": "^2.3.0",
     "zone.js": "~0.12.0"

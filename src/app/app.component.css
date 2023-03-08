@@ -1,16 +1,16 @@
 .nav-link {
-    color: #ffffff;
+    color: #000000;
     font-weight: bold;
     width: auto;
     height:100%;
-    font-size: large;
+    font-size: small;
     
     
 }
 
 .nav-link.active {
-    color: #6e1763;
-    
+    color: #f50404a2;
+     
 }
 
 .nav-item {
@@ -20,18 +20,21 @@
 }
 
 .navbar {
-    background-color: #000000;
+    background-color: #b3afaf73;
     padding-top: 0%;
     padding-bottom: 0%;
-    
+        
 }
 
-.bi {
-    color: aqua;
+.bi.active {
+    color: rgb(255, 0, 0);
     margin-right: 5%;
 }
 
-.imagenTAB{
-    max-width: 50px;
 
+.navbar-icon {
+    display: block;
+    font-size: 1.0rem;
+    margin-bottom: 0.0rem;
 }
+

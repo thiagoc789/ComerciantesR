@@ -13,10 +13,12 @@ import { MatIconModule } from '@angular/material/icon';
 import { BuscarComponent } from './buscar/buscar.component';
 import { EventosComponent } from './eventos/eventos.component';
 import { NegociosComponent } from './negocios/negocios.component';
+import { CarouselModule } from 'ngx-owl-carousel-o';
 
 //PARA LA BASE DE DATOS
 import { AngularFireModule } from '@angular/fire/compat';
 import { environment } from '../environments/environment';
+import { DetailnegociosComponent } from './detailnegocios/detailnegocios.component';
 
 
 //RUTAS
@@ -26,10 +28,13 @@ const routes: Routes = [
   { path: 'buscar', component: BuscarComponent },
   { path: 'negocios', component: NegociosComponent },
   { path: 'eventos', component: EventosComponent },
+  { path: 'detailNegocios/:id', component: DetailnegociosComponent
+   },
 ];
 
 @NgModule({
   imports: [
+    CarouselModule,
     MatCardModule,
     MatIconModule,
     BrowserModule,
