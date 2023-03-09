@@ -1,0 +1,30 @@
+.btn-instagram {
+    background-color: #ffffff;
+    color: #E1306C;
+    border-color: #E1306C;
+}
+
+.btn-instagram:hover {
+    background-color: #E1306C;
+    border-color: #ffffff;
+    color: #ffffff
+}
+
+.container {
+    max-width: 100%;
+    margin: 0 auto;
+}
+
+.zoom {
+    transition: transform 0.5s ease;
+}
+
+.zoom:hover {
+    transform: scale(1.1);
+    box-shadow: 0px 0px 10px 10px rgba(0, 0, 0, 0.233);
+}
+
+#map {
+    height: 400px;
+    box-shadow: 0px 0px 8px 8px rgba(0, 0, 0, 0.233);
+}

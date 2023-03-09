@@ -5,15 +5,6 @@
 
 }
 
-.card:hover {
-    transform: scale(1.1);
-}
-
-.card {
-    transition: box-shadow 0.3s ease;
-    transition: transform 0.5s ease;
-}
-
 .carousel-title hr {
     border-top: 1px solid #000000;
     margin-top: 0;
@@ -126,7 +117,15 @@
 
 .zoom:hover {
     transform: scale(1.1);
-    box-shadow: 0px 0px 10px 10px rgb(255, 0, 0);
+    box-shadow: 0px 0px 10px 10px rgba(0, 0, 0, 0.205);
+    cursor: pointer;
+    
+    
+}
+
+
+.zoom2:hover {
+    box-shadow: 0px 0px 10px 10px rgba(0, 0, 0, 0.342);
 }
 
 .carousel-caption h6 {

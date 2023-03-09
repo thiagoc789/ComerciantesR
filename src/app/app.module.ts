@@ -19,6 +19,8 @@ import { CarouselModule } from 'ngx-owl-carousel-o';
 import { AngularFireModule } from '@angular/fire/compat';
 import { environment } from '../environments/environment';
 import { DetailnegociosComponent } from './detailnegocios/detailnegocios.component';
+import { GoogleMapsModule } from '@angular/google-maps';
+
 
 
 //RUTAS
@@ -34,6 +36,7 @@ const routes: Routes = [
 
 @NgModule({
   imports: [
+    GoogleMapsModule,
     CarouselModule,
     MatCardModule,
     MatIconModule,

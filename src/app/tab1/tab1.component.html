@@ -1,20 +1,19 @@
 <div class="carousel-title" [@fade]>
-    <h1> <img src=" https://cdn-icons-png.flaticon.com/512/9894/9894435.png" style="height: 40px; margin-right: 10px;">  Eventos próximos</h1 >
+    <h1> <img src=" https://cdn-icons-png.flaticon.com/512/9894/9894435.png" style="height: 40px; margin-right: 10px;">
+        Eventos próximos</h1>
     <hr>
 </div>
-
 <div class="container">
     <div id="myCarousel" class="carousel slide" data-ride="carousel" data-interval="4000">
-        <div class="carousel-inner">
+        <div class="carousel-inner zoom2">
             <div class="carousel-item" *ngFor="let item of negocios; let i = index" [class.active]="i === 0" [@fade]>
                 <img src="{{item.logo}}" alt="{{item.nombre}}" class="d-block w-100 zoom">
                 <div class="carousel-caption">
                     <h6>{{item.nombre}}</h6>
-                    <p>{{item.descripcion}}</p>     
-                </div>   
-            </div>    
+                    <p>{{item.descripcion}}</p>
+                </div>
+            </div>
         </div>
-
         <a class="carousel-control-prev custom-control-prev" href="#myCarousel" role="button" data-slide="prev">
             <span class="carousel-control-prev-icon" aria-hidden="true"></span>
             <span class="sr-only">Previous</span>
@@ -25,28 +24,22 @@
         </a>
     </div>
 </div>
-
-
 <div class="carousel-title" [@fade]>
-
-      <h2> <img src=" https://cdn-icons-png.flaticon.com/512/3598/3598587.png" style="height: 40px; margin-right: 20px;">Nuestras marcas</h2>
+    <h2> <img src=" https://cdn-icons-png.flaticon.com/512/3598/3598587.png"
+            style="height: 40px; margin-right: 20px;">Nuestras marcas</h2>
     <hr>
 </div>
 
 <div class="container-fluid">
     <div class="row">
         <div class="col-3 col-sm-4 col-md-3 col-lg-2 mb-3" *ngFor="let negocio of negocios" [@fade]>
-            <div class="card border-0">
+            <div class="card border-0 zoom" (click)="goToDetail(negocio.id)">
                 <img src={{negocio.logo}} class="card-img-top" alt={{negocio.nombre}}>
             </div>
         </div>
     </div>
 </div>
-
 <hr style="color: white;">
 <hr style="color: white;">
-
-
-
-
-
+<hr style="color: white;">
+<hr style="color: white;">
