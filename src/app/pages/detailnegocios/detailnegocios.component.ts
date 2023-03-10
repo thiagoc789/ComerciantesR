@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { fade } from '../animations/fade';
-import { Negocios } from '../models/models';
-import { FirestoreService } from '../services/firestore.service';
+import { fade } from '../../animations/fade';
+import { Negocios } from '../../models/models';
+import { FirestoreService } from '../../services/firestore.service';
 import { ActivatedRoute } from '@angular/router';
 
 declare const google: any;
@@ -35,7 +35,7 @@ export class DetailnegociosComponent implements OnInit {
       console.log(this.negocio)
       this.map = new google.maps.Map(document.getElementById('map'), {
         center: { lat: this.negocio.lat, lng: this.negocio.long },
-        zoom: 17,
+        zoom: 16,
         styles: [
           {
             featureType: 'poi',
@@ -51,7 +51,7 @@ export class DetailnegociosComponent implements OnInit {
         position: markerPos,
         map: this.map,
         icon: {
-          url: 'https://cdn-icons-png.flaticon.com/512/149/149059.png',
+          url: this.negocio.logo,
           scaledSize: new google.maps.Size(32, 32)
         }
       });
@@ -69,7 +69,9 @@ export class DetailnegociosComponent implements OnInit {
       });
 
 
+      marker.addListener('click', () => {
         infoWindow.open(this.map, marker);
+      });
      
     })
 
@@ -86,7 +88,7 @@ export class DetailnegociosComponent implements OnInit {
           position: this.currentPosition,
           map: this.map,
           icon: {
-            url: 'https://maps.google.com/mapfiles/kml/paddle/grn-stars.png',
+            url: 'https://cdn-icons-png.flaticon.com/512/1077/1077012.png',
             scaledSize: new google.maps.Size(32, 32)
           }
         });
