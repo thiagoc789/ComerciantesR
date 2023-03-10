@@ -17,6 +17,7 @@ import { AngularFireModule } from '@angular/fire/compat';
 import { environment } from '../environments/environment';
 import { DetailnegociosComponent } from './pages/detailnegocios/detailnegocios.component';
 import { GoogleMapsModule } from '@angular/google-maps';
+import { DetailEventosComponent } from './pages/detail-eventos/detail-eventos.component';
 
 
 
@@ -29,6 +30,9 @@ const routes: Routes = [
   {
     path: 'detailNegocios/:id', component: DetailnegociosComponent
   },
+  {
+    path: 'detailEventos/:id', component: DetailEventosComponent
+  },
 ];
 
 @NgModule({
@@ -39,19 +43,18 @@ const routes: Routes = [
     MatIconModule,
     BrowserModule,
     BrowserAnimationsModule,
-
     FormsModule,
     MatTabsModule,
     RouterModule.forRoot(routes),
     AngularFireModule.initializeApp(environment.firebaseConfig,),
-
 
   ],
   declarations: [
     AppComponent,
     HomeComponent,
     EventosComponent,
-    NegociosComponent
+    NegociosComponent,
+    DetailEventosComponent
   ],
   bootstrap: [AppComponent]
 })

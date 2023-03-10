@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 
 import { fade } from '../../animations/fade';
-import { Negocios } from '../../models/models';
+import { Eventos, Negocios } from '../../models/models';
 import { FirestoreService } from '../../services/firestore.service';
 
 
@@ -15,6 +15,7 @@ import { FirestoreService } from '../../services/firestore.service';
 export class HomeComponent implements OnInit {
 
   negocios: Negocios[];
+  eventos: Eventos[];
 
 
   constructor(private firestore: FirestoreService, private router: Router) { }
@@ -22,18 +23,25 @@ export class HomeComponent implements OnInit {
   ngOnInit() {
 
     this.firestore.getCollection<Negocios>('Comerciantes').subscribe(res => {
-      console.log(res)
       this.negocios = res;
-      console.log(this.negocios)
+    })
+
+    this.firestore.getCollection<Eventos>('Eventos').subscribe(res => {
+      this.eventos = res;
     })
     
   }
 
-  goToDetail(imageId: number) {
+  goToDetailNegocios(Id: number) {
     //this.navCtrl.navigateForward(['/detail-negocios', id]);
-    this.router.navigateByUrl(`/detailNegocios/${imageId}`);
-    console.log("click")
-
+    this.router.navigateByUrl(`/detailNegocios/${Id}`);
   }
+
+
+  goToDetailEventos(Id: number) {
+    //this.navCtrl.navigateForward(['/detail-negocios', id]);
+    this.router.navigateByUrl(`/detailEventos/${Id}`);
+  }
+
 
 }

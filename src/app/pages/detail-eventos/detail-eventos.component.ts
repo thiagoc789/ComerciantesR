@@ -1,34 +1,32 @@
 import { Component, OnInit } from '@angular/core';
-import { fade } from '../../animations/fade';
-import { Negocios } from '../../models/models';
-import { FirestoreService } from '../../services/firestore.service';
 import { ActivatedRoute } from '@angular/router';
+import { fade } from 'src/app/animations/fade';
+import { Eventos } from 'src/app/models/models';
+import { FirestoreService } from 'src/app/services/firestore.service';
 
 declare const google: any;
 
 @Component({
-  selector: 'app-detailnegocios',
-  templateUrl: './detailnegocios.component.html',
-  styleUrls: ['./detailnegocios.component.css'],
+  selector: 'app-detail-eventos',
+  templateUrl: './detail-eventos.component.html',
+  styleUrls: ['./detail-eventos.component.css'],
   animations: [fade]
-
 })
-export class DetailnegociosComponent implements OnInit {
+export class DetailEventosComponent implements OnInit {
+
   map: any;
   currentPosition: any;
-  negocio: any;
-
-
+  evento: any;
 
   constructor(private firestore: FirestoreService, private route: ActivatedRoute) { }
 
   ngOnInit() {
 
-    const negocioId = this.route.snapshot.paramMap.get('id');
-    this.firestore.getDoc<Negocios>('Comerciantes', negocioId).subscribe(res => {
-      this.negocio = res;
+    const eventoId = this.route.snapshot.paramMap.get('id');
+    this.firestore.getDoc<Eventos>('Eventos', eventoId).subscribe(res => {
+      this.evento = res;
       this.map = new google.maps.Map(document.getElementById('map'), {
-        center: { lat: this.negocio.lat, lng: this.negocio.long },
+        center: { lat: this.evento.lat, lng: this.evento.long },
         zoom: 16,
         styles: [
           {
@@ -38,14 +36,13 @@ export class DetailnegociosComponent implements OnInit {
         ]
       });
 
-      const markerPos = new google.maps.LatLng(this.negocio.lat, this.negocio.long);
+      const markerPos = new google.maps.LatLng(this.evento.lat, this.evento.long);
 
-      // Crea un nuevo objeto Marker
       const marker = new google.maps.Marker({
         position: markerPos,
         map: this.map,
         icon: {
-          url: this.negocio.logo,
+          url: this.evento.imagen,
           scaledSize: new google.maps.Size(32, 32)
         }
       });
@@ -56,8 +53,8 @@ export class DetailnegociosComponent implements OnInit {
       const infoWindow = new google.maps.InfoWindow({
         content: `
     <div style="background-color: #fff; color: #333; padding: 10px;">
-      <h4 style="margin: 0 0 10px;">${this.negocio.nombre}</h4>
-      <p style="margin: 0;">${this.negocio.direccion}</p>
+      <h4 style="margin: 0 0 10px;">${this.evento.nombre}</h4>
+      <p style="margin: 0;">${this.evento.lugar}</p>
     </div>
   `,
       });
@@ -73,7 +70,6 @@ export class DetailnegociosComponent implements OnInit {
             lat: position.coords.latitude,
             lng: position.coords.longitude
           };
-
           // Crear marcador en la posición actual
           const currentLocationMarker = new google.maps.Marker({
             position: this.currentPosition,
@@ -87,5 +83,7 @@ export class DetailnegociosComponent implements OnInit {
 
       }
     })
+
   }
+
 }

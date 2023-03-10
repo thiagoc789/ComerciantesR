@@ -17,19 +17,19 @@ export interface Negocios {
     lng: number;
 }
 
-export interface Prueba {
-    id: number;
-    nombre: string;
-    descripcion: string;
-}
 
+export interface Eventos {
 
-export interface Prueba2 {
-    id: number;
-    nombre: string;
-    descripcion: string;
-}
-
-export interface Anuncios {
+id: number;
+imagen: string;
+nombre: string;
+descripcion: string;
+lugar: string;
+fecha: string;
+hora: string;
+organizador: string;
+organizadorId: number;
+lat: number;
+long: number;
 
 }

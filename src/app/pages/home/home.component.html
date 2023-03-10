@@ -6,11 +6,11 @@
 <div class="container">
     <div id="myCarousel" class="carousel slide" data-ride="carousel" data-interval="4000">
         <div class="carousel-inner zoom2">
-            <div class="carousel-item" *ngFor="let item of negocios; let i = index" [class.active]="i === 0" [@fade]>
-                <img src="{{item.logo}}" alt="{{item.nombre}}" class="d-block w-100 zoom">
+            <div class="carousel-item " (click)="goToDetailEventos(item.id)"  *ngFor="let item of eventos; let i = index" [class.active]="i === 0 " [@fade]>
+                <img src="{{item.imagen}} " alt="{{item.nombre}}" class="d-block w-100 zoom " >
                 <div class="carousel-caption">
                     <h6>{{item.nombre}}</h6>
-                    <p>{{item.descripcion}}</p>
+                    <p>{{item.fecha}}</p>
                 </div>
             </div>
         </div>
@@ -33,7 +33,7 @@
 <div class="container-fluid">
     <div class="row">
         <div class="col-3 col-sm-4 col-md-3 col-lg-2 mb-3" *ngFor="let negocio of negocios" [@fade]>
-            <div class="card border-0 zoom" (click)="goToDetail(negocio.id)">
+            <div class="card border-0 zoom" (click)="goToDetailNegocios(negocio.id)">
                 <img src={{negocio.logo}} class="card-img-top" alt={{negocio.nombre}}>
             </div>
         </div>
