@@ -3,7 +3,8 @@ export interface Negocios {
     nombre: string;
     descripcion: string;
     direccion: string;
-    telefono: number;
+    telefono1: number;
+    telefono2: number;
     correo: string;
     whatsapp: number;
     dueño: string;

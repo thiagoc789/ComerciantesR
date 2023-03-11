@@ -52,7 +52,7 @@
 }
 
 .carousel-item img {
-    height: 500px;
+    height: 400px;
     /* ajusta la altura deseada */
 
 }
@@ -75,8 +75,8 @@
 }
 
 .carousel-item img {
-    width: 800px;
-    height: 500px;
+    width: 400px;
+    height: 450px;
     object-fit: cover;
 }
 
@@ -156,3 +156,4 @@
 .carousel-control-next {
     right: -2%;
 }
+

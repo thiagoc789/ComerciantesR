@@ -1,0 +1,204 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css');
+
+.container {
+    max-width: 10000px;
+    margin: 0 auto;
+
+}
+
+h1 {
+    font-family: 'Poppins', sans-serif;
+    font-size: 48px;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.card-list {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px;
+    justify-items: center;
+}
+
+.card {
+    width: 100%;
+    max-width: 1400px;
+    height: fit-content;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    overflow: hidden;
+    transition: all 0.2s ease-in-out;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.438);
+    cursor: pointer;
+}
+
+.card-header {
+    display: flex;
+    align-items: center;
+    background-color: #f9f9f9;
+}
+
+.card-header .nombre {
+    font-family: 'Poppins', sans-serif;
+    font-size: 24px;
+    color: #000000;
+    font-style: italic;
+    margin: 0;
+    padding: 20px;
+    font-size: 24px;
+    text-align: center;
+}
+
+.card-body {
+    padding: 5px;
+    margin-top: 10px;
+    margin: 0;
+    padding: 20px 20px 20px 20px;
+    font-size: 16px;
+    text-align: justify;
+}
+
+.card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    max-width: 50px;
+    margin-right: 20px;
+    border-radius: 50%;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.404);
+    max-height: 50px;
+}
+
+.card-body .descripcion {
+    font-family: 'Poppins', sans-serif;
+    font-size: 18px;
+    color: #666;
+    margin: 0;
+}
+
+.card-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    background-color: #f9f9f9;
+}
+
+.card-footer .boton {
+    font-family: 'Poppins';
+}
+
+.card-list .card p {
+    text-align: justify;
+    font-size: medium;
+}
+
+.carousel-title h1 {
+    font-size: 32px;
+    color: #000000;
+    padding-bottom: 10px;
+    padding-top: 5px;
+    background-color: #bbb9b954;
+    border-radius:5%;
+    text-align: center;
+    margin-bottom: 20px;
+    border: 1px solid #ddd;
+}
+
+
+.search-container {
+    margin-top: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.search-bar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    overflow: hidden;
+    margin-right: 10px;
+}
+
+.search-bar input[type="text"] {
+    padding: 10px;
+    border: none;
+    width: 100%;
+    font-size: 16px;
+}
+
+.search-bar button {
+    background-color: #4caf50;
+    color: #fff;
+    padding: 10px 15px;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    
+}
+
+.bi {
+    color: #000000;
+    padding: 10px 15px;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+
+}
+
+.search-buttons {
+    display: flex;
+    align-items: center;
+    margin-right: 10px;
+}
+
+.btn-traer {
+    background-color: #ffffff;
+    color: #000000;
+    border-color: #000000;
+}
+
+.btn-traer:hover {
+    background-color: #000000;
+    border-color: #ffffff;
+    color: #ffffff
+}
+
+
+.textoSearch {
+    margin-top: 10px;
+    text-align: center;
+    font-size: 1.2em;
+    color: gray;
+    margin-bottom: 30px;
+}
+
+.zoom {
+    transition: transform 0.5s ease;
+}
+
+.zoom:hover {
+    transform: scale(1.1);
+    box-shadow: 0px 0px 10px 10px rgba(0, 0, 0, 0.205);
+    cursor: pointer;
+
+
+}
+
+.zoom2 {
+    transition: transform 0.5s ease;
+}
+
+.zoom2:hover {
+    transform: scale(1.1);
+    color: red;
+    cursor: pointer;
+}

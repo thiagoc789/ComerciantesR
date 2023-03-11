@@ -1,1 +1,49 @@
-<p>negocios works!</p>
+<div class="container">
+    <div class="carousel-title">
+        <h1>
+            <img src="https://cdn-icons-png.flaticon.com/512/743/743007.png"
+                style="height: 40px; margin-right: 10px;" />
+            Lista de negocios en Restrepo Valle
+        </h1>
+    </div>
+
+
+<div style="text-align: center;">
+    <div class="search-container" style="background-color: rgba(62, 63, 63, 0.164); display: inline-flex; margin: 0 auto; padding: 10px;">
+        <div class="search-buttons">
+            <button class="btn btn-traer zoom btn-s" (click)="verTodos()">Traer todos</button>
+        </div>
+
+        <div class="search-bar zoom3">
+            <input type="text" placeholder="¿Buscas algo?" [(ngModel)]="busqueda" />
+        </div>
+        <i class="bi bi-search zoom2" (click)="buscarNegocios()" ></i>
+    </div>
+</div>
+
+<p class="textoSearch" style="text-align: center; margin-top: 10px;">Puedes ingresar una palabra, frase, nombre o lo que
+    sea que estés buscando!</p>
+
+
+    <div class="card-list">
+        <div class="card" (click)="goToDetailNegocios(negocio.id)" *ngFor="let negocio of negocios">
+            <div class="card-header">
+                <img class="logo" [src]="negocio.logo" alt="Logo de {{negocio.nombre}}" />
+                <h2 class="nombre">{{negocio.nombre}}</h2>
+            </div>
+            <div class="card-body">
+                <p class="descripcion">{{negocio.descripcion}}</p>
+            </div>
+            <div class="card-footer">
+                {{negocio.direccion}}
+                <span class="icono"><i class="bi bi-pin-map-fill"></i></span>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<hr style="color: white;">
+<hr style="color: white;">
+<hr style="color: white;">
+<hr style="color: white;">

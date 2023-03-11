@@ -1,13 +1,13 @@
 <div [@fade]>
 
-    <img src="{{negocio.logo}}" class="rounded-circle shadow-lg mx-auto d-block"
+    <img src="{{negocio?.logo}}" class="rounded-circle shadow-lg mx-auto d-block"
         style="max-width: 300px; max-height: 300px;">
 
     <div class="d-flex align-items-center ">
         <div class="col-md-8 col-sm-10 text-center mx-auto ml-sm-2 my-3 my-sm-0" style="margin-right: 0;">
-            <h1 class="display-4 " style="font-weight:bold;color:#000000; margin-top: 4px;">{{negocio.nombre}}</h1>
+            <h1 class="display-4 " style="font-weight:bold;color:#000000; margin-top: 4px;">{{negocio?.nombre}}</h1>
             <hr style="border-top: 3px solid #bbb; width: 100%;">
-            <p class="lead" style="font-size:20px;color:#000000;">{{negocio.descripcion}}</p>
+            <p class="lead" style="font-size:20px;color:#000000;">{{negocio?.descripcion}}</p>
         </div>
     </div>
     <div class="row justify-content-center">
@@ -15,32 +15,32 @@
             <p class="lead mb-5">Comunicate con
                 nosotros a través de los siguientes medios:</p>
             <div class="btn-group mb-4 flex-wrap" role="group">
-                <a href="tel:{{negocio.telefono1}}" class="btn btn-outline-dark btn-lg zoom"><i
+                <a href="tel:{{negocio?.telefono1}}" class="btn btn-outline-dark btn-lg zoom"><i
                         class="bi bi-telephone"></i>
-                    {{negocio.telefono1}}</a>
-                <a href="tel:{{negocio.telefono2}}" class="btn btn-outline-dark btn-lg zoom"><i
+                    {{negocio?.telefono1}}</a>
+                <a href="tel:{{negocio?.telefono2}}" class="btn btn-outline-dark btn-lg zoom"><i
                         class="bi bi-telephone"></i>
-                    {{negocio.telefono2}}</a>
+                    {{negocio?.telefono2}}</a>
             </div>
         </div>
         <div class="col-md-8 text-center">
             <div class="btn-group flex-wrap" role="group">
-                <a href="https://wa.me/+57{{negocio.whatsapp1}}" class="btn btn-outline-success btn-lg  zoom"><i
+                <a href="https://wa.me/+57{{negocio?.whatsapp1}}" class="btn btn-outline-success btn-lg  zoom"><i
                         class="bi bi-whatsapp"></i>
-                    {{negocio.whatsapp1}}</a>
-                <a href="https://wa.me/+57{{negocio.whatsapp2}}" class="btn btn-outline-success btn-lg zoom"><i
+                    {{negocio?.whatsapp1}}</a>
+                <a href="https://wa.me/+57{{negocio?.whatsapp2}}" class="btn btn-outline-success btn-lg zoom"><i
                         class="bi bi-whatsapp"></i>
-                    {{negocio.whatsapp2}}</a>
+                    {{negocio?.whatsapp2}}</a>
             </div>
         </div>
         <div class="col-md-15 col-xs-15 col-sm-15 text-center mt-4">
             <div class="btn-group flex-wrap " style="width: 50%;" role="group">
-                <a href="{{negocio.instagram}}" target="_blank" class="btn btn-instagram btn-lg zoom"><i
+                <a href="{{negocio?.instagram}}" target="_blank" class="btn btn-instagram btn-lg zoom"><i
                         class="bi bi-instagram mr-2"></i>Instagram</a>
 
-                <a href="{{negocio.facebook}}" target="_blank" class="btn btn-outline-primary btn-lg zoom"><i
+                <a href="{{negocio?.facebook}}" target="_blank" class="btn btn-outline-primary btn-lg zoom"><i
                         class="bi bi-facebook mr-2"></i>Facebook</a>
-                <a href="{{negocio.web}}" target="_blank" class="btn btn-outline-info btn-lg zoom"><i
+                <a href="{{negocio?.web}}" target="_blank" class="btn btn-outline-info btn-lg zoom"><i
                         class="bi bi-globe2 mr-2"></i>Sitio
                     web</a>
             </div>
@@ -49,7 +49,7 @@
                 <img src="https://cdn-icons-png.flaticon.com/512/2922/2922532.png"
                     class="rounded-circle shadow-lg mx-auto d-block" alt="Logo de persona" class="mx-2"
                     style="width: 40px; height: 100%;">
-                <h5 class="display-4" style="font-weight:bold;color:#333;font-size: 30px; ">{{negocio.dueno}}</h5>
+                <h5 class="display-4" style="font-weight:bold;color:#333;font-size: 30px; ">{{negocio?.dueno}}</h5>
             </div>
             <div class="row justify-content-center">
                 <div class="col-md-8 text-center">
@@ -60,12 +60,17 @@
                     <h5 class="display-4" style="font-weight:bold;color:#333;font-size: 30px; "> <img
                             src="https://cdn-icons-png.flaticon.com/512/854/854878.png"
                             class="rounded-circle shadow-lg mx-auto d-block" alt="Logo de persona" class="mx-2"
-                            style="width: 40px; height: 40px;">{{negocio.direccion}}
+                            style="width: 40px; height: 40px;">{{negocio?.direccion}}
                     </h5>
                     <div id="map" style="margin-top: 10px;"></div>
                 </div>
 
             </div>
+
+            <button onclick="window.history.back();"
+                style="background-color:#ffffff; color:#000000;  padding: 10px 20px; border-radius: 5px; cursor:pointer; margin-top: 20px;">Volver
+                a la página anterior</button>
+
             <hr style="color: white;">
             <hr style="color: white;">
             <hr style="color: white;">
