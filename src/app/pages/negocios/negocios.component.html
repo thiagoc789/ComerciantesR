@@ -1,4 +1,4 @@
-<div class="container">
+<div class="container" [@fade]>
     <div class="carousel-title">
         <h1>
             <img src="https://cdn-icons-png.flaticon.com/512/743/743007.png"
@@ -9,17 +9,20 @@
 
 
 <div style="text-align: center;">
-    <div class="search-container" style="background-color: rgba(62, 63, 63, 0.164); display: inline-flex; margin: 0 auto; padding: 10px;">
+    <div class="search-container"
+        style="background-color: rgba(62, 63, 63, 0.164); display: inline-flex; margin: 0 auto; padding: 10px;">
         <div class="search-buttons">
             <button class="btn btn-traer zoom btn-s" (click)="verTodos()">Traer todos</button>
         </div>
 
         <div class="search-bar zoom3">
-            <input type="text" placeholder="¿Buscas algo?" [(ngModel)]="busqueda" />
+            <input type="text" placeholder="¿Buscas algo?" [(ngModel)]="busqueda"
+                (ngModelChange)="buscarNegocios()" />
         </div>
-        <i class="bi bi-search zoom2" (click)="buscarNegocios()" ></i>
+        <i class="bi bi-search zoom2" (click)="buscarNegocios()"></i>
     </div>
 </div>
+
 
 <p class="textoSearch" style="text-align: center; margin-top: 10px;">Puedes ingresar una palabra, frase, nombre o lo que
     sea que estés buscando!</p>

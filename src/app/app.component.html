@@ -2,22 +2,28 @@
   <ul class="nav nav-tabs justify-content-center flex-nowrap" style="width: 100%">
     <li class="nav-item zoom">
       <a class="nav-link" routerLink="/home" routerLinkActive="active">
-        <i class="bi bi-house-heart-fill navbar-icon"></i>
+        <i class="bi bi-house-heart-fill navbar-icon"  style="display: block;"></i>
         Inicio
       </a>
     </li>
     <li class="nav-item zoom">
       <a class="nav-link" routerLink="/negocios" routerLinkActive="active">
-        <i class="bi bi-briefcase navbar-icon"></i>
+        <i class="bi bi-briefcase navbar-icon" style="display: block;"></i>
         Negocios
       </a>
     </li>
     <li class="nav-item zoom">
       <a class="nav-link" routerLink="/eventos" routerLinkActive="active">
-        <i class="bi bi-calendar4-event navbar-icon " ></i>
+        <i class="bi bi-calendar4-event navbar-icon " style="display: block;" ></i>
         Eventos
       </a>
     </li>
+        <li class="nav-item zoom" >
+          <a class="nav-link  " routerLink="/info" routerLinkActive="active">
+            <i class="bi bi-info-circle" style="display: block;"></i>
+            Info
+          </a>
+        </li>
   </ul>
 </nav>
 <router-outlet></router-outlet>

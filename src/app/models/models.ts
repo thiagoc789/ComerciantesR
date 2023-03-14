@@ -34,3 +34,40 @@ lat: number;
 long: number;
 
 }
+
+export interface Droguerias {
+
+    nombre: string;
+    telefono: string;
+    dias: string;
+    direccion: string;
+
+}
+
+export interface Polideportivo {
+
+    disciplina: string;
+    monitor: string;
+    lunes: string;
+    martes: string;
+    miercoles: string;
+    jueves: string;
+    viernes: string;
+    sabado: string;
+
+
+}
+
+export interface Estadio {
+
+    disciplina: string;
+    monitor: string;
+    lunes: string;
+    martes: string;
+    miercoles: string;
+    jueves: string;
+    viernes: string;
+    sabado: string;
+
+
+}

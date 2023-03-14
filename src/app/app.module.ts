@@ -18,6 +18,7 @@ import { environment } from '../environments/environment';
 import { DetailnegociosComponent } from './pages/detailnegocios/detailnegocios.component';
 import { GoogleMapsModule } from '@angular/google-maps';
 import { DetailEventosComponent } from './pages/detail-eventos/detail-eventos.component';
+import { InfoComponent } from './pages/info/info.component';
 
 
 
@@ -32,6 +33,9 @@ const routes: Routes = [
   },
   {
     path: 'detailEventos/:id', component: DetailEventosComponent
+  },
+  {
+    path: 'info', component: InfoComponent
   },
 ];
 
@@ -54,7 +58,8 @@ const routes: Routes = [
     HomeComponent,
     EventosComponent,
     NegociosComponent,
-    DetailEventosComponent
+    DetailEventosComponent,
+    InfoComponent
   ],
   bootstrap: [AppComponent]
 })

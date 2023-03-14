@@ -202,3 +202,8 @@ h1 {
     color: red;
     cursor: pointer;
 }
+
+.fondo{
+    background-image: url('https://static.storyweaver.org.in/illustrations/58816/large/3.jpg');
+    background-size: auto;
+}

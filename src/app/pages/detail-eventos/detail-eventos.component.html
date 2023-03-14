@@ -1,20 +1,20 @@
 <div [@fade]>
 
-    <img src="{{evento.imagen}}" class="shadow-lg mx-auto d-block"
+    <img src="{{evento?.imagen}}" class="shadow-lg mx-auto d-block"
         style="max-width: 100%; max-height: 500px; margin-top: 10px;">
 
     <div class="d-flex align-items-center ">
         <div class="col-md-8 col-sm-10 text-center mx-auto ml-sm-2 my-3 my-sm-0" style="margin-right: 0;">
-            <h1 class="display-4 " style="font-weight:bold;color:#000000; margin-top: 4px;">{{evento.nombre}}</h1>
+            <h1 class="display-4 " style="font-weight:bold;color:#000000; margin-top: 4px;">{{evento?.nombre}}</h1>
             <hr style="border-top: 3px solid #bbb; width: 100%;">
-            <p class="lead" style="font-size:20px;color:#000000;">{{evento.descripcion}}</p>
+            <p class="lead" style="font-size:20px;color:#000000;">{{evento?.descripcion}}</p>
         </div>
     </div>
     <div class="d-flex align-middle justify-content-center" style="margin-top: 25px;">
         <img src="https://cdn-icons-png.flaticon.com/512/2787/2787902.png"
             class="rounded-circle shadow-lg mx-auto d-block" alt="Logo de persona" class="mx-2"
             style="width: 40px; height: 100%;">
-        <h5 class="display-4" style="font-weight:bold;color:#333;font-size: 30px; ">Organiza: {{evento.organizador}}
+        <h5 class="display-4" style="font-weight:bold;color:#333;font-size: 30px; ">Organiza: {{evento?.organizador}}
         </h5>
     </div>
     <div class="row justify-content-center">
@@ -25,7 +25,7 @@
             <h5 class="display-4" style="font-weight:bold;color:#333;font-size: 30px; "> <img
                     src="https://cdn-icons-png.flaticon.com/512/854/854878.png"
                     class="rounded-circle shadow-lg mx-auto d-block" alt="Logo de persona" class="mx-2"
-                    style="width: 40px; height: 40px;">{{evento.lugar}}
+                    style="width: 40px; height: 40px;">{{evento?.lugar}}
             </h5>
             <div id="map" style="margin-top: 10px;"></div>
                             <button onclick="window.history.back();"

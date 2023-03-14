@@ -1,0 +1,127 @@
+<div class="container" [@fade]>
+
+
+
+    <div class="carousel-title" [@fade]>
+        <h1 [@fade]> <img src=" https://cdn-icons-png.flaticon.com/512/9894/9894435.png"
+                style="height: 40px; margin-right: 10px;">
+            Informacíon General</h1>
+        <hr>
+    </div>
+
+
+    <!--Drogueria De Turno-->
+    <div class="table-title">
+        <h2>Droguería de turno</h2>
+        
+    </div>
+    <caption class="caption">Día {{ diaActual }}</caption>
+    <table class="table">
+
+
+        <thead>
+            <tr>
+                <th>Droguería</th>
+                <th>Días</th>
+                <th>Dirección</th>
+                <th>Teléfono</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let drogueria of droguerias" [ngClass]="{'bg-primary': drogueria.dias.includes(diaActual2)}">
+                <td>{{ drogueria.nombre }}</td>
+                <td>{{ drogueria.dias }}</td>
+                <td>{{ drogueria.direccion }}</td>
+                <td>{{ drogueria.telefono }}</td>
+
+            </tr>
+
+        </tbody>
+    </table>
+    <hr>
+
+
+    <!--Polideportivo-->
+    <div class="table-title">
+        <h2>Horarios coliseo</h2>
+        
+    </div>
+    <caption class="caption">Día {{ diaActualNombre }}</caption>
+    <table class="table">
+
+
+        <thead>
+            <tr>
+                <th>Disciplina Deportiva</th>
+                <th>Monitor</th>
+                <th>Lunes</th>
+                <th>Martes</th>
+                <th>Miercoles</th>
+                <th>Jueves</th>
+                <th>Viernes</th>
+                <th>Sábado</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let item of polideportivo" >
+                <td>{{ item.disciplina }}</td>
+                <td>{{ item.monitor }}</td>
+<td [ngClass]="{'bg-primary': semana === 1}">{{ item.lunes }}</td>
+<td [ngClass]="{'bg-primary': semana === 2}">{{ item.martes }}</td>
+<td [ngClass]="{'bg-primary': semana === 3}">{{ item.miercoles }}</td>
+<td [ngClass]="{'bg-primary': semana === 4}">{{ item.jueves }}</td>
+<td [ngClass]="{'bg-primary': semana === 5}">{{ item.viernes }}</td>
+<td [ngClass]="{'bg-primary': semana === 6}">{{ item.sabado }}</td>
+
+
+            </tr>
+
+        </tbody>
+    </table>
+
+<!--Estadio-->
+    <div class="table-title">
+        <h2>Horarios estadio</h2>
+    
+    </div>
+    <caption class="caption">Día {{ diaActualNombre }}</caption>
+        <table class="table">
+        
+        
+            <thead>
+                <tr>
+                    <th>Disciplina Deportiva</th>
+                    <th>Monitor</th>
+                    <th>Lunes</th>
+                    <th>Martes</th>
+                    <th>Miercoles</th>
+                    <th>Jueves</th>
+                    <th>Viernes</th>
+                    <th>Sábado</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let item of estadio">
+                    <td>{{ item.disciplina }}</td>
+                    <td>{{ item.monitor }}</td>
+                    <td [ngClass]="{'bg-primary': semana === 1}">{{ item.lunes }}</td>
+                    <td [ngClass]="{'bg-primary': semana === 2}">{{ item.martes }}</td>
+                    <td [ngClass]="{'bg-primary': semana === 3}">{{ item.miercoles }}</td>
+                    <td [ngClass]="{'bg-primary': semana === 4}">{{ item.jueves }}</td>
+                    <td [ngClass]="{'bg-primary': semana === 5}">{{ item.viernes }}</td>
+                    <td [ngClass]="{'bg-primary': semana === 6}">{{ item.sabado }}</td>
+        
+        
+                </tr>
+        
+            </tbody>
+        </table>
+
+    <hr style="color: white;">
+    <hr style="color: white;">
+    <hr style="color: white;">
+    <hr style="color: white;">
+
+
+
+</div>
