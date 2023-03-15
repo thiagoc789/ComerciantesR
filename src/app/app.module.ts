@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { NgModule, isDevMode } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -19,12 +19,13 @@ import { DetailnegociosComponent } from './pages/detailnegocios/detailnegocios.c
 import { GoogleMapsModule } from '@angular/google-maps';
 import { DetailEventosComponent } from './pages/detail-eventos/detail-eventos.component';
 import { InfoComponent } from './pages/info/info.component';
+import { ServiceWorkerModule } from '@angular/service-worker';
 
 
 
 //RUTAS
 const routes: Routes = [
-  { path: '', redirectTo: '/home', pathMatch: 'full' },
+  { path: '', redirectTo: '', pathMatch: 'full',component: HomeComponent },
   { path: 'home', component: HomeComponent },
   { path: 'negocios', component: NegociosComponent },
   { path: 'eventos', component: EventosComponent },
@@ -51,6 +52,11 @@ const routes: Routes = [
     MatTabsModule,
     RouterModule.forRoot(routes),
     AngularFireModule.initializeApp(environment.firebaseConfig,),
+    ServiceWorkerModule.register('ngsw-worker.js', {
+      enabled: true,
+
+      registrationStrategy: 'registerWithDelay:1000'
+    }),
 
   ],
   declarations: [
