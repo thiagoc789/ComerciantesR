@@ -12,11 +12,8 @@
           "/manifest.webmanifest",
           "/*.css",
           "/*.js"
-        ],
-        "urls": [
-          "https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js",
-          "https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css"
         ]
+
       }
     },
     {
@@ -28,24 +25,6 @@
           "/assets/**",
           "/*.(svg|cur|jpg|jpeg|png|apng|webp|avif|gif|otf|ttf|woff|woff2)"
         ]
-      }
-    }
-  ],
-  "dataGroups": [
-    {
-      "name": "data-api",
-      "urls": [
-        "comerciantes-restrepo.firebaseapp.com",
-        "https://comerciantes-restrepo-default-rtdb.firebaseio.com",
-        "comerciantes-restrepo.appspot.com",
-        "https://firestore.googleapis.com/v1/projects/comerciantes-restrepo/databases/(default)/documents/",
-        "https://firestore.googleapis.com/v1/projects/comerciantes-restrepo/databases/(default)/documents/Comerciantes/"
-      ],
-      "cacheConfig": {
-        "strategy": "performance",
-        "maxSize": 5,
-        "maxAge": "50m",
-        "timeout": "5s"
       }
     }
   ]

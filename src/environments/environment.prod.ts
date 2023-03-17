@@ -1,5 +1,5 @@
 export const environment = {
-    production: false,
+    production: true,
     firebaseConfig: {
         apiKey: "AIzaSyBO-UGpyBD55KeTUJsOGbxI4ttmUXJ5ybY",
         authDomain: "comerciantes-restrepo.firebaseapp.com",
