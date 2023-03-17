@@ -19,6 +19,8 @@ import { GoogleMapsModule } from '@angular/google-maps';
 import { DetailEventosComponent } from './pages/detail-eventos/detail-eventos.component';
 import { InfoComponent } from './pages/info/info.component';
 import { ServiceWorkerModule } from '@angular/service-worker';
+import { AngularFireMessagingModule } from '@angular/fire/compat/messaging';
+
 
 //RUTAS
 const routes: Routes = [
@@ -33,6 +35,7 @@ const routes: Routes = [
 
 @NgModule({
   imports: [
+    AngularFireMessagingModule,
     GoogleMapsModule,
     CarouselModule,
     MatCardModule,
