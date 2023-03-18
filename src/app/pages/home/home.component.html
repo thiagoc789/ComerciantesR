@@ -1,13 +1,17 @@
 <div class="container">
 
-<div class="carousel-title" [@fade]>
-    <h1 [@fade]> <img src=" https://cdn-icons-png.flaticon.com/512/9894/9894435.png" style="height: 40px; margin-right: 10px;">
-        Eventos próximos</h1>
+
+<div class="carousel-title text-center" [@fade]>
+    <h1 [@fade]>Eventos próximos <img src="https://cdn-icons-png.flaticon.com/512/9894/9894435.png"
+            style="height: 40px; margin-right: 10px;">
+        <button class="btn btn-primary-outline" onclick="requestPermission()">
+            <i class="bi bi-bell"></i> Activar notificaciones
+        </button>
+    </h1>
     <hr>
 </div>
-<button (click)="requestPermission()">
-    Hello this is a chat app. You should let us send you notifications for this reason.
-</button>
+
+
 <div class="container">
     <div id="myCarousel" class="carousel slide" data-ride="carousel" data-interval="4000">
         <div class="carousel-inner zoom2">
@@ -19,13 +23,18 @@
                 </div>
             </div>
         </div>
-        <a class="carousel-control-prev custom-control-prev" href="#myCarousel" role="button" data-slide="prev">
+        <!-- Control de previo -->
+        <a class="carousel-control-prev custom-control-prev" href="#myCarousel" role="button" data-bs-target="#myCarousel"
+            data-bs-slide="prev">
             <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-            <span class="sr-only">Previous</span>
+            <span class="visually-hidden">Previo</span>
         </a>
-        <a class="carousel-control-next custom-control-next" href="#myCarousel" role="button" data-slide="next">
+        
+        <!-- Control de siguiente -->
+        <a class="carousel-control-next custom-control-next" href="#myCarousel" role="button" data-bs-target="#myCarousel"
+            data-bs-slide="next">
             <span class="carousel-control-next-icon" aria-hidden="true"></span>
-            <span class="sr-only">Next</span>
+            <span class="visually-hidden">Siguiente</span>
         </a>
     </div>
 </div>
