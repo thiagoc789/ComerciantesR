@@ -24,6 +24,7 @@ export class HomeComponent implements OnInit {
     this.getToken()
   }
 
+
   ngOnInit() {
 
     this.firestore.getCollection<Negocios>('Comerciantes').subscribe(res => {

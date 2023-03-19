@@ -107,9 +107,7 @@
     transition-delay: 0s;
 }
 
-.carousel-item {
-    overflow: hidden;
-}
+
 
 .zoom {
     transition: transform 0.5s ease;
@@ -139,9 +137,7 @@
 
 .carousel-control-prev,
 .carousel-control-next {
-    width: 10%;
-    filter: invert(1);
-    /* invertir el color de los iconos para hacerlos más oscuros */
+    width: 20%;
 
 }
 

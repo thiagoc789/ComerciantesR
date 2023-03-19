@@ -14,33 +14,32 @@
 
 <div class="container">
     <div id="myCarousel" class="carousel slide" data-ride="carousel" data-interval="4000">
-        <div class="carousel-inner zoom2">
-            <div class="carousel-item " (click)="goToDetailEventos(item.id)"  *ngFor="let item of eventos; let i = index" [class.active]="i === 0 " [@fade]>
-                <img src="{{item.imagen}} " alt="{{item.nombre}}" class="d-block w-100 zoom " >
+        <div class="carousel-inner slide zoom2">
+            <div class="carousel-item " (click)="goToDetailEventos(item.id)"  *ngFor="let item of eventos; let i = index" [class.active]="i === 0" [@fade]>
+                <img src="{{item.imagen}}" alt="{{item.nombre}}" class="d-block w-100 zoom">
                 <div class="carousel-caption">
                     <h6>{{item.nombre}}</h6>
                     <p>{{item.fecha}}</p>
                 </div>
             </div>
         </div>
-        <!-- Control de previo -->
-        <a class="carousel-control-prev custom-control-prev" href="#myCarousel" role="button" data-bs-target="#myCarousel"
-            data-bs-slide="prev">
+        <a class="carousel-control-prev" href="#myCarousel" role="button" data-bs-slide="prev">
             <span class="carousel-control-prev-icon" aria-hidden="true"></span>
             <span class="visually-hidden">Previo</span>
         </a>
-        
-        <!-- Control de siguiente -->
-        <a class="carousel-control-next custom-control-next" href="#myCarousel" role="button" data-bs-target="#myCarousel"
-            data-bs-slide="next">
+        <a class="carousel-control-next" href="#myCarousel" role="button" data-bs-slide="next">
             <span class="carousel-control-next-icon" aria-hidden="true"></span>
             <span class="visually-hidden">Siguiente</span>
         </a>
     </div>
 </div>
+
+
+
+
 <div class="carousel-title" [@fade]>
     <h2 [@fade]> <img src=" https://cdn-icons-png.flaticon.com/512/3598/3598587.png"
-            style="height: 40px; margin-right: 20px;">Nuestras marcass</h2>
+            style="height: 40px; margin-right: 20px;">Nuestras marcas</h2>
     <hr>
 </div>
 
