@@ -16,16 +16,25 @@ import { mergeMapTo } from 'rxjs/operators';
 })
 export class HomeComponent implements OnInit {
 
+  botonClicado = false;
+
   negocios: Negocios[];
   eventos: Eventos[];
 
-
   constructor(private firestore: FirestoreService, private router: Router, private afMessaging: AngularFireMessaging) { 
     this.getToken()
+    
+    
   }
 
 
   ngOnInit() {
+    const botonClicado = localStorage.getItem('botonClicado');
+    if (botonClicado === 'true') {
+      this.botonClicado = true;
+    }
+
+    
 
     this.firestore.getCollection<Negocios>('Comerciantes').subscribe(res => {
       this.negocios = res;
@@ -38,17 +47,26 @@ export class HomeComponent implements OnInit {
   }
 
   requestPermission() {
+    this.botonClicado = true;
+    localStorage.setItem('botonClicado', 'true');
+    
     this.afMessaging.requestPermission
       .pipe(mergeMapTo(this.afMessaging.tokenChanges))
       .subscribe(
-        (token) => { console.log('Permission granted! Save to the server!', token); },
-        (error) => { console.error(error); },
+        (token) => { console.log('Permission granted! Save to the server!', token);  },
+        (error) => { console.error(error); },     
       );
   }
 
-  getToken(){
-    this.afMessaging.getToken.subscribe((res) => console.log("token: ", res));
+  getToken() {
+    this.afMessaging.getToken.subscribe((res) => {
+      console.log("token: ", res);
+      
+    });
+    
+    
   }
+
 
   goToDetailNegocios(Id: number) {
     //this.navCtrl.navigateForward(['/detail-negocios', id]);

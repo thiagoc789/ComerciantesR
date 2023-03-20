@@ -1,8 +1,71 @@
+.container{
+    max-width: 1600px;
+}
+.separador {
+    border: none;
+    height: 3px;
+    margin: 10px 0;
+    background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.911), rgba(0, 0, 0, 0));
+
+}
+
+.boton-aviso {
+    display: block;
+    margin: 0 auto;
+    
+        color: rgb(255, 0, 0);
+        font-weight: bold;
+        border-color: #dc3545;
+        border-radius: 5px;
+        padding: 10px 20px;
+}
+
+.carousel-title {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 2rem;
+    font-weight: bold;
+    margin-top: 15px;
+
+}
+
+.carousel-title img {
+    height: 100px;
+    margin-right: 30px;
+}
+
+.carousel-title span {
+    display: block;
+    font-size: 1.5rem;
+    font-weight: normal;
+    margin-left: 10px;
+
+}
+
+.carousel-title h1 {
+    margin-left: 10px;
+    font-family: 'Oswald', sans-serif;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0px;
+    font-size: 3rem;
+    line-height: 1.2;
+    margin: 0;
+}
+
+.carousel-title h1 small {
+    font-size: 1.5rem;
+   
+}
+
+
 .col-3 {
     margin: 0px 0px 0px 0px;
     padding-left: 2%;
     box-sizing: border-box;
-
 }
 
 .carousel-title hr {
@@ -26,37 +89,6 @@
             156);
 }
 
-.carousel-title h1 {
-    font-size: 32px;
-    color: #000000;
-    margin-top: 0;
-    margin-bottom: 0;
-    padding-bottom: 10px;
-    padding-top: 5px;
-
-    font-family: cursive;
-    background-color: #bbb9b954;
-}
-
-
-.carousel-title h2 {
-    font-size: 32px;
-    color: #000000;
-    padding-top: 10px;
-    padding-bottom: 10px;
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen-Sans, Ubuntu, Cantarell, 'Helvetica Neue', sans-serif;
-    font-family: cursive;
-    background-color: #bbb9b954;
-    margin-top: 0;
-    margin-bottom: 0;
-}
-
-.carousel-item img {
-    height: 400px;
-    /* ajusta la altura deseada */
-
-}
-
 .carousel-caption {
     bottom: 0;
     font-size: small;
@@ -76,15 +108,13 @@
 
 .carousel-item img {
     width: 400px;
-    height: 450px;
+    height: 600px;
     object-fit: cover;
 }
 
 .carousel {
     margin-bottom: 1rem;
 }
-
-
 
 @media (max-width: 576px) {
 
@@ -106,8 +136,6 @@
     transition-timing-function: cubic-bezier(0.25, 0.1, 0.25, 1);
     transition-delay: 0s;
 }
-
-
 
 .zoom {
     transition: transform 0.5s ease;
@@ -134,12 +162,53 @@
     margin-bottom: 0;
 }
 
-
 .carousel-control-prev,
 .carousel-control-next {
-    width: 20%;
+    position: absolute;
+    top: 40%;
+
+    width: 80px;
+    height: 80px;
+    font-size: 5.5rem;
+    color: #b9b9b9;
+    line-height: 9.15;
+    opacity: 100%;
+}
+
+.zoom3 {
+    transition: transform 0.5s ease;
+}
+
+.zoom3:hover {
+    transform: scale(1.1);
+    cursor: pointer;
+    color: #888787;
 
 }
 
+.carousel-indicators {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin-bottom: 0;
+    margin-top: 50;
+    list-style: none;
+    text-align: center;
+    z-index: 15;
+}
 
+.carousel-indicators li {
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    margin: 1rem;
+    text-indent: -999px;
+    cursor: pointer;
+    background-color: rgba(255, 255, 255, 0.5);
+    border-radius: 50%;
+}
 
+.carousel-indicators .active {
+    background-color: #fff;
+}

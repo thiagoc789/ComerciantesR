@@ -1,60 +1,80 @@
 <div class="container">
+    <!--AVISO-->
+    <button class="btn boton-aviso" [@fade] (click)="requestPermission()" *ngIf="!botonClicado">
+        <i class="bi bi-bell"></i> Por favor, para enviarte actualizaciones e información importante activa las
+        notificaciones presionando click aquí
+    </button>
+
+    <!--TITULO-->
+    <div class="carousel-title text-center" [@fade]
+        style="display: flex; align-items: center; justify-content: center;">
+        <img src="https://cdn-icons-png.flaticon.com/512/1968/1968790.png" style="height: 60px; margin-right: 10px;">
+        <h1 [@fade] style="text-align: center; margin: 0; font-size: 2rem; line-height: 1.2;">
+            Eventos <br>
+            próximos
+        </h1>
+    </div>
+    <hr class="separador">
+
+    <!--CAROUSEL-->
+
+<div id="myCarousel" class="carousel slide" data-ride="carousel" data-interval="4000">
 
 
-<div class="carousel-title text-center" [@fade]>
-    <h1 [@fade]>Eventos próximos <img src="https://cdn-icons-png.flaticon.com/512/9894/9894435.png"
-            style="height: 40px; margin-right: 10px;">
-        <button class="btn btn-primary-outline" onclick="requestPermission()">
-            <i class="bi bi-bell"></i> Activar notificaciones
-        </button>
-    </h1>
-    <hr>
+
+    <div class="carousel-inner slide zoom2">
+        <div class="carousel-item " (click)="goToDetailEventos(item.id)" *ngFor="let item of eventos; let i = index"
+            [class.active]="i === 0" [@fade]>
+            <img src="{{item.imagen}}" alt="{{item.nombre}}" class="d-block w-100 zoom">
+            <div class="carousel-caption">
+                <h6>{{item.nombre}}</h6>
+                <p>{{item.fecha}}</p>
+            </div>
+        </div>
+
+    </div>
+<ol class="carousel-indicators">
+    <li *ngFor="let item of eventos; let i = index" [attr.data-bs-target]="'#myCarousel'" [attr.data-bs-slide-to]="i"
+        [class.active]="i === 0"></li>
+</ol>
+    <a class="carousel-control-prev zoom3" href="#myCarousel" role="button" data-bs-slide="prev">
+        <span class="bi bi-chevron-compact-left"></span>
+        <span class="visually-hidden">Previo</span>
+    </a>
+    <a class="carousel-control-next zoom3" href="#myCarousel" role="button" data-bs-slide="next">
+        <span class="bi bi-chevron-compact-right"></span>
+        <span class="visually-hidden">Siguiente</span>
+    </a>
 </div>
 
 
-<div class="container">
-    <div id="myCarousel" class="carousel slide" data-ride="carousel" data-interval="4000">
-        <div class="carousel-inner slide zoom2">
-            <div class="carousel-item " (click)="goToDetailEventos(item.id)"  *ngFor="let item of eventos; let i = index" [class.active]="i === 0" [@fade]>
-                <img src="{{item.imagen}}" alt="{{item.nombre}}" class="d-block w-100 zoom">
-                <div class="carousel-caption">
-                    <h6>{{item.nombre}}</h6>
-                    <p>{{item.fecha}}</p>
+
+    <!--Titulo-->
+
+    <div class="carousel-title text-center " [@fade] style="margin-top: 40px;">
+        <img src="https://cdn-icons-png.flaticon.com/512/869/869687.png" style="height: 60px; margin-right: 10px;">
+        <h1 [@fade] style="text-align: center; margin: 0; font-size: 2rem; line-height: 1.2;">
+            Nuestras <br>
+            Marcas
+        </h1>
+        
+    </div>
+    <hr class="separador">
+
+    <!--MARCAS-->
+
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-3 col-sm-4 col-md-3 col-lg-2 mb-3" *ngFor="let negocio of negocios" [@fade]>
+                <div class="card border-0 zoom" (click)="goToDetailNegocios(negocio.id)">
+                    <img src={{negocio.logo}} class="card-img-top" alt={{negocio.nombre}}>
                 </div>
             </div>
         </div>
-        <a class="carousel-control-prev" href="#myCarousel" role="button" data-bs-slide="prev">
-            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Previo</span>
-        </a>
-        <a class="carousel-control-next" href="#myCarousel" role="button" data-bs-slide="next">
-            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Siguiente</span>
-        </a>
     </div>
-</div>
-
-
-
-
-<div class="carousel-title" [@fade]>
-    <h2 [@fade]> <img src=" https://cdn-icons-png.flaticon.com/512/3598/3598587.png"
-            style="height: 40px; margin-right: 20px;">Nuestras marcas</h2>
-    <hr>
-</div>
-
-<div class="container-fluid">
-    <div class="row">
-        <div class="col-3 col-sm-4 col-md-3 col-lg-2 mb-3" *ngFor="let negocio of negocios" [@fade]>
-            <div class="card border-0 zoom" (click)="goToDetailNegocios(negocio.id)">
-                <img src={{negocio.logo}} class="card-img-top" alt={{negocio.nombre}}>
-            </div>
-        </div>
-    </div>
-</div>
-<hr style="color: white;">
-<hr style="color: white;">
-<hr style="color: white;">
-<hr style="color: white;">
+    <hr style="color: white;">
+    <hr style="color: white;">
+    <hr style="color: white;">
+    <hr style="color: white;">
 
 </div>
