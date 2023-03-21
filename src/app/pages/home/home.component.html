@@ -19,9 +19,6 @@
     <!--CAROUSEL-->
 
 <div id="myCarousel" class="carousel slide" data-ride="carousel" data-interval="4000">
-
-
-
     <div class="carousel-inner slide zoom2">
         <div class="carousel-item " (click)="goToDetailEventos(item.id)" *ngFor="let item of eventos; let i = index"
             [class.active]="i === 0" [@fade]>
@@ -53,7 +50,7 @@
 
     <div class="carousel-title text-center " [@fade] style="margin-top: 40px;">
         <img src="https://cdn-icons-png.flaticon.com/512/869/869687.png" style="height: 60px; margin-right: 10px;">
-        <h1 [@fade] style="text-align: center; margin: 0; font-size: 2rem; line-height: 1.2;">
+        <h1 [@fade] style="text-align: center; margin: 0; font-size: 2rem; line-height: 1.2; margin-top: 20px;">
             Nuestras <br>
             Marcas
         </h1>

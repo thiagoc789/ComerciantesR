@@ -15,9 +15,9 @@
 
 .nav-item {
     width: 100%;
+    height: fit-content;
     text-align: center;
     
-
 }
 
 .navbar {
@@ -45,7 +45,7 @@
 }
 
 .zoom:hover {
-    transform: translateY(-5px);
-    box-shadow: 0px 0px 7px 7px rgba(43, 41, 44, 0.322);
+    transform: translateY(-1px);
+    box-shadow: 0px 0px 4px 4px rgba(0, 0, 0, 0.322);
 }
 
