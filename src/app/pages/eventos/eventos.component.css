@@ -98,18 +98,6 @@ h1 {
     font-size: medium;
 }
 
-.carousel-title h1 {
-    font-size: 32px;
-    color: #000000;
-    padding-bottom: 10px;
-    padding-top: 5px;
-    background-color: #bbb9b954;
-    border-radius: 5%;
-    text-align: center;
-    margin-bottom: 20px;
-    border: 1px solid #ddd;
-}
-
 
 .search-container {
     margin-top: 30px;
