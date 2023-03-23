@@ -1,6 +1,6 @@
 <div [@fade]>
 
-    <img src="{{negocio?.logo}}" class="rounded-circle shadow-lg mx-auto d-block"
+    <img src="{{negocio?.logo}}" alt="{{negocio?.nombre}}" class="rounded-circle shadow-lg mx-auto d-block"
         style="max-width: 300px; max-height: 300px;">
 
     <div class="d-flex align-items-center ">
@@ -47,7 +47,7 @@
 
             <div class="d-flex align-middle justify-content-center" style="margin-top: 25px;">
                 <img src="https://cdn-icons-png.flaticon.com/512/2922/2922532.png"
-                    class="rounded-circle shadow-lg mx-auto d-block" alt="Logo de persona" class="mx-2"
+                    class="rounded-circle shadow-lg mx-auto d-block" alt="Icono dueno" class="mx-2"
                     style="width: 40px; height: 100%;">
                 <h5 class="display-4" style="font-weight:bold;color:#333;font-size: 30px; ">{{negocio?.dueno}}</h5>
             </div>
@@ -59,7 +59,7 @@
                     </h1>
                     <h5 class="display-4" style="font-weight:bold;color:#333;font-size: 30px; "> <img
                             src="https://cdn-icons-png.flaticon.com/512/927/927667.png"
-                            class="rounded-circle shadow-lg mx-auto d-block" alt="Logo de persona" class="mx-2"
+                            class="rounded-circle shadow-lg mx-auto d-block" alt="Icono direccion" class="mx-2"
                             style="width: 40px; height: 40px;">{{negocio?.direccion}}
                     </h5>
                     <div id="map" style="margin-top: 10px;"></div>
