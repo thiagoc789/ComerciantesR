@@ -24,6 +24,7 @@ export class NegociosComponent {
   }
 
   buscarNegocios() {
+  console.log(this.busqueda)
     if (this.busqueda.trim() !== '') {
       const busquedaNormalizada = this.normalizarTexto(this.busqueda);
       const palabrasBusqueda = busquedaNormalizada.split(' ');

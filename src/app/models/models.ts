@@ -17,6 +17,7 @@ export interface Negocios {
     eslogan: string;
     lat: number;
     lng: number;
+    categoria: string;
 }
 
 

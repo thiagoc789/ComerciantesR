@@ -8,6 +8,7 @@ import { FirestoreService } from '../../services/firestore.service';
 import { mergeMapTo } from 'rxjs/operators';
 
 
+
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
@@ -16,18 +17,24 @@ import { mergeMapTo } from 'rxjs/operators';
 })
 export class HomeComponent implements OnInit {
 
+  categorias = [
+  { nombre: 'Entretenimiento', icono: 'bi bi-hamburger' }, 
+  { nombre: 'Bebidas', icono: 'bi bi-cup-straw' }, 
+  { nombre: 'Ropa', icono: 'bi bi-tshirt' }, 
+  { nombre: 'Tecnología', icono: 'bi bi-laptop' },];
+
+
   botonClicado = false;
 
   negocios: Negocios[];
+  negociosFiltrados = [];
   eventos: Eventos[];
+  busqueda: string = '';
 
   constructor(private firestore: FirestoreService, private router: Router, private afMessaging: AngularFireMessaging) { 
     this.getToken()
     
-    
   }
-
-
   ngOnInit() {
     const botonClicado = localStorage.getItem('botonClicado');
     if (botonClicado === 'true') {
@@ -67,7 +74,6 @@ export class HomeComponent implements OnInit {
     
   }
 
-
   goToDetailNegocios(Id: number) {
     //this.navCtrl.navigateForward(['/detail-negocios', id]);
     this.router.navigateByUrl(`/detailNegocios/${Id}`);
@@ -78,6 +84,36 @@ export class HomeComponent implements OnInit {
     //this.navCtrl.navigateForward(['/detail-negocios', id]);
     this.router.navigateByUrl(`/detailEventos/${Id}`);
   }
+
+  buscarEventos(categoria: string) {
+    console.log(categoria)
+    this.busqueda = categoria;
+    console.log(this.busqueda)
+    if (this.busqueda.trim() !== '') {
+      const busquedaNormalizada = this.normalizarTexto(this.busqueda);
+      const palabrasBusqueda = busquedaNormalizada.split(' ');
+      this.firestore.getCollection<Negocios>('Comerciantes').subscribe(res => {
+        this.negocios = res.filter(negocios => {
+          const categoria = this.normalizarTexto(negocios.categoria);
+          return palabrasBusqueda.some(palabra =>  categoria.includes(palabra));
+        });
+      });
+    } else {
+      this.firestore.getCollection<Negocios>('Comerciantes').subscribe(res => {
+        this.negocios = res;
+      });
+    }
+  }
+
+  normalizarTexto(texto: string) {
+    return texto.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "").replace(/,/g, "");
+  }
+
+  verTodos() {
+    this.busqueda = '';
+    this.buscarEventos('');
+  }
+
 
 
 
