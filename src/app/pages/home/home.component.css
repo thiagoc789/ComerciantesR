@@ -1,6 +1,8 @@
-.container{
+.container {
     max-width: 1600px;
+
 }
+
 .separador {
     border: none;
     height: 3px;
@@ -12,12 +14,12 @@
 .boton-aviso {
     display: block;
     margin: 0 auto;
-    
-        color: rgb(255, 0, 0);
-        font-weight: bold;
-        border-color: #dc3545;
-        border-radius: 5px;
-        padding: 10px 20px;
+
+    color: rgb(255, 0, 0);
+    font-weight: bold;
+    border-color: #dc3545;
+    border-radius: 5px;
+    padding: 10px 20px;
 }
 
 .carousel-title {
@@ -58,14 +60,7 @@
 
 .carousel-title h1 small {
     font-size: 1.5rem;
-   
-}
 
-
-.col-3 {
-    margin: 0px 0px 0px 0px;
-    padding-left: 2%;
-    box-sizing: border-box;
 }
 
 .carousel-title hr {
@@ -100,16 +95,21 @@
     right: 0%;
 }
 
-.carousel-inner img {
-    max-width: 100%;
-    height: auto;
-    margin: auto;
+.carousel-item img {
+    width: 100%;
+    height: 500px;
+    object-fit: cover;
 }
 
-.carousel-item img {
-    width: 400px;
-    height: 600px;
-    object-fit: cover;
+
+
+#myCarousel {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    width: 80%;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
 }
 
 .carousel {
@@ -197,7 +197,7 @@
     list-style: none;
     margin: 0;
     padding: 0;
-   
+
 }
 
 .carousel-indicators li {
@@ -214,4 +214,77 @@
 
 .carousel-indicators li.active {
     background-color: #f30606;
+}
+
+
+.card-img-top {
+    object-fit: cover;
+    width: 12em;
+    height: 8em;
+    /* establecer un ancho fijo para la imagen */
+}
+
+.card {
+    background-color: #e7e7e991;
+}
+
+.card-body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+    height: 100%;
+    object-fit: cover;
+}
+
+.align-items-stretch {
+    align-items: stretch;
+}
+
+.align-items-center {
+    align-items: center;
+}
+
+.container-fluid {
+    max-width: 80%;
+    min-width: 10em;
+}
+
+.d-flex {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-grow: 1;
+    object-fit: cover;
+}
+
+
+
+@media (max-width: 600px) {
+    .container-fluid {
+        max-width: 100%;
+        margin-right: 0;
+        /* otros estilos */
+    }
+}
+
+@media (max-width: 600px) {
+    .container {
+        padding-left: 0;
+        padding-right: 0;
+        /* otros estilos */
+    }
+
+    .container-fluid {
+        padding-left: 0.5;
+        padding-right: 0.5;
+    }
+
+        .card-img-top {
+            object-fit: cover;
+            max-width: 8em;
+            height: 8em;
+            /* establecer un ancho fijo para la imagen */
+        }
 }

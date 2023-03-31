@@ -6,7 +6,8 @@ export interface Negocios {
     telefono1: number;
     telefono2: number;
     correo: string;
-    whatsapp: number;
+    whatsapp1: number;
+    whatsapp2: number;
     dueño: string;
     instagram: string;
     facebook: string;

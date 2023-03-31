@@ -8,7 +8,8 @@
     <!--TITULO-->
     <div class="carousel-title text-center" [@fade]
         style="display: flex; align-items: center; justify-content: center;">
-        <img src="https://cdn-icons-png.flaticon.com/512/1968/1968790.png" alt="Icono eventos proximos " style="height: 60px; margin-right: 10px;">
+        <img src="https://cdn-icons-png.flaticon.com/512/1968/1968790.png" alt="Icono eventos proximos "
+            style="height: 60px; margin-right: 10px;">
         <h1 [@fade] style="text-align: center; margin: 0; font-size: 2rem; line-height: 1.2;">
             Eventos <br>
             próximos
@@ -18,57 +19,78 @@
 
     <!--CAROUSEL-->
 
-<div id="myCarousel" class="carousel slide" data-ride="carousel" data-interval="4000">
-    <div class="carousel-inner slide zoom2">
-        <div class="carousel-item " (click)="goToDetailEventos(item.id)" *ngFor="let item of eventos; let i = index"
-            [class.active]="i === 0" [@fade]>
-            <img src="{{item.imagen}}" alt="{{item.nombre}}" class="d-block w-100 zoom">
-            <div class="carousel-caption">
-                <h6>{{item.nombre}}</h6>
-                <p>{{item.fecha}}</p>
+    <div id="myCarousel" class="carousel slide" data-ride="carousel" data-interval="4000">
+        <div class="carousel-inner slide zoom2">
+            <div class="carousel-item " (click)="goToDetailEventos(item.id)" *ngFor="let item of eventos; let i = index"
+                [class.active]="i === 0" [@fade]>
+                <img src="{{item.imagen}}" alt="{{item.nombre}}" class="zoom">
+                <div class="carousel-caption">
+                    <h6>{{item.nombre}}</h6>
+                    <p>{{item.fecha}}</p>
+                </div>
             </div>
-        </div>
 
+        </div>
+        <ol class="carousel-indicators">
+            <li *ngFor="let item of eventos; let i = index" [attr.data-bs-target]="'#myCarousel'"
+                [attr.data-bs-slide-to]="i" [class.active]="i === 0"></li>
+        </ol>
+        <a class="carousel-control-prev zoom3" href="#myCarousel" role="button" data-bs-slide="prev">
+            <span class="bi bi-chevron-compact-left"></span>
+            <span class="visually-hidden">Previo</span>
+        </a>
+        <a class="carousel-control-next zoom3" href="#myCarousel" role="button" data-bs-slide="next">
+            <span class="bi bi-chevron-compact-right"></span>
+            <span class="visually-hidden">Siguiente</span>
+        </a>
     </div>
-<ol class="carousel-indicators">
-    <li *ngFor="let item of eventos; let i = index" [attr.data-bs-target]="'#myCarousel'" [attr.data-bs-slide-to]="i"
-        [class.active]="i === 0"></li>
-</ol>
-    <a class="carousel-control-prev zoom3" href="#myCarousel" role="button" data-bs-slide="prev">
-        <span class="bi bi-chevron-compact-left"></span>
-        <span class="visually-hidden">Previo</span>
-    </a>
-    <a class="carousel-control-next zoom3" href="#myCarousel" role="button" data-bs-slide="next">
-        <span class="bi bi-chevron-compact-right"></span>
-        <span class="visually-hidden">Siguiente</span>
-    </a>
-</div>
 
 
 
     <!--Titulo-->
 
     <div class="carousel-title text-center " [@fade] style="margin-top: 40px;">
-        <img src="https://cdn-icons-png.flaticon.com/512/869/869687.png" alt= "Icono subtitulo nuestras marcas" style="height: 60px; margin-right: 10px;">
+        <img src="https://cdn-icons-png.flaticon.com/512/869/869687.png" alt="Icono subtitulo nuestras marcas"
+            style="height: 60px; margin-right: 10px;">
         <h1 [@fade] style="text-align: center; margin: 0; font-size: 2rem; line-height: 1.2; margin-top: 20px;">
             Nuestras <br>
             Marcas
         </h1>
-        
+
     </div>
     <hr class="separador">
 
     <!--MARCAS-->
 
     <div class="container-fluid">
-        <div class="row">
-            <div class="col-3 col-sm-4 col-md-3 col-lg-2 mb-3" *ngFor="let negocio of negocios" [@fade]>
-                <div class="card border-0 zoom" (click)="goToDetailNegocios(negocio.id)">
-                    <img src={{negocio.logo}} class="card-img-top" alt={{negocio.nombre}}>
+        <div class="row flex-wrap justify-content-center">
+            <div class="col-12 col-sm-6 col-md-6 col-lg-6 mb-3" *ngFor="let negocio of negocios" [@fade]>
+                <div class="card border-0 h-100 zoom">
+                    <div class="d-flex">
+                        <div>
+                            <img src={{negocio.logo}} class="card-img-top" alt={{negocio.nombre}}>
+                        </div>
+                        <div class="ml-3 d-flex flex-column flex-grow-1 ">
+                            <h5 class="card-title mb-0 bodytext" >{{negocio.nombre}}</h5>
+                            <p class="card-text fs-6">{{negocio.direccion}}</p>
+                            <div>
+                            <a href="https://wa.me/{{negocio.whatsapp1}}" target="_blank" class="btn btn-primary">
+                                Llamar</a>
+                            <a href="https://wa.me/{{negocio.telefono1}}" target="_blank" class="btn btn-whatsapp">
+                                WhatsApp
+                            </a>
+                            </div>
+                        </div>
+
+                    </div>
                 </div>
             </div>
         </div>
     </div>
+
+
+
+
     <hr style="color: white;">
     <hr style="color: white;">
     <hr style="color: white;">
