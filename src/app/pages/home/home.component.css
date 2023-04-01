@@ -1,35 +1,56 @@
 .bg-light-green {
-    background: linear-gradient(to bottom, #baf3f3, #b4e2cbd0);
-        border-radius: 0 0 25% 25%;
-        margin-bottom: 20px;
-        height: 300px;
+    background: linear-gradient(to right, #e7eb22, #2bbb1e);
+ 
+
 }
 
 .container-fluid.titulo {
     max-width: 100%;
     width: 100%;
-    height: 6em;
+    height: 10em;
+    position: sticky;
+    top: 0;
+    display: block;
+    z-index: -1;
 }
 
-.btn{
-font-family: 'Signika Negative';
+
+
+.cont {
+    width: 100%;
+    background-color: #f4f4f4;
+    border-top-left-radius: 26px;
+    border-top-right-radius: 26px;
+    position: relative;
+    z-index: 2;
+    overflow-y: auto;
+    max-width: max-content;
 }
 
-.titulotext.mb-0{
+.container{
+max-width: 100%;
+margin:0
+}
+
+.btn {
+    font-family: 'Signika Negative';
+}
+
+.titulotext.mb-0 {
     font-family: 'Signika Negative';
     font-size: 2.5rem;
     margin-top: 1.5rem;
     margin-bottom: 0;
-    color: #000000;
+    color: #ffffff;
     font-weight: bold;
     text-transform: uppercase;
-    
+
 }
 
-.titulotext{
-        font-family: 'Signika Negative';
+.titulotext {
+    font-family: 'Signika Negative';
     font-size: 2.5rem;
-    color: #000000;
+    color: #ffffff;
     font-weight: bold;
     text-transform: uppercase;
 }
@@ -38,9 +59,6 @@ font-family: 'Signika Negative';
     max-width: 120px;
 }
 
-.container {
-max-width: 1600px;
-}
 
 .separador {
     border: none;
@@ -54,12 +72,13 @@ max-width: 1600px;
 .boton-aviso {
     display: block;
     margin: 0 auto;
-
     color: rgb(255, 0, 0);
     font-weight: bold;
     border-color: #dc3545;
     border-radius: 5px;
     padding: 10px 20px;
+    margin-top: 10px;
+
 }
 
 .carousel-title {
@@ -283,15 +302,13 @@ h1 {
     padding-top: 0;
 }
 
-.card-title {
-    margin-top: 0;
-    padding-top: 0;
-    font-family: 'Anton';
-    letter-spacing: 1px;
+.card-text {
+    font-family: 'Signika Negative';
 }
 
-.card-text{
+.card-title {
     font-family: 'Signika Negative';
+    font-weight: bold;
 }
 
 .card-img-top {
@@ -303,16 +320,60 @@ h1 {
 
 .card {
     background-color: #ffffff;
+
 }
 
-.card-body {
+.card-group {
     display: flex;
-    flex-direction: column;
-    justify-content: center;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    scroll-snap-type: x mandatory;
+    margin-bottom: 3em;
+}
+
+.cardCat {
+    flex: 0 0 auto;
+    margin-right: 1rem;
+}
+
+.cardCat:last-child {
+    margin-right: 0;
+}
+
+.cardCat {
+    cursor: pointer;
+    text-align: center;
+    display: flex;
+    border-radius: 8px;
+    background: #fff;
     align-items: center;
-    margin: auto;
-    height: 100%;
-    object-fit: cover;
+    max-width: 11em;
+    height: 11em;
+    
+}
+
+.cardCat-body {
+    
+    padding: 10px;
+    overflow: hidden;
+}
+
+
+.cardCat-title{
+    font-size: 1.0rem;
+    color: #000000;
+    text-align: center;
+    margin: 10px;
+    padding: 0;
+    font-family: 'Signika Negative';
+    letter-spacing: 1px;
+}
+
+.cardCat-text{
+    font-size: 2.0em;
+    margin-top: 20px;
+    
 
 }
 
@@ -336,6 +397,8 @@ h1 {
     flex-grow: 1;
     object-fit: cover;
 }
+
+
 
 
 
@@ -365,4 +428,16 @@ h1 {
         height: 8em;
         /* establecer un ancho fijo para la imagen */
     }
+
+        .contentCard {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-grow: 1;
+            object-fit: cover;
+        }
 }
+
+
+
+

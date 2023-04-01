@@ -18,10 +18,24 @@ import { mergeMapTo } from 'rxjs/operators';
 export class HomeComponent implements OnInit {
 
   categorias = [
-  { nombre: 'Entretenimiento', icono: 'bi bi-hamburger' }, 
-  { nombre: 'Bebidas', icono: 'bi bi-cup-straw' }, 
-  { nombre: 'Ropa', icono: 'bi bi-tshirt' }, 
-  { nombre: 'Tecnología', icono: 'bi bi-laptop' },];
+    { nombre: 'Restaurantes comidas rápidas', icono: 'fas fa-hamburger', color: '#FF5733' },
+    { nombre: 'Panaderías y Postres', icono: 'fas fa-birthday-cake', color: '#FFC300' },
+    { nombre: 'Tiendas y Supermercados', icono: 'fas fa-shopping-cart', color: '#DAF7A6' },
+    { nombre: 'Medicamentos y Aseo', icono: 'fas fa-pills', color: '#581845' },
+    { nombre: 'Reparaciones y mantenimientos', icono: 'fas fa-wrench', color: '#7FDBFF' },
+    { nombre: 'Salud y Belleza', icono: 'fas fa-spa', color: '#FFDC00' },
+    { nombre: 'Educación', icono: 'fas fa-graduation-cap', color: '#E6E6FA' },
+    { nombre: 'Variedades y accesorios', icono: 'fas fa-gift', color: '#FFE4E1' },
+    { nombre: 'Mascotas', icono: 'fas fa-paw', color: '#1ABC9C' },
+    { nombre: 'Papelerias y misceláneas', icono: 'fas fa-pencil-ruler', color: '#F5B7B1' },
+    { nombre: 'Deporte', icono: 'fas fa-football-ball', color: '#6C3483' },
+    { nombre: 'Servicios empresariales', icono: 'fas fa-briefcase', color: '#FF5733' },
+    { nombre: 'Entretenimiento', icono: 'fas fa-theater-masks', color: '#FFC300' },
+    { nombre: 'Manualidades', icono: 'fas fa-palette', color: '#DAF7A6' },
+    { nombre: 'Ropa y Lavandería', icono: 'fas fa-tshirt', color: '#581845' },
+  ];
+
+
 
 
   botonClicado = false;
@@ -95,7 +109,11 @@ export class HomeComponent implements OnInit {
       this.firestore.getCollection<Negocios>('Comerciantes').subscribe(res => {
         this.negocios = res.filter(negocios => {
           const categoria = this.normalizarTexto(negocios.categoria);
-          return palabrasBusqueda.some(palabra =>  categoria.includes(palabra));
+          
+          return palabrasBusqueda.every(palabra =>  categoria.includes(palabra));
+          
+          
+          
         });
       });
     } else {
