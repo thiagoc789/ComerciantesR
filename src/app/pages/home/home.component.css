@@ -175,18 +175,55 @@ margin:0
     margin-bottom: 1rem;
 }
 
-@media (max-width: 576px) {
+@media (max-width: 700px) {
 
     /* ajustar el ancho máximo para dispositivos móviles */
     .carousel-item img {
-        height: 200px;
+        height: 300px;
+        width: 100%;
+        max-width: 100%;
         /* ajusta la altura deseada */
 
     }
 
+
     .carousel-inner img {
         max-width: 100%;
+        
+    }
+
+        #myCarousel {
+            margin-top: 20px;
+            margin-bottom: 20px;
+            width: 98%;
+            justify-content: center;
+            align-items: center;
+            margin: auto;
+        }
+}
+
+
+@media (min-width: 700px) and (max-width: 1000px) {
+
+    #myCarousel {
+
+        width: 90%;
         height: 300px;
+
+    }
+
+    .carousel-item img {
+        height: 350px;
+        width: 100%;
+        max-width: 100%;
+        /* ajusta la altura deseada */
+
+    }
+
+
+    .carousel-inner img {
+        max-width: 100%;
+
     }
 }
 
@@ -312,7 +349,7 @@ h1 {
 }
 
 .card-img-top {
-    object-fit: cover;
+    /*object-fit: cover;   Cambiar aqui para que se vean los logos cortados pero bien dimensionados*/
     width: 12em;
     height: 10em;
     /* establecer un ancho fijo para la imagen */
@@ -398,11 +435,7 @@ h1 {
     object-fit: cover;
 }
 
-
-
-
-
-@media (max-width: 600px) {
+@media (max-width: 800px) {
     .container-fluid {
         max-width: 100%;
         margin-right: 0;
@@ -428,7 +461,6 @@ h1 {
         height: 8em;
         /* establecer un ancho fijo para la imagen */
     }
-
         .contentCard {
             display: flex;
             justify-content: center;
@@ -436,6 +468,11 @@ h1 {
             flex-grow: 1;
             object-fit: cover;
         }
+}
+
+.cardCat.active {
+    background-color: blue;
+    color: white;
 }
 
 

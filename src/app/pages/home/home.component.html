@@ -75,19 +75,20 @@
             <div class="row ">
                 <div class="col-sm-12">
                     <div class="card-group container-fluid ">
-                        <div class="cardCat zoom6" (click)="buscarEventos('')">
+                        <div class="cardCat zoom6 "  (click)="buscarEventos('')">
                             <div class="cardCat-body">
                                 <p class="cardCat-text"><i class="fas fa-shopping-cart"></i></p>
                                 <h5 class="cardCat-title">Ver Todos</h5>
 
                             </div>
                         </div>
-<div class="cardCat zoom6" *ngFor="let categoria of categorias" (click)="buscarEventos(categoria.nombre)">
-    <div class="cardCat-body">
-        <i class="{{ categoria.icono }} cardCat-text" [style.color]="categoria.color"></i>
-        <h6 class="cardCat-title">{{ categoria.nombre }}</h6>
-    </div>
-</div>
+                        <div class="cardCat zoom6"  *ngFor="let categoria of categorias"
+                            (click)="buscarEventos(categoria.nombre)">
+                            <div class="cardCat-body">
+                                <i class="{{ categoria.icono }} cardCat-text" [style.color]="categoria.color"></i>
+                                <h6 class="cardCat-title">{{ categoria.nombre }}</h6>
+                            </div>
+                        </div>
 
                     </div>
                 </div>

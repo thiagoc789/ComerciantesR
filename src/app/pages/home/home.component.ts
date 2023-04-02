@@ -35,11 +35,7 @@ export class HomeComponent implements OnInit {
     { nombre: 'Ropa y Lavandería', icono: 'fas fa-tshirt', color: '#581845' },
   ];
 
-
-
-
   botonClicado = false;
-
   negocios: Negocios[];
   negociosFiltrados = [];
   eventos: Eventos[];
@@ -100,6 +96,7 @@ export class HomeComponent implements OnInit {
   }
 
   buscarEventos(categoria: string) {
+    
     console.log(categoria)
     this.busqueda = categoria;
     console.log(this.busqueda)
