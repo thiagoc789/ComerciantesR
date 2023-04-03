@@ -1,21 +1,4 @@
-.bg-light-green {
-    background: linear-gradient(to right, #e7eb22, #2bbb1e);
-
-
-}
-
-.container-fluid.titulo {
-    max-width: 100%;
-    width: 100%;
-    height: 10em;
-    position: sticky;
-    top: 0;
-    display: block;
-    z-index: -1;
-}
-
-
-
+/* Contenedor verde */
 .cont {
     width: 100%;
     background-color: #f4f4f4;
@@ -25,30 +8,17 @@
     z-index: 2;
     overflow-y: auto;
     max-width: max-content;
+    font-family: 'Signika Negative';
 }
 
+/* CONTENEDOR BLANCO */
 .container {
     max-width: 100%;
     margin: 0
 }
 
-.btn {
-    font-family: 'Signika Negative';
-}
-
-.titulotext.mb-0 {
-    font-family: 'Signika Negative';
-    font-size: 2.5rem;
-    margin-top: 1.5rem;
-    margin-bottom: 0;
-    color: #ffffff;
-    font-weight: bold;
-    text-transform: uppercase;
-
-}
-
+/*LOGO Y TITULO DE LA PAGINA */
 .titulotext {
-    font-family: 'Signika Negative';
     font-size: 2.5rem;
     color: #ffffff;
     font-weight: bold;
@@ -57,6 +27,11 @@
 
 .logo {
     max-width: 120px;
+}
+
+.bg-light-green {
+    background: linear-gradient(to right, #e7eb22, #2bbb1e);
+
 }
 
 
@@ -81,67 +56,6 @@
 
 }
 
-.carousel-title {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    font-size: 2rem;
-    font-weight: bold;
-    margin-top: 15px;
-
-}
-
-.carousel-title img {
-    height: 100px;
-    margin-right: 30px;
-}
-
-.carousel-title span {
-    display: block;
-    font-size: 1.5rem;
-    font-weight: normal;
-    margin-left: 10px;
-
-}
-
-.carousel-title h1 {
-    margin-left: 10px;
-    font-family: 'Oswald', sans-serif;
-    font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 0px;
-    font-size: 3rem;
-    line-height: 1.2;
-    margin: 0;
-}
-
-.carousel-title h1 small {
-    font-size: 1.5rem;
-
-}
-
-.carousel-title hr {
-    border-top: 1px solid #000000;
-    margin-top: 0;
-    margin-bottom: 0;
-}
-
-.carousel-title {
-    text-align: center;
-    margin-bottom: 20px;
-}
-
-.carousel-item {
-    box-shadow: 0px 0px 5px rgb(170, 156, 156);
-}
-
-.carousel-inner {
-    box-shadow: 0px 0px 5px rgb(170,
-            156,
-            156);
-}
 
 .carousel-caption {
     bottom: 0;
@@ -160,32 +74,21 @@
     object-fit: cover;
 }
 
-
-
 #myCarousel {
     margin-top: 20px;
     margin-bottom: 20px;
     width: 80%;
-    justify-content: center;
-    align-items: center;
     margin: auto;
-}
-
-.carousel {
-    margin-bottom: 1rem;
 }
 
 @media (max-width: 700px) {
 
-    /* ajustar el ancho máximo para dispositivos móviles */
     .carousel-item img {
         height: 300px;
         width: 100%;
         max-width: 100%;
-        /* ajusta la altura deseada */
 
     }
-
 
     .carousel-inner img {
         max-width: 100%;
@@ -202,7 +105,6 @@
     }
 }
 
-
 @media (min-width: 700px) and (max-width: 1000px) {
 
     #myCarousel {
@@ -216,21 +118,13 @@
         height: 350px;
         width: 100%;
         max-width: 100%;
-        /* ajusta la altura deseada */
 
     }
-
 
     .carousel-inner img {
         max-width: 100%;
 
     }
-}
-
-.carousel-item {
-    transition: transform 0.5s ease-in-out;
-    transition-timing-function: cubic-bezier(0.25, 0.1, 0.25, 1);
-    transition-delay: 0s;
 }
 
 .zoom {
@@ -257,9 +151,8 @@
 }
 
 .carousel-caption h6 {
-    font-size: 1.5rem;
-    font-weight: bold;
-    margin-bottom: 1rem;
+    margin-top: 1em;
+    font-size: 1.0rem;
 }
 
 .carousel-caption p {
@@ -269,13 +162,11 @@
 
 .carousel-control-prev,
 .carousel-control-next {
-    position: absolute;
     top: 40%;
     width: 80px;
     height: 80px;
-    font-size: 5.5rem;
+    font-size: 3.5rem;
     color: #b9b9b9;
-    line-height: 9.15;
     opacity: 100%;
 }
 
@@ -303,18 +194,10 @@
 }
 
 .carousel-indicators {
-    position: absolute;
     bottom: -45px;
-    /* ajusta la distancia entre los indicadores y el borde inferior */
     left: 50%;
     transform: translateX(-50%);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    list-style: none;
     margin: 0;
-    padding: 0;
-
 }
 
 .carousel-indicators li {
@@ -326,26 +209,10 @@
     border-radius: 50%;
     background-color: rgb(133, 133, 134);
     cursor: pointer;
-    transition: background-color 0.3s ease;
 }
 
 .carousel-indicators li.active {
     background-color: #f30606;
-}
-
-h1 {
-    margin-top: 10;
-    margin-bottom: 0px;
-    padding-top: 0;
-}
-
-.card-text {
-    font-family: 'Signika Negative';
-}
-
-.card-title {
-    font-family: 'Signika Negative';
-    font-weight: bold;
 }
 
 .card-img-top {
@@ -358,6 +225,11 @@ h1 {
 .card {
     background-color: #ffffff;
 
+}
+
+.card-title {
+    font-size: large;
+    padding: 10px 10px 10px 10px;
 }
 
 .card-group {
@@ -398,29 +270,30 @@ h1 {
 
 
 .cardCat-title {
-    font-size: 1.0rem;
-    color: #000000;
-    text-align: center;
     margin: 10px;
     padding: 0;
-    font-family: 'Signika Negative';
-    letter-spacing: 1px;
 }
 
 .cardCat-text {
     font-size: 2.0em;
     margin-top: 20px;
 
+}
+
+.cardCat.active {
+    background-color: rgba(9, 134, 30, 0.897);
+    color: rgb(0, 0, 0);
 
 }
 
-.align-items-stretch {
-    align-items: stretch;
+.cardCat-text.active {
+    color: rgb(255, 255, 255);
 }
 
-.align-items-center {
-    align-items: center;
+.cardCat-title.active {
+    color: rgb(255, 255, 255);
 }
+
 
 .container-fluid {
     max-width: 80%;
@@ -442,6 +315,10 @@ h1 {
     align-items: center;
     flex-grow: 1;
     object-fit: cover;
+}
+
+.botones{
+    padding: 10px 10px 10px 10px;
 }
 
 @media (max-width: 800px) {
@@ -482,9 +359,18 @@ h1 {
         padding-right: 0.5;
     }
 
+    .card-title{
+        font-size: medium;
+    }
+
+    .card-text{
+        font-size: small;
+        padding-left: 10px;
+    }
+
     .card-img-top {
-        max-width: 9em;
-        height: 9em;
+        max-width: 12em;
+        max-height: 12em;
         margin-right: 1em;
         /* establecer un ancho fijo para la imagen */
     }
@@ -496,20 +382,6 @@ h1 {
         flex-grow: 1;
         object-fit: cover;
     }
-}
-
-.cardCat.active {
-    background-color: rgba(9, 134, 30, 0.897);
-    color: rgb(0, 0, 0);
-
-}
-
-.cardCat-text.active {
-    color: rgb(255, 255, 255);
-}
-
-.cardCat-title.active {
-    color: rgb(255, 255, 255);
 }
 
 
