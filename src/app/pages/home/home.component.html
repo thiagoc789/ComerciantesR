@@ -75,24 +75,28 @@
             <div class="row ">
                 <div class="col-sm-12">
                     <div class="card-group container-fluid ">
-                        <div class="cardCat zoom6 "  (click)="buscarEventos('')">
+                        <div class="cardCat zoom6 " [ngClass]="{'active': categoriaActiva === -1}"
+                            (click)="setCategoriaActiva(-1); buscarEventos('')">
                             <div class="cardCat-body">
-                                <p class="cardCat-text"><i class="fas fa-shopping-cart"></i></p>
-                                <h5 class="cardCat-title">Ver Todos</h5>
-
+                                <p class="cardCat-text"><i class="fas fa-shopping-cart"></i> </p>
+                                <h5 class="cardCat-title"  [ngClass]="{'active': categoriaActiva === -1}" >Ver Todos</h5>
                             </div>
                         </div>
-                        <div class="cardCat zoom6"  *ngFor="let categoria of categorias"
-                            (click)="buscarEventos(categoria.nombre)">
+                        <div class="cardCat zoom6" *ngFor="let categoria of categorias; let i = index"
+                            [ngClass]="{'active': categoriaActiva === i}"
+                            (click)="setCategoriaActiva(i); buscarEventos(categoria.nombre)">
                             <div class="cardCat-body">
-                                <i class="{{ categoria.icono }} cardCat-text" [style.color]="categoria.color"></i>
-                                <h6 class="cardCat-title">{{ categoria.nombre }}</h6>
+                                <i class="{{ categoria.icono }} cardCat-text" [style.color]="categoria.color"
+                                    [ngClass]="{'active': categoriaActiva === i}"></i>
+                                <h6 class="cardCat-title" [ngClass]="{'active': categoriaActiva === i}">{{
+                                    categoria.nombre }}</h6>
                             </div>
-                        </div>
 
+                        </div>
                     </div>
                 </div>
             </div>
+
 
             <!--MARCAS-->
 
@@ -111,14 +115,18 @@
                                     <p class="card-text fs-7" style="color: #666;">
                                         <i class="bi bi-geo-alt-fill"></i> {{negocio.direccion}}
                                     </p>
-                                    <div >
+                                    <div>
                                         <a href="tel:{{negocio.telefono1}}" target="_blank"
-                                            class="btn btn-primary zoom6 botonesCard " style="margin-right: 1em; max-height: 3.3em; width: 7em;">
-                                            <i class="bi bi-telephone"></i><p class="textCard">Llamar</p>
+                                            class="btn btn-primary zoom6 botonesCard "
+                                            style="margin-right: 1em; max-height: 3.3em; width: 7em;">
+                                            <i class="bi bi-telephone"></i>
+                                            <p class="textCard">Llamar</p>
                                         </a>
                                         <a href="https://wa.me/{{negocio.whatsapp1}}" target="_blank"
-                                            class="btn btn-success zoom6 botonesCard" style="max-height: 3.3em; width: 7em;">
-                                            <i class="bi bi-whatsapp "></i><p class="textCard">WhatsApp</p>
+                                            class="btn btn-success zoom6 botonesCard"
+                                            style="max-height: 3.3em; width: 7em;">
+                                            <i class="bi bi-whatsapp "></i>
+                                            <p class="textCard">WhatsApp</p>
                                         </a>
                                     </div>
                                 </div>

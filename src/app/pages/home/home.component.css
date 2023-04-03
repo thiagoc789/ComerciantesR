@@ -499,6 +499,17 @@ h1 {
 }
 
 .cardCat.active {
-    background-color: blue;
-    color: white;
+    background-color: rgba(9, 134, 30, 0.897);
+    color: rgb(0, 0, 0);
+
 }
+
+.cardCat-text.active {
+    color: rgb(255, 255, 255);
+}
+
+.cardCat-title.active {
+    color: rgb(255, 255, 255);
+}
+
+

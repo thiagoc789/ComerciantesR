@@ -45,6 +45,13 @@ export class HomeComponent implements OnInit {
     this.getToken()
     
   }
+
+  categoriaActiva = -1;
+
+  setCategoriaActiva(index: number) {
+    this.categoriaActiva = index;
+  }
+  
   ngOnInit() {
     const botonClicado = localStorage.getItem('botonClicado');
     if (botonClicado === 'true') {
