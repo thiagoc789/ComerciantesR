@@ -20,6 +20,8 @@ import { DetailEventosComponent } from './pages/detail-eventos/detail-eventos.co
 import { InfoComponent } from './pages/info/info.component';
 import { ServiceWorkerModule } from '@angular/service-worker';
 import { AngularFireMessagingModule } from '@angular/fire/compat/messaging';
+import { SitemapComponentComponent } from './sitemap-component/sitemap-component.component';
+import { HttpClientModule } from '@angular/common/http';
 
 
 //RUTAS
@@ -31,12 +33,14 @@ const routes: Routes = [
   {path: 'detailNegocios/:id', component: DetailnegociosComponent},
   {path: 'detailEventos/:id', component: DetailEventosComponent},
   {path: 'info', component: InfoComponent},
+  { path: 'sitemap.xml', component: SitemapComponentComponent }
 ];
 
 @NgModule({
   imports: [
     AngularFireMessagingModule,
     GoogleMapsModule,
+    HttpClientModule,
     CarouselModule,
     MatCardModule,
     MatIconModule,

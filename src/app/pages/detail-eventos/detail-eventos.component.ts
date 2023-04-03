@@ -49,21 +49,6 @@ export class DetailEventosComponent implements OnInit {
 
       marker.setMap(this.map);
 
-
-      const infoWindow = new google.maps.InfoWindow({
-        content: `
-    <div style="background-color: #fff; color: #333; padding: 10px;">
-      <h4 style="margin: 0 0 10px;">${this.evento.nombre}</h4>
-      <p style="margin: 0;">${this.evento.lugar}</p>
-    </div>
-  `,
-      });
-
-
-      marker.addListener('click', () => {
-        infoWindow.open(this.map, marker);
-      });
-
       if (navigator.geolocation) {
         navigator.geolocation.getCurrentPosition(position => {
           this.currentPosition = {

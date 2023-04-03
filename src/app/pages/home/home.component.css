@@ -350,8 +350,8 @@ h1 {
 
 .card-img-top {
     /*object-fit: cover;   Cambiar aqui para que se vean los logos cortados pero bien dimensionados*/
-    width: 12em;
-    height: 10em;
+    max-width: 12em;
+    max-height: 12em;
     /* establecer un ancho fijo para la imagen */
 }
 
