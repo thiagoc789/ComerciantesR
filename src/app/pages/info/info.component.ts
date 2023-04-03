@@ -28,8 +28,22 @@ export class InfoComponent {
   ngOnInit() {
 
     const fecha = new Date();
-    this.diaActual = fecha.getDate();
-    this.diaActual2 = this.diaActual.toString()
+    const hora = fecha.getHours();
+    const minutos = fecha.getMinutes();
+
+    // Si la hora actual es mayor o igual a las 06:00, actualiza el valor de diaActual
+    if (hora >= 6 || (hora === 5 && minutos >= 0)) {
+      this.diaActual = fecha.getDate();
+      this.diaActual2 = this.diaActual.toString();
+    }
+    // Si no, usa el día anterior
+    else {
+      fecha.setDate(fecha.getDate() - 1);
+      this.diaActual = fecha.getDate();
+      this.diaActual2 = this.diaActual.toString();
+    }
+
+    
     this.firestore.getCollection<Droguerias>('Droguerias').subscribe(res => {
       this.droguerias = res;  
     });
