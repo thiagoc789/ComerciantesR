@@ -217,8 +217,8 @@
 
 .card-img-top {
     /*object-fit: cover;   Cambiar aqui para que se vean los logos cortados pero bien dimensionados*/
-    max-width: 12em;
-    max-height: 12em;
+    width: 12em;
+    height: 12em;
     /* establecer un ancho fijo para la imagen */
 }
 
@@ -228,6 +228,7 @@
 }
 
 .card-title {
+    font-weight: bold;
     font-size: large;
     padding: 10px 10px 10px 10px;
 }
@@ -239,6 +240,7 @@
     -webkit-overflow-scrolling: touch;
     scroll-snap-type: x mandatory;
     margin-bottom: 3em;
+    padding-bottom: 10px;
 }
 
 .cardCat {
@@ -360,17 +362,16 @@
     }
 
     .card-title{
-        font-size: medium;
     }
 
     .card-text{
-        font-size: small;
+
         padding-left: 10px;
     }
 
     .card-img-top {
-        max-width: 12em;
-        max-height: 12em;
+        width: 12em;
+        height: 12em;
         margin-right: 1em;
         /* establecer un ancho fijo para la imagen */
     }

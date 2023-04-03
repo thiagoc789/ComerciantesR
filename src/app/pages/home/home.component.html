@@ -79,7 +79,7 @@
                             (click)="setCategoriaActiva(-1); buscarEventos('')">
                             <div class="cardCat-body">
                                 <p class="cardCat-text"><i class="fas fa-shopping-cart"></i> </p>
-                                <h5 class="cardCat-title"  [ngClass]="{'active': categoriaActiva === -1}" >Ver Todos</h5>
+                                <h5 class="cardCat-title" [ngClass]="{'active': categoriaActiva === -1}">Ver Todos</h5>
                             </div>
                         </div>
                         <div class="cardCat zoom6" *ngFor="let categoria of categorias; let i = index"
@@ -103,16 +103,16 @@
             <div class="container-fluid">
                 <div class="row flex-wrap justify-content-center">
                     <div class="col-12 col-sm-12 col-md-12 col-lg-6 mb-3" *ngFor="let negocio of negocios" [@fade]>
-                        <div class="card border-0 h-100 zoom4" (click)="goToDetailNegocios(negocio.id)">
+                        <div class="card border-0 h-100 zoom4">
                             <div class="d-flex contentCard">
                                 <div>
-                                    <img src={{negocio.logo}} class="card-img-top" alt={{negocio.nombre}}>
+                                    <img src={{negocio.logo}} class="card-img-top" (click)="goToDetailNegocios(negocio.id)" alt={{negocio.nombre}}>
                                 </div>
                                 <div class="ml-3 d-flex flex-column flex-grow-1">
-                                    <h1 class="card-title">
+                                    <h1 class="card-title" (click)="goToDetailNegocios(negocio.id)">
                                         <i class="bi bi-shop"></i> {{negocio.nombre}}
                                     </h1>
-                                    <p class="card-text fs-7" style="color: #666;">
+                                    <p class="card-text fs-7" style="color: #666;" (click)="goToDetailNegocios(negocio.id)">
                                         <i class="bi bi-geo-alt-fill"></i> {{negocio.direccion}}
                                     </p>
                                     <div class="botones">
