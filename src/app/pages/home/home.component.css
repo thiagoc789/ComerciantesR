@@ -1,6 +1,6 @@
 .bg-light-green {
     background: linear-gradient(to right, #e7eb22, #2bbb1e);
- 
+
 
 }
 
@@ -27,9 +27,9 @@
     max-width: max-content;
 }
 
-.container{
-max-width: 100%;
-margin:0
+.container {
+    max-width: 100%;
+    margin: 0
 }
 
 .btn {
@@ -189,17 +189,17 @@ margin:0
 
     .carousel-inner img {
         max-width: 100%;
-        
+
     }
 
-        #myCarousel {
-            margin-top: 20px;
-            margin-bottom: 20px;
-            width: 98%;
-            justify-content: center;
-            align-items: center;
-            margin: auto;
-        }
+    #myCarousel {
+        margin-top: 20px;
+        margin-bottom: 20px;
+        width: 98%;
+        justify-content: center;
+        align-items: center;
+        margin: auto;
+    }
 }
 
 
@@ -334,8 +334,8 @@ margin:0
 }
 
 h1 {
-    margin-top: 0;
-    margin-bottom: 20px;
+    margin-top: 10;
+    margin-bottom: 0px;
     padding-top: 0;
 }
 
@@ -387,17 +387,17 @@ h1 {
     align-items: center;
     max-width: 11em;
     height: 11em;
-    
+
 }
 
 .cardCat-body {
-    
+
     padding: 10px;
     overflow: hidden;
 }
 
 
-.cardCat-title{
+.cardCat-title {
     font-size: 1.0rem;
     color: #000000;
     text-align: center;
@@ -407,10 +407,10 @@ h1 {
     letter-spacing: 1px;
 }
 
-.cardCat-text{
+.cardCat-text {
     font-size: 2.0em;
     margin-top: 20px;
-    
+
 
 }
 
@@ -435,11 +435,38 @@ h1 {
     object-fit: cover;
 }
 
+
+.contentCard {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-grow: 1;
+    object-fit: cover;
+}
+
 @media (max-width: 800px) {
     .container-fluid {
         max-width: 100%;
         margin-right: 0;
         /* otros estilos */
+    }
+}
+
+@media (max-width: 427px) {
+
+    .botonesCard{
+        max-width: 3em;
+        max-height: 4em;
+        margin-right: 0;
+       
+    }
+
+    .textCard{
+        display: none;
+    }
+
+    .d-flex{
+        align-items: start;
     }
 }
 
@@ -456,25 +483,22 @@ h1 {
     }
 
     .card-img-top {
-        object-fit: cover;
-        max-width: 8em;
-        height: 8em;
+        max-width: 9em;
+        height: 9em;
+        margin-right: 1em;
         /* establecer un ancho fijo para la imagen */
     }
-        .contentCard {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            flex-grow: 1;
-            object-fit: cover;
-        }
+
+    .contentCard {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-grow: 1;
+        object-fit: cover;
+    }
 }
 
 .cardCat.active {
     background-color: blue;
     color: white;
 }
-
-
-
-
