@@ -47,11 +47,6 @@ export class InfoComponent {
 
     });
 
-
-
-
   }
-
-
 
 }

@@ -1,15 +1,20 @@
-<div [@fade]>
+<div id="contenido" [@fade]>
 
-    <img src="{{negocio?.logo}}" alt="{{negocio?.nombre}}" class="rounded-circle shadow-lg mx-auto d-block"
-        style="max-width:35em; max-height: 300px; margin-top: 2em;">
-
-    <div class="d-flex align-items-center ">
-        <div class="col-md-8 col-sm-10 text-center mx-auto ml-sm-2 my-3 my-sm-0" style="margin-right: 0;">
-            <h1 class="display-4 " style="font-weight:bold;color:#000000; margin-top: 4px;">{{negocio?.nombre}}</h1>
+    <div class="d-flex justify-content-center flex-column" style="text-align: center;">
+        <div>
+            <img src="{{negocio?.logo}}" alt="{{negocio?.nombre}}" class="rounded-circle shadow-lg mx-auto d-block"
+                style="max-width:100%; max-height: 300px; margin-top: 2em;">
+        </div>
+        <div>
+            <h1 class="display-4 " style="font-weight:bold;color:#000000; margin-top: 1em;">{{negocio?.nombre}}</h1>
+        </div>
+        <div>
             <hr style="border-top: 3px solid #bbb; width: 100%;">
-            <p class="lead" style="font-size:20px;color:#000000;">{{negocio?.descripcion}}</p>
+            <p class="lead" style="font-size:20px;color:#000000; text-align: center;">{{negocio?.descripcion}}</p>
         </div>
     </div>
+
+
     <div class="row justify-content-center">
         <div class="col-md-8 text-center">
             <p class="lead mb-5">Comunicate con
@@ -35,40 +40,39 @@
         </div>
         <div class="col-md-15 col-xs-15 col-sm-15 text-center mt-4">
             <div class="btn-group flex-wrap " style="width: 50%;" role="group">
-                <a href="https://{{negocio.instagram}} "  class="btn btn-instagram btn-lg zoom"><i
+                <a href="https://{{negocio.instagram}} " class="btn btn-instagram btn-lg zoom"><i
                         class="bi bi-instagram mr-2"></i> Instagram</a>
 
-                <a href="https://{{negocio.facebook}} "  class="btn btn-outline-primary btn-lg zoom"><i
+                <a href="https://{{negocio.facebook}} " class="btn btn-outline-primary btn-lg zoom"><i
                         class="bi bi-facebook mr-2"></i> Facebook</a>
-                <a href="https://{{negocio.web}} "  class="btn btn-outline-info btn-lg zoom"><i
+                <a href="https://{{negocio.web}} " class="btn btn-outline-info btn-lg zoom"><i
                         class="bi bi-globe2 mr-2"></i> Sitio
                     web</a>
             </div>
-
-            </div>
-            <div class="row justify-content-center">
-                <div class="col-md-8 text-center">
-                    <hr style="border-top: 3px solid #bbb; width: 100%;">
-                    <h1 class="display-4 "
-                        style="font-weight:bold;color:#000000; margin-top: 4px; font-size: xx-large;">Encuentranos en:
-                    </h1>
-                    <h5 class="display-4" style="font-weight:bold;color:#333;font-size: 30px; "> <img
-                            src="https://cdn-icons-png.flaticon.com/512/927/927667.png"
-                            class="rounded-circle shadow-lg mx-auto d-block" alt="Icono direccion" class="mx-2"
-                            style="width: 40px; height: 40px;">{{negocio?.direccion}}
-                    </h5>
-                    <div id="map" style="margin-top: 10px;"></div>
-                </div>
-
-            </div>
-
-            <button class="btn btn-outline-success btn-lg zoom" onclick="window.history.back();"
-                style="max-width: 15em; margin-top: 2em; ">Volver
-                a la página anterior</button>
-
-            <hr style="color: white;">
-            <hr style="color: white;">
-            <hr style="color: white;">
-            <hr style="color: white;">
+            <hr style="border-top: 3px solid #bbb; width: 100%;">
         </div>
+        <div class="row justify-content-center">
+
+
+            <h1 class="display-4 "
+                style="font-weight:bold;color:#000000; text-align: center; margin-top: 4px; font-size: xx-large;">
+                Encuentranos en:
+            </h1>
+            <h5 class="display-4" style="font-weight:bold;color:#333;font-size: 30px; text-align: center;"> <img
+                    src="https://cdn-icons-png.flaticon.com/512/927/927667.png"
+                    class="rounded-circle shadow-lg mx-auto d-block" alt="Icono direccion" class="mx-2"
+                    style="width: 40px; height: 40px;">{{negocio?.direccion}}
+            </h5>
+            <div id="map" style="margin-top: 10px;"></div>
+        </div>
+
+        <button class="btn btn-outline-success btn-lg zoom" onclick="window.history.back();"
+            style="max-width: 15em; margin-top: 2em; ">Volver
+            a la página anterior</button>
+
+        <hr style="color: white;">
+        <hr style="color: white;">
+        <hr style="color: white;">
+        <hr style="color: white;">
     </div>
+</div>

@@ -23,6 +23,7 @@ export class DetailnegociosComponent implements OnInit {
   constructor(private firestore: FirestoreService, private route: ActivatedRoute) { }
 
   ngOnInit() {
+    window.scrollTo(0, 0);
 
     const negocioId = this.route.snapshot.paramMap.get('id');
     this.firestore.getDoc<Negocios>('Comerciantes', negocioId).subscribe(res => {
@@ -45,27 +46,12 @@ export class DetailnegociosComponent implements OnInit {
         position: markerPos,
         map: this.map,
         icon: {
-          url: this.negocio.logo,
+          url: 'assets/icons/logo.png',
           scaledSize: new google.maps.Size(32, 32)
         }
       });
 
       marker.setMap(this.map);
-
-
-      const infoWindow = new google.maps.InfoWindow({
-        content: `
-    <div style="background-color: #fff; color: #333; padding: 10px;">
-      <h4 style="margin: 0 0 10px;">${this.negocio.nombre}</h4>
-      <p style="margin: 0;">${this.negocio.direccion}</p>
-    </div>
-  `,
-      });
-
-
-      marker.addListener('click', () => {
-        infoWindow.open(this.map, marker);
-      });
 
       if (navigator.geolocation) {
         navigator.geolocation.getCurrentPosition(position => {
