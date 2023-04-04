@@ -1,5 +1,5 @@
 .nav-link {
-    color: #000000;
+    color: #ffffff;
     font-weight: bold;
     width: auto;
     height:100%;
@@ -23,7 +23,7 @@
     background-color: #cac5c5d5;
     padding-top: 0%;
     padding-bottom: 0%;
-          
+    background-color: #1606f3;
 }
 
 .bi.active {
