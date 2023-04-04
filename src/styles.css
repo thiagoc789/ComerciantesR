@@ -4,7 +4,6 @@
     height: 3px;
     margin: 10px 0;
     background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.911), rgba(0, 0, 0, 0));
-
 }
 
 .carousel-title {
@@ -12,7 +11,7 @@
     flex-direction: row;
     align-items: center;
     justify-content: center;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: 'Signika Negative';
     font-size: 2rem;
     font-weight: bold;
     margin-top: 15px;
@@ -34,7 +33,7 @@
 
 .carousel-title h1 {
     margin-left: 10px;
-    font-family: 'Oswald', sans-serif;
+    font-family: 'Signika Negative';
     font-weight: 700;
     text-transform: uppercase;
     letter-spacing: 0px;
@@ -46,5 +45,13 @@
 .carousel-title h1 small {
     font-size: 1.5rem;
 
+}
+
+body{
+    font-family: 'Signika Negative';
+}
+
+.body{
+    font-family: 'Signika Negative';
 }
 

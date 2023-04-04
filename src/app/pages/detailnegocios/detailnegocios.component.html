@@ -8,6 +8,9 @@
         <div>
             <h1 class="display-4 " style="font-weight:bold;color:#000000; margin-top: 1em;">{{negocio?.nombre}}</h1>
         </div>
+                <div>
+                    <h6 class="display-7" style="color:#9b9898;">{{negocio?.eslogan}}</h6>
+                </div>
         <div>
             <hr style="border-top: 3px solid #bbb; width: 100%;">
             <p class="lead" style="font-size:20px;color:#000000; text-align: center;">{{negocio?.descripcion}}</p>
@@ -23,9 +26,8 @@
                 <a href="tel:{{negocio?.telefono1}}" class="btn btn-outline-dark btn-lg zoom"><i
                         class="bi bi-telephone"></i>
                     {{negocio?.telefono1}}</a>
-                <a href="tel:{{negocio?.telefono2}}" class="btn btn-outline-dark btn-lg zoom"><i
-                        class="bi bi-telephone"></i>
-                    {{negocio?.telefono2}}</a>
+                <a *ngIf="negocio?.telefono2" href="tel:{{negocio.telefono2}}"
+                    class="btn btn-outline-dark btn-lg zoom"><i class="bi bi-telephone"></i>{{negocio.telefono2}}</a>
             </div>
         </div>
         <div class="col-md-8 text-center">
@@ -33,21 +35,19 @@
                 <a href="https://wa.me/+57{{negocio?.whatsapp1}}" class="btn btn-outline-success btn-lg  zoom"><i
                         class="bi bi-whatsapp"></i>
                     {{negocio?.whatsapp1}}</a>
-                <a href="https://wa.me/+57{{negocio?.whatsapp2}}" class="btn btn-outline-success btn-lg zoom"><i
-                        class="bi bi-whatsapp"></i>
-                    {{negocio?.whatsapp2}}</a>
+                <a *ngIf="negocio?.whatsapp2" href="https://wa.me/+57{{negocio.whatsapp2}}"
+                    class="btn btn-outline-success btn-lg zoom"><i class="bi bi-whatsapp"></i>{{negocio.whatsapp2}}</a>
             </div>
         </div>
         <div class="col-md-15 col-xs-15 col-sm-15 text-center mt-4">
             <div class="btn-group flex-wrap " style="width: 50%;" role="group">
-                <a href="https://{{negocio.instagram}} " class="btn btn-instagram btn-lg zoom"><i
-                        class="bi bi-instagram mr-2"></i> Instagram</a>
+                <a *ngIf="negocio?.instagram" href="https://{{negocio.instagram}}"
+                    class="btn btn-instagram btn-lg zoom"><i class="bi bi-instagram mr-2"></i> Instagram</a>
 
-                <a href="https://{{negocio.facebook}} " class="btn btn-outline-primary btn-lg zoom"><i
-                        class="bi bi-facebook mr-2"></i> Facebook</a>
-                <a href="https://{{negocio.web}} " class="btn btn-outline-info btn-lg zoom"><i
-                        class="bi bi-globe2 mr-2"></i> Sitio
-                    web</a>
+                <a *ngIf="negocio?.facebook" href="https://{{negocio.facebook}}"
+                    class="btn btn-outline-primary btn-lg zoom"><i class="bi bi-facebook mr-2"></i> Facebook</a>
+                <a *ngIf="negocio?.web" href="https://{{negocio.web}}" class="btn btn-outline-info btn-lg zoom"><i
+                        class="bi bi-globe2 mr-2"></i> Sitio web</a>
             </div>
             <hr style="border-top: 3px solid #bbb; width: 100%;">
         </div>

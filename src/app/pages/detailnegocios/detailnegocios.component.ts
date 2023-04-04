@@ -12,13 +12,13 @@ declare const google: any;
   styleUrls: ['./detailnegocios.component.css'],
   animations: [fade]
 
+
 })
+
 export class DetailnegociosComponent implements OnInit {
   map: any;
   currentPosition: any;
   negocio: any;
-
-
 
   constructor(private firestore: FirestoreService, private route: ActivatedRoute) { }
 

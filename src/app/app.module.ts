@@ -1,4 +1,4 @@
-import { NgModule, isDevMode } from '@angular/core';
+import { NgModule} from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -22,7 +22,7 @@ import { ServiceWorkerModule } from '@angular/service-worker';
 import { AngularFireMessagingModule } from '@angular/fire/compat/messaging';
 import { SitemapComponentComponent } from './sitemap-component/sitemap-component.component';
 import { HttpClientModule } from '@angular/common/http';
-
+import { CommonModule } from '@angular/common';  
 
 //RUTAS
 const routes: Routes = [
@@ -38,6 +38,7 @@ const routes: Routes = [
 
 @NgModule({
   imports: [
+    CommonModule,
     AngularFireMessagingModule,
     GoogleMapsModule,
     HttpClientModule,
@@ -62,6 +63,7 @@ const routes: Routes = [
     EventosComponent,
     NegociosComponent,
     DetailEventosComponent,
+    DetailnegociosComponent,
     InfoComponent
   ],
   bootstrap: [AppComponent]
