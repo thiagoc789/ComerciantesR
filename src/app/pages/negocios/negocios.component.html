@@ -31,6 +31,32 @@
         que
         sea que estés buscando!</p>
 
+                    <div class="row ">
+                        <div class="col-sm-12">
+                            <div class="card-group container-fluid ">
+                                <div class="cardCat zoom6 " [ngClass]="{'active': categoriaActiva === -1}"
+                                    (click)="setCategoriaActiva(-1); buscarEventos('')">
+                                    <div class="cardCat-body">
+                                        <p class="cardCat-text"><i class="fas fa-shopping-cart"></i> </p>
+                                        <h5 class="cardCat-title" [ngClass]="{'active': categoriaActiva === -1}">Ver Todos</h5>
+                                    </div>
+                                </div>
+                                <div class="cardCat zoom6" *ngFor="let categoria of categorias; let i = index"
+                                    [ngClass]="{'active': categoriaActiva === i}"
+                                    (click)="setCategoriaActiva(i); buscarEventos(categoria.nombre)">
+                                    <div class="cardCat-body">
+                                        <i class="{{ categoria.icono }} cardCat-text" [style.color]="categoria.color"
+                                            [ngClass]="{'active': categoriaActiva === i}"></i>
+                                        <h6 class="cardCat-title" [ngClass]="{'active': categoriaActiva === i}">{{
+                                            categoria.nombre }}</h6>
+                                    </div>
+                    
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
 
     <div class="card-list">
         <div class="card" (click)="goToDetailNegocios(negocio.id)" *ngFor="let negocio of negocios">

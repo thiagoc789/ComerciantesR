@@ -101,6 +101,7 @@ export class HomeComponent implements OnInit {
     //this.navCtrl.navigateForward(['/detail-negocios', id]);
     this.router.navigateByUrl(`/detailEventos/${Id}`);
   }
+  
 
   buscarEventos(categoria: string) {
     

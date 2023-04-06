@@ -14,8 +14,32 @@ export class NegociosComponent {
 
   negocios: Negocios[];
   busqueda: string = '';
+  
+  categorias = [
+    { nombre: 'Restaurantes comidas rápidas', icono: 'fas fa-hamburger', color: '#FF5733' },
+    { nombre: 'Panaderías y Postres', icono: 'fas fa-birthday-cake', color: '#FFC300' },
+    { nombre: 'Tiendas y Supermercados', icono: 'fas fa-shopping-cart', color: '#DAF7A6' },
+    { nombre: 'Medicamentos y Aseo', icono: 'fas fa-pills', color: '#581845' },
+    { nombre: 'Reparaciones y mantenimientos', icono: 'fas fa-wrench', color: '#7FDBFF' },
+    { nombre: 'Salud y Belleza', icono: 'fas fa-spa', color: '#FFDC00' },
+    { nombre: 'Educación', icono: 'fas fa-graduation-cap', color: '#E6E6FA' },
+    { nombre: 'Variedades y accesorios', icono: 'fas fa-gift', color: '#FFE4E1' },
+    { nombre: 'Mascotas', icono: 'fas fa-paw', color: '#1ABC9C' },
+    { nombre: 'Papelerias y misceláneas', icono: 'fas fa-pencil-ruler', color: '#F5B7B1' },
+    { nombre: 'Deporte', icono: 'fas fa-football-ball', color: '#6C3483' },
+    { nombre: 'Servicios empresariales', icono: 'fas fa-briefcase', color: '#FF5733' },
+    { nombre: 'Entretenimiento', icono: 'fas fa-theater-masks', color: '#FFC300' },
+    { nombre: 'Manualidades', icono: 'fas fa-palette', color: '#DAF7A6' },
+    { nombre: 'Ropa y Lavandería', icono: 'fas fa-tshirt', color: '#581845' },
+  ];
 
   constructor(private firestore: FirestoreService, private router: Router) { }
+
+  categoriaActiva = -1;
+
+  setCategoriaActiva(index: number) {
+    this.categoriaActiva = index;
+  }
 
   ngOnInit() {
     this.firestore.getCollection<Negocios>('Comerciantes').subscribe(res => {
@@ -33,6 +57,31 @@ export class NegociosComponent {
           const descripcionNormalizada = this.normalizarTexto(negocio.descripcion);
           const nombreNormalizado = this.normalizarTexto(negocio.nombre);
           return palabrasBusqueda.some(palabra => descripcionNormalizada.includes(palabra) || nombreNormalizado.includes(palabra));
+        });
+      });
+    } else {
+      this.firestore.getCollection<Negocios>('Comerciantes').subscribe(res => {
+        this.negocios = res;
+      });
+    }
+  }
+
+  buscarEventos(categoria: string) {
+
+    console.log(categoria)
+    this.busqueda = categoria;
+    console.log(this.busqueda)
+    if (this.busqueda.trim() !== '') {
+      const busquedaNormalizada = this.normalizarTexto(this.busqueda);
+      const palabrasBusqueda = busquedaNormalizada.split(' ');
+      this.firestore.getCollection<Negocios>('Comerciantes').subscribe(res => {
+        this.negocios = res.filter(negocios => {
+          const categoria = this.normalizarTexto(negocios.categoria);
+
+          return palabrasBusqueda.every(palabra => categoria.includes(palabra));
+
+
+
         });
       });
     } else {

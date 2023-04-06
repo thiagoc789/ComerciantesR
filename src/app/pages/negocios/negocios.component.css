@@ -140,3 +140,66 @@ h1 {
     color: red;
     cursor: pointer;
 }
+
+.cardCat {
+    flex: 0 0 auto;
+    margin-right: 1rem;
+}
+
+.cardCat:last-child {
+    margin-right: 0;
+}
+
+.cardCat {
+    cursor: pointer;
+    text-align: center;
+    display: flex;
+    border-radius: 8px;
+    background: #fff;
+    align-items: center;
+    max-width: 11em;
+    height: 11em;
+
+}
+
+.cardCat-body {
+
+    padding: 10px;
+    overflow: hidden;
+}
+
+
+.cardCat-title {
+    margin: 10px;
+    padding: 0;
+}
+
+.cardCat-text {
+    font-size: 2.0em;
+    margin-top: 20px;
+
+}
+
+.cardCat.active {
+    background-color: rgba(9, 134, 30, 0.897);
+    color: rgb(0, 0, 0);
+
+}
+
+.cardCat-text.active {
+    color: rgb(255, 255, 255);
+}
+
+.cardCat-title.active {
+    color: rgb(255, 255, 255);
+}
+
+.card-group {
+    display: flex;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    scroll-snap-type: x mandatory;
+    margin-bottom: 3em;
+    padding-bottom: 10px;
+}
