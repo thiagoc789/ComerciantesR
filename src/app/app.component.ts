@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { SwUpdate } from '@angular/service-worker';
 
 @Component({
   selector: 'app-root',
@@ -6,23 +7,19 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  ngOnInit() {
-    // Comprobar si hay una nueva versión del Service Worker cada hora
-    setInterval(() => {
-      this.updateServiceWorker();
-    }, 60 * 60 * 1000);
-  }
+  
+  constructor(private swUpdate: SwUpdate) {
+    // Comprobar si hay una nueva versión disponible
+    this.swUpdate.available.subscribe(() => {
+      if (confirm('Hay una nueva versión disponible. ¿Quieres actualizar?')) {
+        window.location.reload();
+      }
+    });
 
-  updateServiceWorker() {
-    if ('serviceWorker' in navigator) {
-      navigator.serviceWorker.getRegistration().then(registration => {
-        if (registration) {
-          registration.update().then(() => {
-            console.log('Service Worker updated');
-          });
-        }
-      });
-    }
+    // Comprobar si hay actualizaciones cada hora
+    setInterval(() => {
+      this.swUpdate.checkForUpdate();
+    }, 60 * 60 * 1000); // Cada hora
   }
 
 }
