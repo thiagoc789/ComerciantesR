@@ -1,4 +1,3 @@
-
 <div class="carousel-title text-center" [@fade] style="display: flex; align-items: center; justify-content: center; background-color: #031654; margin-top: 0; color: 
     #ffffff; font-weight: lighter; padding: 10px; 
         border-bottom-left-radius: 26px;
@@ -9,7 +8,7 @@
         Informacion general
     </h1>
 </div>
-    <hr class="separador">
+<hr class="separador">
 
 <div class="container" [@fade]>
     <!--Drogueria De Turno-->
@@ -27,19 +26,56 @@
             </tr>
         </thead>
         <tbody>
-<tr *ngFor="let drogueria of droguerias"
-    [ngClass]="{'bg-primary': drogueria.dias.includes(diaActual2)}">
-    <td>{{ drogueria.nombre }}</td>
-    <td>{{ drogueria.dias }}</td>
-    <td>{{ drogueria.direccion }}</td>
-    <td>{{ drogueria.telefono }}</td>
-</tr>
+            <tr *ngFor="let drogueria of droguerias" [ngClass]="{'bg-primary': drogueria.dias.includes(diaActual2)}">
+                <td>{{ drogueria.nombre }}</td>
+                <td>{{ drogueria.dias }}</td>
+                <td>{{ drogueria.direccion }}</td>
+                <td>{{ drogueria.telefono }} <a href="tel:{{drogueria.telefono}}" target="_blank" class="btn btn-info zoom6 botonesCard "
+                    style="height: 2em; width: 3em; margin-left: 1em;">
+                    <i class="bi bi-telephone"></i>
+                </a></td>
+            </tr>
 
 
 
         </tbody>
     </table>
-    <hr>
+    <hr class="separador">
+
+    <div class="table-title">
+        <h2>Horarios TransCalima</h2>
+    </div>
+    <div class="centrado">
+        <h4 style="color: crimson;">Restrepo - Buga</h4>
+        <hr>
+        <img src="/assets/restrepoBuga.png" alt="Horario Restrepo Buga">
+    </div>
+    <hr class="separador">
+
+    <div class="centrado">
+        <h4 style="color: crimson;">Buga - Restrepo</h4>
+        <hr>
+        <img src="/assets/bugaRestrepo.png" alt="Horario Buga Restrepo">
+    </div>
+
+    <hr class="separador">
+
+    <div class="centrado">
+        <h4 style="color: crimson;">Restrepo - Cali</h4>
+        <hr>
+        <img src="/assets/restrepoCali.png" alt="Horario Restrepo Cali">
+    </div>
+    <hr class="separador">
+
+    <div class="centrado">
+        <h4 style="color: crimson;">Cali - Restrepo</h4>
+        <hr>
+        <img src="/assets/caliRestrepo.png" alt="Horario Cali Restrepo">
+    </div>
+
+    <hr class="separador">
+
+
 
 
     <!--Polideportivo-->

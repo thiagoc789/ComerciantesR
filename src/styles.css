@@ -76,4 +76,10 @@ body{
     font-size: 16px;
 }
 
+.centrado {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
 
