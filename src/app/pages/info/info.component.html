@@ -1,81 +1,83 @@
-<div class="carousel-title text-center" [@fade] style="display: flex; align-items: center; justify-content: center; background-color: #031654; margin-top: 0; color: 
+<div class="contenedor">
+
+    <div class="carousel-title text-center" [@fade] style="display: flex; align-items: center; justify-content: center; background-color: #031654; margin-top: 0; color: 
     #ffffff; font-weight: lighter; padding: 10px; 
         border-bottom-left-radius: 26px;
     border-bottom-right-radius: 26px;
 ">
-    <i class="fa-solid fa-circle-info" style="margin-right: 0.5em;"></i>
-    <h1 [@fade] style="text-align: center; margin: 0; font-size: 2rem; line-height: 1.2;">
-        Informacion general
-    </h1>
-</div>
-<hr class="separador">
-
-<div class="container" [@fade]>
-    <!--Drogueria De Turno-->
-    <div class="table-title">
-        <h2>Droguería de turno</h2>
-    </div>
-    <caption class="caption">Día {{ diaActual }}</caption>
-    <table class="table">
-        <thead>
-            <tr>
-                <th>Droguería</th>
-                <th>Días</th>
-                <th>Dirección</th>
-                <th>Teléfono</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr *ngFor="let drogueria of droguerias" [ngClass]="{'bg-primary': drogueria.dias.includes(diaActual2)}">
-                <td>{{ drogueria.nombre }}</td>
-                <td>{{ drogueria.dias }}</td>
-                <td>{{ drogueria.direccion }}</td>
-                <td>{{ drogueria.telefono }} <a href="tel:{{drogueria.telefono}}" target="_blank" class="btn btn-info zoom6 botonesCard "
-                    style="height: 2em; width: 3em; margin-left: 1em;">
-                    <i class="bi bi-telephone"></i>
-                </a></td>
-            </tr>
-
-
-
-        </tbody>
-    </table>
-    <hr class="separador">
-
-    <div class="table-title">
-        <h2>Horarios TransCalima</h2>
-    </div>
-    <div class="centrado">
-        <h4 style="color: crimson;">Restrepo - Buga</h4>
-        <hr>
-        <img src="/assets/restrepoBuga.png" alt="Horario Restrepo Buga">
+        <i class="fa-solid fa-circle-info" style="margin-right: 0.5em;"></i>
+        <h1 [@fade] style="text-align: center; margin: 0; font-size: 2rem; line-height: 1.2;">
+            Informacion general
+        </h1>
     </div>
     <hr class="separador">
 
-    <div class="centrado">
-        <h4 style="color: crimson;">Buga - Restrepo</h4>
-        <hr>
-        <img src="/assets/bugaRestrepo.png" alt="Horario Buga Restrepo">
-    </div>
+    
+        <!--Drogueria De Turno-->
+        <div class="table-title">
+            <h2>Droguería de turno</h2>
+        </div>
+        <caption class="caption">Día {{ diaActual }}</caption>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Droguería</th>
+                    <th>Días</th>
+                    <th>Dirección</th>
+                    <th>Teléfono</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let drogueria of droguerias"
+                    [ngClass]="{'bg-primary': drogueria.dias.includes(diaActual2)}">
+                    <td>{{ drogueria.nombre }}</td>
+                    <td>{{ drogueria.dias }}</td>
+                    <td>{{ drogueria.direccion }}</td>
+                    <td>{{ drogueria.telefono }} <a href="tel:{{drogueria.telefono}}" target="_blank"
+                            class="btn btn-info zoom6 botonesCard " style="height: 2em; width: 3em; margin-left: 1em;">
+                            <i class="bi bi-telephone"></i>
+                        </a></td>
+                </tr>
 
-    <hr class="separador">
-
-    <div class="centrado">
-        <h4 style="color: crimson;">Restrepo - Cali</h4>
-        <hr>
-        <img src="/assets/restrepoCali.png" alt="Horario Restrepo Cali">
-    </div>
-    <hr class="separador">
-
-    <div class="centrado">
-        <h4 style="color: crimson;">Cali - Restrepo</h4>
-        <hr>
-        <img src="/assets/caliRestrepo.png" alt="Horario Cali Restrepo">
-    </div>
-
-    <hr class="separador">
 
 
+            </tbody>
+        </table>
+        <hr class="separador">
+
+        
+            <div class="table-title">
+                <h2>Horarios TransCalima</h2>
+            </div>
+            <div class="centrado">
+                <h4 style="color: crimson;">Restrepo - Buga</h4>
+                <hr>
+                <img src="/assets/restrepoBuga.png" alt="Horario Restrepo Buga">
+            </div>
+            <hr class="separador">
+
+            <div class="centrado">
+                <h4 style="color: crimson;">Buga - Restrepo</h4>
+                <hr>
+                <img src="/assets/bugaRestrepo.png" alt="Horario Buga Restrepo">
+            </div>
+
+            <hr class="separador">
+        
+            <div class="centrado">
+                <h4 style="color: crimson;">Restrepo - Cali</h4>
+                <hr>
+                <img src="/assets/restrepoCali.png" alt="Horario Restrepo Cali">
+            </div>
+            <hr class="separador">
+
+            <div class="centrado">
+                <h4 style="color: crimson;">Cali - Restrepo</h4>
+                <hr>
+                <img src="/assets/caliRestrepo.png" alt="Horario Cali Restrepo">
+            </div>
+
+            <hr class="separador">
 
 
     <!--Polideportivo-->
@@ -157,7 +159,3 @@
     <hr style="color: white;">
     <hr style="color: white;">
     <hr style="color: white;">
-
-
-
-</div>

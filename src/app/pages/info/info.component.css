@@ -15,7 +15,7 @@
     text-align: left;
     background-color: #f2f2f2;
     border-bottom: 1px solid #ccc;
-    color:blue;
+    color: blue;
 }
 
 .table td {
@@ -39,8 +39,8 @@
 .table-title {
     text-align: center;
     margin-bottom: 20px;
-        background-color: rgba(117, 132, 212, 0.219);
-            padding: 5px
+    background-color: rgba(117, 132, 212, 0.219);
+    padding: 5px
 }
 
 .bg-primary {
@@ -58,9 +58,22 @@
 
 }
 
-.container{
+.container {
     width: 100%;
     margin: 0 auto;
     padding: 0 20px;
 }
 
+.contenedor {
+
+    width: 100%;
+
+}
+
+@media (max-width: 800px) {
+    .contenedor {
+
+        width: 800px;
+
+    }
+}
