@@ -1,14 +1,13 @@
-<div [@fade]>
 
     <img src="{{evento?.imagen}}" alt="{{evento?.nombre}}" class="shadow-lg mx-auto d-block"
-        style="max-width: 80%; max-height: 300px; margin-top: 10px;">
-
+        style="max-width: 80%; margin-top: 10px;">
+<div class="container" [@fade]>
     <div class="d-flex align-items-center ">
         <div class="col-md-8 col-sm-10 text-center mx-auto ml-sm-2 my-3 my-sm-0" style="margin-right: 0;">
             <h1 class="display-4 " style="font-weight:bold;color:#000000; margin-top: 4px;">{{evento?.nombre}}</h1>
             <hr style="border-top: 3px solid #bbb; width: 100%;">
             <p class="lead" style="font-size:20px;color:#000000;">{{evento?.descripcion}}</p>
-            <p class="lead" style="font-size:20px;color:#000000;">Adquiere tu boleta <i
+            <p class="lead" style="color:#000000;">Adquiere tu boleta <i
                     class="fa-regular fa-hand-point-right fa-shake" style="margin-right: 1em ; margin-left: 1em; "></i> <a *ngIf="evento.telefono"
                     href="https://wa.me/+57{{evento.telefono}}" class="btn btn-outline-success btn-lg zoom"><i
                         class="bi bi-whatsapp" style="margin-right: 0.5em;"></i>{{evento.telefono}}</a></p>

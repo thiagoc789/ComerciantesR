@@ -138,3 +138,7 @@ h1 {
     color: red;
     cursor: pointer;
 }
+
+.logo{
+    width: 5em;
+}
