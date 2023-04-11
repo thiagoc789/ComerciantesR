@@ -3,7 +3,7 @@
   "name": "Yo compro en Restrepo",
   "short_name": "Yo compro en Restrepo",
   "theme_color": "#031654",
-  "background_color": "#031654",
+  "background_color": "#ffffff",
   "display": "standalone",
   "scope": "./",
   "start_url": "./",

@@ -1,6 +1,6 @@
 {
   "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
-  "version": 1,
+  "version": 2,
   "newProjectRoot": "projects",
   "projects": {
     "ComerciantesR": {
@@ -26,7 +26,9 @@
               "src/manifest.webmanifest",
               "src/manifest.webmanifest",
               "src/firebase-messaging-sw.js",
-              "src/manifest.json"
+              "src/manifest.json",
+              "src/sw-custom.js",
+              "src/ngsw-config.json"
             ],
             "styles": [
                 "node_modules/bootstrap/dist/css/bootstrap.min.css",

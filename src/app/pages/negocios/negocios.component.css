@@ -181,7 +181,7 @@ h1 {
 }
 
 .cardCat.active {
-    background-color: rgba(9, 134, 30, 0.897);
+    background-color: #170bcde5;
     color: rgb(0, 0, 0);
 
 }

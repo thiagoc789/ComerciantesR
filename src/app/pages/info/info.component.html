@@ -28,7 +28,7 @@
         </thead>
         <tbody>
 <tr *ngFor="let drogueria of droguerias"
-    [ngClass]="{'bg-primary': drogueria.dias.includes(diaActual2) && drogueria.dias.indexOf(diaActual2) === 0}">
+    [ngClass]="{'bg-primary': drogueria.dias.includes(diaActual2)}">
     <td>{{ drogueria.nombre }}</td>
     <td>{{ drogueria.dias }}</td>
     <td>{{ drogueria.direccion }}</td>
