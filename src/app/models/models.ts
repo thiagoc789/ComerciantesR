@@ -34,6 +34,7 @@ organizador: string;
 organizadorId: number;
 lat: number;
 long: number;
+telefono: number;
 
 }
 
