@@ -1,4 +1,13 @@
-<div class="titulo-padre bg-light-green">
+<div *ngIf="isLoading" class="spinner-container d-flex flex-column align-items-center">
+    <div><img src="/favicon.ico" alt="LOGO"></div>
+    <div class="spinner-border text-primary" role="status">
+        <span class="sr-only">Cargando...</span>
+    </div>
+    <div style="margin-left: 1em; margin-top: 1em;">Cargando nuestros negocios y eventos...</div>
+</div>
+
+
+<div class="titulo-padre bg-light-green" *ngIf="!isLoading">
     <div class="contenedor-padre d-flex justify-content-center align-items-center">
         <img src="assets/icons/logo.png" alt="Comerciantes Restrepo" class="img-fluid logo">
         <div class="titulo-padre flex-column align-items-center">

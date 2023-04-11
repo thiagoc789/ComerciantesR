@@ -40,10 +40,11 @@ export class HomeComponent implements OnInit {
   negociosFiltrados = [];
   eventos: Eventos[];
   busqueda: string = '';
+  isLoading = true;
 
-  constructor(private firestore: FirestoreService, private router: Router, private afMessaging: AngularFireMessaging) { 
+  constructor(private firestore: FirestoreService, private router: Router, private afMessaging: AngularFireMessaging) {
     this.getToken()
-    
+
   }
 
   categoriaActiva = -1;
@@ -51,44 +52,42 @@ export class HomeComponent implements OnInit {
   setCategoriaActiva(index: number) {
     this.categoriaActiva = index;
   }
-  
+
   ngOnInit() {
     const botonClicado = localStorage.getItem('botonClicado');
     if (botonClicado === 'true') {
       this.botonClicado = true;
     }
 
-    
-
     this.firestore.getCollection<Negocios>('Comerciantes').subscribe(res => {
       this.negocios = res;
+      this.isLoading = false;
     })
 
     this.firestore.getCollection<Eventos>('Eventos').subscribe(res => {
       this.eventos = res;
     })
-    
-  }
 
+  }
   requestPermission() {
     this.botonClicado = true;
     localStorage.setItem('botonClicado', 'true');
-    
+
     this.afMessaging.requestPermission
       .pipe(mergeMapTo(this.afMessaging.tokenChanges))
       .subscribe(
-        (token) => { console.log('Permission granted! Save to the server!', token);  },
-        (error) => { console.error(error); },     
+        (token) => { console.log('Permission granted! Save to the server!', token); },
+        (error) => { console.error(error); },
       );
   }
 
   getToken() {
     this.afMessaging.getToken.subscribe((res) => {
       console.log("token: ", res);
-      
+
     });
-    
-    
+
+
   }
 
   goToDetailNegocios(Id: number) {
@@ -101,10 +100,10 @@ export class HomeComponent implements OnInit {
     //this.navCtrl.navigateForward(['/detail-negocios', id]);
     this.router.navigateByUrl(`/detailEventos/${Id}`);
   }
-  
+
 
   buscarEventos(categoria: string) {
-    
+
     console.log(categoria)
     this.busqueda = categoria;
     console.log(this.busqueda)
@@ -114,11 +113,11 @@ export class HomeComponent implements OnInit {
       this.firestore.getCollection<Negocios>('Comerciantes').subscribe(res => {
         this.negocios = res.filter(negocios => {
           const categoria = this.normalizarTexto(negocios.categoria);
-          
-          return palabrasBusqueda.every(palabra =>  categoria.includes(palabra));
-          
-          
-          
+
+          return palabrasBusqueda.every(palabra => categoria.includes(palabra));
+
+
+
         });
       });
     } else {
