@@ -74,6 +74,7 @@
     .contenedor {
 
         width: 800px;
+        zoom: 50%;
 
     }
 }
