@@ -42,7 +42,7 @@
                 <div class="carousel-inner slide zoom2">
                     <div class="carousel-item " (click)="goToDetailEventos(item.id)"
                         *ngFor="let item of eventos; let i = index" [class.active]="i === 0" [@fade]>
-                        <img src="{{item.imagen}}" alt="{{item.nombre}}" class="zoom">
+                        <img src="{{item.logo}}" alt="{{item.nombre}}" class="zoom">
                         <div class="carousel-caption">
                             <h6>{{item.nombre}}</h6>
                             <p>{{item.fecha}}</p>

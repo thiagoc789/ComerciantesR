@@ -35,6 +35,7 @@ organizadorId: number;
 lat: number;
 long: number;
 telefono: number;
+logo: string;
 
 }
 

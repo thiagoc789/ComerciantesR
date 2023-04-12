@@ -20,6 +20,8 @@ export class NegociosComponent {
     { nombre: 'Panaderías y Postres', icono: 'fas fa-birthday-cake', color: '#FFC300' },
     { nombre: 'Tiendas y Supermercados', icono: 'fas fa-shopping-cart', color: '#DAF7A6' },
     { nombre: 'Medicamentos y Aseo', icono: 'fas fa-pills', color: '#581845' },
+    { nombre: 'Hospedaje y hoteleria', icono: 'fa-solid fa-hotel', color: '#F5B7B1' },
+    { nombre: 'Tecnologia', icono: 'fa-solid fa-microchip', color: '#FF5733' },
     { nombre: 'Reparaciones y mantenimientos', icono: 'fas fa-wrench', color: '#7FDBFF' },
     { nombre: 'Salud y Belleza', icono: 'fas fa-spa', color: '#FFDC00' },
     { nombre: 'Educación', icono: 'fas fa-graduation-cap', color: '#E6E6FA' },

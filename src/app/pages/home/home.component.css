@@ -92,6 +92,7 @@
 
     .carousel-inner img {
         max-width: 100%;
+    
 
     }
 
@@ -99,9 +100,8 @@
         margin-top: 20px;
         margin-bottom: 20px;
         width: 98%;
-        justify-content: center;
-        align-items: center;
         margin: auto;
+        
     }
 }
 
