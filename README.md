@@ -1,6 +1,6 @@
 # Yo Compro en Restrepo
 
-Bienvenido al repositorio de "Yo Compro en Restrepo", una plataforma digital que tiene como objetivo apoyar a los comerciantes y consumidores en la zona de Restrepo, Bogotá, Colombia. Nuestra misión es facilitar la búsqueda y conexión entre los negocios locales y sus clientes potenciales, promoviendo el comercio local y fortaleciendo la comunidad.
+Bienvenido al repositorio de "Yo Compro en Restrepo", una plataforma digital que tiene como objetivo apoyar a los comerciantes y consumidores en la zona de Restrepo Valle, Colombia. Nuestra misión es facilitar la búsqueda y conexión entre los negocios locales y sus clientes potenciales, promoviendo el comercio local y fortaleciendo la comunidad.
 
 ![Home Page Screenshot](./src/assets/screenshot.png)
 
@@ -22,4 +22,40 @@ Bienvenido al repositorio de "Yo Compro en Restrepo", una plataforma digital que
 
 Nos encantaría saber de ti. Si tienes alguna sugerencia, pregunta o comentario, no dudes en ponerte en contacto con nosotros a través de nuestro formulario de contacto o envíanos un correo electrónico a [info@yocomproenrestrepo.com](mailto:info@yocomproenrestrepo.com).
 
+_____________________________________________________________________________________________________________________________________________________
+
+# DESARROLLADORES
+
+Bienvenido al repositorio de "Yo Compro en Restrepo", una plataforma digital que tiene como objetivo apoyar a los comerciantes y consumidores en la zona de Restrepo Valle, Colombia.
+
+
+## Tecnologías utilizadas
+
+- Angular
+- TypeScript
+- Bootstrap
+- SCSS
+
+## Configuración del entorno de desarrollo
+
+1. Asegúrate de tener instalado [Node.js](https://nodejs.org/) y [npm](https://www.npmjs.com/) en tu computadora.
+2. Clona este repositorio en tu máquina local ejecutando `git clone https://github.com/thiagoc789/ComerciantesR.git`.
+3. Navega al directorio del proyecto: `cd ComerciantesR`.
+4. Instala las dependencias del proyecto ejecutando `npm install`.
+5. Inicia el servidor de desarrollo ejecutando `ng serve`.
+6. Abre tu navegador y ve a `http://localhost:4200/` para ver la aplicación en ejecución.
+
+## Contribuyendo al proyecto
+
+Si deseas contribuir al proyecto, sigue estos pasos:
+
+1. Haz un fork del repositorio.
+2. Crea una nueva rama en tu fork con un nombre descriptivo, por ejemplo, `feature/add-new-feature` o `bugfix/fixing-bug`.
+3. Realiza tus cambios en la rama creada.
+4. Asegúrate de que tus cambios no rompen ninguna funcionalidad existente y de que se ajustan a las guías de estilo del proyecto.
+5. Envía tus cambios en un Pull Request desde tu fork al repositorio original, especificando la rama de destino y proporcionando una descripción detallada de los cambios realizados.
+
+## Contacto
+
+Si tienes preguntas, sugerencias o problemas con el código, no dudes en abrir un Issue en GitHub o ponte en contacto con nosotros a través del correo electrónico [info@yocomproenrestrepo.com](mailto:info@yocomproenrestrepo.com).
 
