@@ -74,4 +74,13 @@ export class DetailnegociosComponent implements OnInit {
       }
     })
   }
+
+  formatDescription(description: string): string {
+    return description
+      .toLowerCase()
+      .split('. ')
+      .map(sentence => sentence.charAt(0).toUpperCase() + sentence.slice(1))
+      .join('. ');
+  }
+
 }

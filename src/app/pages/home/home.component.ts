@@ -6,6 +6,7 @@ import { fade } from '../../animations/fade';
 import { Eventos, Negocios } from '../../models/models';
 import { FirestoreService } from '../../services/firestore.service';
 import { mergeMapTo } from 'rxjs/operators';
+import { LoadStatusService } from 'src/app/load-status.service';
 
 
 
@@ -47,7 +48,7 @@ export class HomeComponent implements OnInit {
   busqueda: string = '';
   isLoading = true;
 
-  constructor(private firestore: FirestoreService, private router: Router, private afMessaging: AngularFireMessaging) {
+  constructor(private firestore: FirestoreService, private router: Router, private afMessaging: AngularFireMessaging, private loadStatusService: LoadStatusService) {
     this.getToken()
 
   }
@@ -67,6 +68,8 @@ export class HomeComponent implements OnInit {
     this.firestore.getCollection<Negocios>('Comerciantes').subscribe(res => {
       this.negocios = res;
       this.isLoading = false;
+      this.loadStatusService.isFirstLoad = false;
+
     })
 
     this.firestore.getCollection<Eventos>('Eventos').subscribe(res => {
@@ -139,6 +142,10 @@ export class HomeComponent implements OnInit {
   verTodos() {
     this.busqueda = '';
     this.buscarEventos('');
+  }
+
+  get isFirstLoad(): boolean {
+    return this.loadStatusService.isFirstLoad;
   }
 
 

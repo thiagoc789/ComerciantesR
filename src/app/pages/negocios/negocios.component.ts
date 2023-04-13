@@ -116,9 +116,9 @@ export class NegociosComponent {
 
   getLimitedDescription(negocio) {
     if (negocio.expanded || negocio.descripcion.length <= this.descriptionLimit) {
-      return negocio.descripcion;
+      return this.formatDescription(negocio.descripcion)
     }
-    return negocio.descripcion.slice(0, this.descriptionLimit) + '...';
+    return this.formatDescription(negocio.descripcion.slice(0, this.descriptionLimit) + '...')
   }
 
   shouldShowReadMore(negocio) {
@@ -127,6 +127,14 @@ export class NegociosComponent {
 
   toggleDescription(negocio) {
     negocio.expanded = !negocio.expanded;
+  }
+
+  formatDescription(description: string): string {
+    return description
+      .toLowerCase()
+      .split('. ')
+      .map(sentence => sentence.charAt(0).toUpperCase() + sentence.slice(1))
+      .join('. ');
   }
 
 }

@@ -1,4 +1,4 @@
-<div *ngIf="isLoading" class="spinner-container d-flex flex-column align-items-center">
+<div *ngIf="isLoading && isFirstLoad" class="spinner-container d-flex flex-column align-items-center">
     <div><img src="/favicon.ico" alt="LOGO" style="max-width: 150px; margin-top: 4em;"></div>
     <div class="spinner-border text-primary" role="status">
         <span class="sr-only">Cargando...</span>
@@ -152,13 +152,16 @@
                                     <div class="botones">
                                         <a href="tel:{{negocio.telefono1}}" target="_blank"
                                             class="btn btn-primary zoom6 botonesCard "
-                                            style="margin-right: 1em; max-height: 3.3em; width: 7em;">
+                                            style="margin-right: 1em; max-height: 3.3em; width: 7em;"
+                                            (click)="$event.stopPropagation()">
                                             <i class="bi bi-telephone"></i>
                                             <p class="textCard">Llamar</p>
                                         </a>
-                                        <a href="https://wa.me/{{negocio.whatsapp1}}" target="_blank"
+                                        <a href="https://wa.me/+57{{negocio.whatsapp1}}" target="_blank"
                                             class="btn btn-success zoom6 botonesCard"
-                                            style="max-height: 3.3em; width: 7em;">
+                                            style="max-height: 3.3em; width: 7em;"
+                                             (click)="$event.stopPropagation()">
+                                           
                                             <i class="bi bi-whatsapp "></i>
                                             <p class="textCard">WhatsApp</p>
                                         </a>

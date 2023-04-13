@@ -11,10 +11,12 @@
                 <div>
                     <h6 class="display-7" style="color:#9b9898;">{{negocio?.eslogan}}</h6>
                 </div>
-        <div>
-            <hr style="border-top: 3px solid #bbb; width: 100%;">
-            <p class="lead" style="font-size:20px;color:#000000; text-align: center;">{{negocio?.descripcion}}</p>
-        </div>
+    <div>
+        <hr style="border-top: 3px solid #bbb; width: 100%;">
+        <p class="lead" style="font-size:20px;color:#000000; text-align: center;">{{ formatDescription(negocio?.descripcion)
+            }}</p>
+    </div>
+
     </div>
 
 
