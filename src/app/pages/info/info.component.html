@@ -11,73 +11,110 @@
         </h1>
     </div>
     <hr class="separador">
+    <!--Lineas de emergencia-->
+    <div class="table-title">
+        <h2>Líneas de emergencia</h2>
+    </div>
 
-    
-        <!--Drogueria De Turno-->
-        <div class="table-title">
-            <h2>Droguería de turno</h2>
+    <section class="emergency-section">
+        <p>Presiona para llamar rapidamente</p>
+        <div class="emergency-container">
+            <div class="emergency-card">
+                <i class="fa-solid fa-fire"></i>
+                <h3>Bomberos guardia</h3>
+                <a href="tel:3113543033" class="phone-btn"><i class="fa fa-phone"></i> 3113543033</a>
+                <a href="tel:3178440510" class="phone-btn"><i class="fa fa-phone"></i> 3178440510</a>
+            </div>
+            <div class="emergency-card">
+                <i class="fa-solid fa-fire-extinguisher"></i>
+                <h3>Bomberos oficina</h3>
+                <a href="tel:3185352966" class="phone-btn"><i class="fa fa-phone"></i>3185352966</a>
+            </div>
+            <div class="emergency-card">
+                <i class="fa-solid fa-shield"></i>
+                <h3>Policía</h3>
+                <a href="tel:3042509579" class="phone-btn"><i class="fa fa-phone"></i>3042509579</a>
+                <a href="tel:3172605953" class="phone-btn"><i class="fa fa-phone"></i>3172605953</a>
+            </div>
+            <div class="emergency-card">
+                <i class="fa-regular fa-hospital"></i>
+                <h3>Hospital San José</h3>
+                <a href="tel:3216457292" class="phone-btn"><i class="fa fa-phone"></i>3216457292</a>
+            </div>
+            <div class="emergency-card">
+                <i class="fa-solid fa-person-military-pointing"></i>
+                <h3>Defensa Civil</h3>
+                <a href="tel:3113489052" class="phone-btn"><i class="fa fa-phone"></i>3113489052</a>
+                <a href="tel:3113565553" class="phone-btn"><i class="fa fa-phone"></i>3113565553</a>
+            </div>
         </div>
-        <caption class="caption">Día {{ diaActual }}</caption>
-        <table class="table">
-            <thead>
-                <tr>
-                    <th>Droguería</th>
-                    <th>Días</th>
-                    <th>Dirección</th>
-                    <th>Teléfono</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr *ngFor="let drogueria of droguerias"
-                    [ngClass]="{'bg-primary': drogueria.dias.includes(diaActual2)}">
-                    <td>{{ drogueria.nombre }}</td>
-                    <td>{{ drogueria.dias }}</td>
-                    <td>{{ drogueria.direccion }}</td>
-                    <td>{{ drogueria.telefono }} <a href="tel:{{drogueria.telefono}}" target="_blank"
-                            class="btn btn-info zoom6 botonesCard " style="height: 2em; width: 3em; margin-left: 1em;">
-                            <i class="bi bi-telephone"></i>
-                        </a></td>
-                </tr>
+    </section>
+
+    <hr class="separador">
+    <!--Drogueria De Turno-->
+    <div class="table-title">
+        <h2>Droguería de turno</h2>
+    </div>
+    <caption class="caption">Día {{ diaActual }}</caption>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Droguería</th>
+                <th>Días</th>
+                <th>Dirección</th>
+                <th>Teléfono</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let drogueria of droguerias" [ngClass]="{'bg-primary': drogueria.dias.includes(diaActual2)}">
+                <td>{{ drogueria.nombre }}</td>
+                <td>{{ drogueria.dias }}</td>
+                <td>{{ drogueria.direccion }}</td>
+                <td>{{ drogueria.telefono }} <a href="tel:{{drogueria.telefono}}" target="_blank"
+                        class="btn btn-info zoom6 botonesCard " style="height: 2em; width: 3em; margin-left: 1em;">
+                        <i class="bi bi-telephone"></i>
+                    </a></td>
+            </tr>
 
 
 
-            </tbody>
-        </table>
-        <hr class="separador">
+        </tbody>
+    </table>
+    <hr class="separador">
 
-        
-            <div class="table-title">
-                <h2>Horarios TransCalima</h2>
-            </div>
-            <div class="centrado">
-                <h4 style="color: crimson;">Restrepo - Buga</h4>
-                <hr>
-                <img src="/assets/restrepoBuga.png" alt="Horario Restrepo Buga">
-            </div>
-            <hr class="separador">
 
-            <div class="centrado">
-                <h4 style="color: crimson;">Buga - Restrepo</h4>
-                <hr>
-                <img src="/assets/bugaRestrepo.png" alt="Horario Buga Restrepo">
-            </div>
+    <div class="table-title">
+        <h2>Horarios TransCalima</h2>
+    </div>
+    <div class="centrado">
+        <h4 style="color: crimson;">Restrepo - Buga</h4>
+        <hr>
+        <img src="/assets/restrepoBuga.png" alt="Horario Restrepo Buga">
+    </div>
+    <hr class="separador">
 
-            <hr class="separador">
-        
-            <div class="centrado">
-                <h4 style="color: crimson;">Restrepo - Cali</h4>
-                <hr>
-                <img src="/assets/restrepoCali.png" alt="Horario Restrepo Cali">
-            </div>
-            <hr class="separador">
+    <div class="centrado">
+        <h4 style="color: crimson;">Buga - Restrepo</h4>
+        <hr>
+        <img src="/assets/bugaRestrepo.png" alt="Horario Buga Restrepo">
+    </div>
 
-            <div class="centrado">
-                <h4 style="color: crimson;">Cali - Restrepo</h4>
-                <hr>
-                <img src="/assets/caliRestrepo.png" alt="Horario Cali Restrepo">
-            </div>
+    <hr class="separador">
 
-            <hr class="separador">
+    <div class="centrado">
+        <h4 style="color: crimson;">Restrepo - Cali</h4>
+        <hr>
+        <img src="/assets/restrepoCali.png" alt="Horario Restrepo Cali">
+    </div>
+    <hr class="separador">
+
+    <div class="centrado">
+        <h4 style="color: crimson;">Cali - Restrepo</h4>
+        <hr>
+        <img src="/assets/caliRestrepo.png" alt="Horario Cali Restrepo">
+    </div>
+
+    <hr class="separador">
 
 
     <!--Polideportivo-->

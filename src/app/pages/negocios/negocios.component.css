@@ -168,6 +168,12 @@ h1 {
     overflow: hidden;
 }
 
+@media (max-width: 800px) {
+    .container {
+        zoom: 70%;
+
+    }
+}
 
 .cardCat-title {
     margin: 10px;
