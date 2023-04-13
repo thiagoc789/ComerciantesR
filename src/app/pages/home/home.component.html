@@ -1,9 +1,32 @@
 <div *ngIf="isLoading" class="spinner-container d-flex flex-column align-items-center">
-    <div><img src="/favicon.ico" alt="LOGO"></div>
+    <div><img src="/favicon.ico" alt="LOGO" style="max-width: 150px; margin-top: 4em;"></div>
     <div class="spinner-border text-primary" role="status">
         <span class="sr-only">Cargando...</span>
     </div>
     <div style="margin-left: 1em; margin-top: 1em;">Cargando nuestros negocios y eventos...</div>
+    <div style="margin-left: 1em; margin-top: 1em;">Yo Compro En Restrepo v1.0.1</div>
+    <div class="install-section">
+        <h3>Instala nuestra aplicación en tu dispositivo</h3>
+        <div class="device-columns row">
+            <div class="device-column col-md-5 android">
+                <div class="d-flex flex-column align-items-center">
+                    <i class="fa-brands fa-android"></i>
+                    <h4>Android</h4>
+                    <img src="assets/pwa-and.png" alt="Android" class="device-image">
+                </div>
+            </div>
+            <div class="device-column col-md-5 ios">
+                <div class="d-flex flex-column align-items-center">
+                    <i class="fa-brands fa-apple"></i>
+                    <h4>iPhone</h4>
+                    <img src="assets/pwa-iph.jpg" alt="iPhone" class="device-image">
+                </div>
+            </div>
+        </div>
+    </div>
+    <hr>
+    <hr>
+    <hr>
 </div>
 
 
@@ -79,7 +102,7 @@
             </div>
             <hr class="separador">
 
-            
+
 
 
             <!--Categorias-->
@@ -115,12 +138,12 @@
                 <div class="row flex-wrap justify-content-center">
                     <div class="col-12 col-sm-12 col-md-12 col-lg-6 mb-3" *ngFor="let negocio of negocios" [@fade]>
                         <div class="card border-0 h-100 zoom4">
-                            <div class="d-flex contentCard" (click)="goToDetailNegocios(negocio.id)" >
+                            <div class="d-flex contentCard" (click)="goToDetailNegocios(negocio.id)">
                                 <div>
                                     <img src={{negocio.logo}} class="card-img-top" alt={{negocio.nombre}}>
                                 </div>
                                 <div class="ml-3 d-flex flex-column flex-grow-1">
-                                    <h1 class="card-title" >
+                                    <h1 class="card-title">
                                         <i class="bi bi-shop"></i> {{negocio.nombre}}
                                     </h1>
                                     <p class="card-text fs-7" style="color: #666;">
@@ -149,18 +172,20 @@
                 </div>
             </div>
 
-<footer class="footer" style="opacity: 0.8; text-align: center;">
-    <div class="footer-content">
-        <div>Comunicate con nosotros si tienes dudas o quieres aparecer aquí</div>
-        <div class="footer-buttons">
-            <a href="mailto:info@yocomproenrestrepo.com" class="btn btn btn-outline-dark mr-3"><i class="fa-regular fa-envelope fa-beat"></i></a>
-            <a href="https://wa.me/+573167421690" class="btn btn btn-outline-dark" style="margin-left: 1em;"><i class="fa-brands fa-whatsapp fa-beat-fade"></i></a>
-        </div>
-    </div>
-    <div class="footer-copy">
-        <p>&copy; 2023 Todos los derechos reservados v1.0.0</p>
-    </div>
-</footer>
+            <footer class="footer" style="opacity: 0.8; text-align: center;">
+                <div class="footer-content">
+                    <div>Comunicate con nosotros si tienes dudas o quieres aparecer aquí</div>
+                    <div class="footer-buttons">
+                        <a href="mailto:info@yocomproenrestrepo.com" class="btn btn btn-outline-dark mr-3"><i
+                                class="fa-regular fa-envelope fa-beat"></i></a>
+                        <a href="https://wa.me/+573167421690" class="btn btn btn-outline-dark"
+                            style="margin-left: 1em;"><i class="fa-brands fa-whatsapp fa-beat-fade"></i></a>
+                    </div>
+                </div>
+                <div class="footer-copy">
+                    <p>&copy; 2023 Todos los derechos reservados v1.0.1</p>
+                </div>
+            </footer>
 
 
             <hr style="color: white;">

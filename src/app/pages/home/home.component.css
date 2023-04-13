@@ -1,4 +1,54 @@
+.install-section {
+    margin-top: 2em;
+    width: 80%;
+    text-align: center;
+}
+
+.device-columns {
+    display: flex;
+    margin-top: 3em;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.device-column {
+    
+    flex-direction: column;  
+}
+
+.android{
+    color: #057905;
+}
+
+.ios{
+    color: #025ca5;
+}
+
+.device-image {
+    width: 25em;
+    margin-top: 1em;
+}
+
+/* Estilos para pantallas de computadora */
+@media (min-width: 768px) {
+    .device-columns {
+        flex-direction: row;
+    }
+}
+
+@media (min-width: 768px) {
+    .device-columns {
+        flex-direction: row;
+    }
+
+    .device-column {
+        margin-top: 0;
+    }
+}
+
+
 /* Contenedor verde */
+
 .cont {
     width: 100%;
     background-color: #f4f4f4;
