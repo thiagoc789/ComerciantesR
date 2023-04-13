@@ -41,6 +41,8 @@ export class NegociosComponent {
 
   categoriaActiva = -1;
 
+  
+
   setCategoriaActiva(index: number) {
     this.categoriaActiva = index;
   }
@@ -108,6 +110,23 @@ export class NegociosComponent {
   goToDetailNegocios(Id: number) {
     //this.navCtrl.navigateForward(['/detail-negocios', id]);
     this.router.navigateByUrl(`/detailNegocios/${Id}`);
+  }
+
+  private descriptionLimit = 350;
+
+  getLimitedDescription(negocio) {
+    if (negocio.expanded || negocio.descripcion.length <= this.descriptionLimit) {
+      return negocio.descripcion;
+    }
+    return negocio.descripcion.slice(0, this.descriptionLimit) + '...';
+  }
+
+  shouldShowReadMore(negocio) {
+    return negocio.descripcion.length > this.descriptionLimit;
+  }
+
+  toggleDescription(negocio) {
+    negocio.expanded = !negocio.expanded;
   }
 
 }

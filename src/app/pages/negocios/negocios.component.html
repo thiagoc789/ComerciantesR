@@ -58,21 +58,28 @@
 
 
 
-    <div class="card-list">
-        <div class="card" (click)="goToDetailNegocios(negocio.id)" *ngFor="let negocio of negocios">
-            <div class="card-header">
-                <img class="logo" [src]="negocio.logo" alt="Logo de {{negocio.nombre}}" />
-                <h2 class="nombre">{{negocio.nombre}}</h2>
-            </div>
-            <div class="card-body">
-                <p class="descripcion">{{negocio.descripcion}}</p>
-            </div>
-            <div class="card-footer">
-                {{negocio.direccion}}
-                <span class="icono"><i class="bi bi-pin-map-fill"></i></span>
-            </div>
+<div class="card-list">
+    <div class="card" (click)="goToDetailNegocios(negocio.id)" *ngFor="let negocio of negocios">
+        <div class="card-header">
+            <img class="logo" [src]="negocio.logo" alt="Logo de {{negocio.nombre}}" />
+            <h2 class="nombre">{{negocio.nombre}}</h2>
+        </div>
+        <div class="card-body">
+            <p class="descripcion" [ngClass]="{'expanded': negocio.expanded}">
+                {{ getLimitedDescription(negocio) }}<button *ngIf="shouldShowReadMore(negocio)" class="read-more-btn"
+                    (click)="toggleDescription(negocio); $event.stopPropagation()">
+                    {{ negocio.expanded ? 'Ver menos' : 'Ver más' }}
+                </button>
+            </p>
+
+        </div>
+        <div class="card-footer">
+            {{negocio.direccion}}
+            <span class="icono"><i class="bi bi-pin-map-fill"></i></span>
         </div>
     </div>
+</div>
+
 </div>
 
 

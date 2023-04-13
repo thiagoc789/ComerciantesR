@@ -18,6 +18,7 @@ export interface Negocios {
     lat: number;
     lng: number;
     categoria: string;
+    expanded?: boolean;
 }
 
 
