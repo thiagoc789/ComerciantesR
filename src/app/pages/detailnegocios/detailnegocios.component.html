@@ -8,14 +8,30 @@
         <div>
             <h1 class="display-4 " style="font-weight:bold;color:#000000; margin-top: 1em;">{{negocio?.nombre}}</h1>
         </div>
-                <div>
-                    <h6 class="display-7" style="color:#9b9898;">{{negocio?.eslogan}}</h6>
-                </div>
-    <div>
-        <hr style="border-top: 3px solid #bbb; width: 100%;">
-        <p class="lead" style="font-size:20px;color:#000000; text-align: center;">{{ formatDescription(negocio?.descripcion)
-            }}</p>
-    </div>
+        <div>
+            <h6 class="display-7" style="color:#9b9898;">{{negocio?.eslogan}}</h6>
+        </div>
+        <div>
+            <hr style="border-top: 3px solid #bbb; width: 100%;">
+            <p class="lead" [ngStyle]="{
+      'font-size': '20px',
+      'color': '#000000',
+      'text-align': 'center'
+    }" [innerHTML]="getFormattedDescription(negocio?.descripcion)">
+            </p>
+        </div>
+
+
+        <div *ngIf="negocio.audioUrl">
+<audio controls>
+    <source
+        src="https://26643.live.streamtheworld.com/CARACOL_RADIOAAC.aac?csegid=2000&dist=caracol_co-web-playperm-live_str_play&tdsdk=js-2.9&swm=false&pname=TDSdk&pversion=2.9&banners=none&gdpr=0&burst-time=15&sbmid=72bc8fdd-82be-4c24-8d8d-6d664c7b966d"
+        type="audio/aac">
+    Tu navegador no soporta la etiqueta de audio.
+</audio>
+
+        </div>
+
 
     </div>
 

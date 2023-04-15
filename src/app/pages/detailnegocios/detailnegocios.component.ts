@@ -75,12 +75,25 @@ export class DetailnegociosComponent implements OnInit {
     })
   }
 
-  formatDescription(description: string): string {
-    return description
-      .toLowerCase()
-      .split('. ')
-      .map(sentence => sentence.charAt(0).toUpperCase() + sentence.slice(1))
-      .join('. ');
+  getFormattedDescription(description: string): string {
+    // Aplicar el formateo de las oraciones (mayúsculas y minúsculas)
+    const formattedDescription = this.formatDescription(description);
+
+    // Reemplazar los caracteres \n por etiquetas HTML <br>
+    return formattedDescription.replace(/\\n/g, '<br>');
   }
+
+  formatDescription(description: string): string {
+    const sentences = description.split('. ');
+
+    for (let i = 0; i < sentences.length; i++) {
+      const firstChar = sentences[i].charAt(0).toUpperCase();
+      const remainingChars = sentences[i].slice(1);
+      sentences[i] = firstChar + remainingChars.toLowerCase();
+    }
+
+    return sentences.join('. ');
+  }
+
 
 }
