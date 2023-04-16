@@ -84,16 +84,24 @@ export class DetailnegociosComponent implements OnInit {
   }
 
   formatDescription(description: string): string {
-    const sentences = description.split('. ');
+    // Convertir todo el texto en minúsculas
+    const lowerCaseDescription = description.toLowerCase();
+
+    // Convertir las letras encerradas entre asteriscos en mayúsculas
+    const regex = /\*([a-zA-Z])\*/g;
+    const formattedDescription = lowerCaseDescription.replace(regex, (match, letter) => letter.toUpperCase());
+
+    const sentences = formattedDescription.split('. ');
 
     for (let i = 0; i < sentences.length; i++) {
       const firstChar = sentences[i].charAt(0).toUpperCase();
       const remainingChars = sentences[i].slice(1);
-      sentences[i] = firstChar + remainingChars.toLowerCase();
+      sentences[i] = firstChar + remainingChars;
     }
 
     return sentences.join('. ');
   }
+
 
 
 }

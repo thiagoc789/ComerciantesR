@@ -13,11 +13,7 @@
         </div>
         <div>
             <hr style="border-top: 3px solid #bbb; width: 100%;">
-            <p class="lead" [ngStyle]="{
-      'font-size': '20px',
-      'color': '#000000',
-      'text-align': 'center'
-    }" [innerHTML]="getFormattedDescription(negocio?.descripcion)">
+            <p class="description" [innerHTML]="getFormattedDescription(negocio?.descripcion)">
             </p>
         </div>
 
