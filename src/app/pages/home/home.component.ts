@@ -5,8 +5,11 @@ import { Router } from '@angular/router';
 import { fade } from '../../animations/fade';
 import { Eventos, Negocios } from '../../models/models';
 import { FirestoreService } from '../../services/firestore.service';
-import { mergeMapTo } from 'rxjs/operators';
+import { finalize, map, mergeMapTo, timeoutWith } from 'rxjs/operators';
 import { LoadStatusService } from 'src/app/load-status.service';
+import { forkJoin, race, timer, filter, tap, of } from 'rxjs';
+import { mapTo, delay } from 'rxjs/operators';
+
 
 
 
@@ -65,18 +68,38 @@ export class HomeComponent implements OnInit {
       this.botonClicado = true;
     }
 
-    this.firestore.getCollection<Negocios>('Comerciantes').subscribe(res => {
+    const loadNegocios$ = this.firestore.getCollection<Negocios>('Comerciantes');
+    const loadEventos$ = this.firestore.getCollection<Eventos>('Eventos');
+
+    let completedQueries = 0;
+    const checkQueriesCompleted = () => {
+      completedQueries++;
+      if (completedQueries === 2) {
+        this.isLoading = false;
+        this.loadStatusService.isFirstLoad = false;
+      }
+    };
+
+    loadNegocios$.subscribe(res => {
       this.negocios = res;
-      this.isLoading = false;
-      this.loadStatusService.isFirstLoad = false;
+      checkQueriesCompleted();
+    });
 
-    })
-
-    this.firestore.getCollection<Eventos>('Eventos').subscribe(res => {
+    loadEventos$.subscribe(res => {
       this.eventos = res;
-    })
+      checkQueriesCompleted();
+    });
 
+    // Después de 5 segundos, verifica si todas las consultas han finalizado.
+    setTimeout(() => {
+      if (completedQueries < 2) {
+        this.isLoading = false;
+        this.loadStatusService.isFirstLoad = false;
+      }
+    }, 5000);
   }
+
+
   requestPermission() {
     this.botonClicado = true;
     localStorage.setItem('botonClicado', 'true');

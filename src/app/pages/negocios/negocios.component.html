@@ -22,63 +22,63 @@
                 <input type="text" placeholder="¿Buscas algo?" [(ngModel)]="busqueda"
                     (ngModelChange)="buscarNegocios()" />
             </div>
-            <i class="bi bi-search zoom2" (click)="buscarNegocios()"></i>
+            <i class="fa-solid fa-magnifying-glass fa-beat zoom2 botonSearch" (click)="buscarNegocios()"></i>
         </div>
     </div>
 
 
-    <p class="textoSearch" style="text-align: center; margin-top: 10px;">Puedes ingresar una palabra, frase, nombre o lo
-        que
-        sea que estés buscando!</p>
+    <p class="textoSearch" style="text-align: center; margin-top: 10px;">Puedes ingresar una palabra, frase, nombre o
+        loque sea que estés buscando!</p>
 
-                    <div class="row ">
-                        <div class="col-sm-12">
-                            <div class="card-group container-fluid ">
-                                <div class="cardCat zoom6 " [ngClass]="{'active': categoriaActiva === -1}"
-                                    (click)="setCategoriaActiva(-1); buscarEventos('')">
-                                    <div class="cardCat-body">
-                                        <p class="cardCat-text"><i class="fas fa-shopping-cart"></i> </p>
-                                        <h5 class="cardCat-title" [ngClass]="{'active': categoriaActiva === -1}">Ver Todos</h5>
-                                    </div>
-                                </div>
-                                <div class="cardCat zoom6" *ngFor="let categoria of categorias; let i = index"
-                                    [ngClass]="{'active': categoriaActiva === i}"
-                                    (click)="setCategoriaActiva(i); buscarEventos(categoria.nombre)">
-                                    <div class="cardCat-body">
-                                        <i class="{{ categoria.icono }} cardCat-text" [style.color]="categoria.color"
-                                            [ngClass]="{'active': categoriaActiva === i}"></i>
-                                        <h6 class="cardCat-title" [ngClass]="{'active': categoriaActiva === i}">{{
-                                            categoria.nombre }}</h6>
-                                    </div>
-                    
-                                </div>
-                            </div>
-                        </div>
+    <div class="row ">
+        <div class="col-sm-12">
+            <div class="card-group container-fluid ">
+                <div class="cardCat zoom6 " [ngClass]="{'active': categoriaActiva === -1}"
+                    (click)="setCategoriaActiva(-1); buscarEventos('')">
+                    <div class="cardCat-body">
+                        <p class="cardCat-text"><i class="fas fa-shopping-cart"></i> </p>
+                        <h5 class="cardCat-title" [ngClass]="{'active': categoriaActiva === -1}">Ver Todos</h5>
+                    </div>
+                </div>
+                <div class="cardCat zoom6" *ngFor="let categoria of categorias; let i = index"
+                    [ngClass]="{'active': categoriaActiva === i}"
+                    (click)="setCategoriaActiva(i); buscarEventos(categoria.nombre)">
+                    <div class="cardCat-body">
+                        <i class="{{ categoria.icono }} cardCat-text" [style.color]="categoria.color"
+                            [ngClass]="{'active': categoriaActiva === i}"></i>
+                        <h6 class="cardCat-title" [ngClass]="{'active': categoriaActiva === i}">{{
+                            categoria.nombre }}</h6>
                     </div>
 
-
-
-<div class="card-list">
-    <div class="card" (click)="goToDetailNegocios(negocio.id)" *ngFor="let negocio of negocios">
-        <div class="card-header">
-            <img class="logo" [src]="negocio.logo" alt="Logo de {{negocio.nombre}}" />
-            <h2 class="nombre">{{negocio.nombre}}</h2>
-        </div>
-        <div class="card-body">
-            <p class="descripcion" [ngClass]="{'expanded': negocio.expanded}">
-                {{ getLimitedDescription(negocio) }}<button *ngIf="shouldShowReadMore(negocio)" class="read-more-btn"
-                    (click)="toggleDescription(negocio); $event.stopPropagation()">
-                    {{ negocio.expanded ? 'Ver menos' : 'Ver más' }}
-                </button>
-            </p>
-
-        </div>
-        <div class="card-footer">
-            {{negocio.direccion}}
-            <span class="icono"><i class="bi bi-pin-map-fill"></i></span>
+                </div>
+            </div>
         </div>
     </div>
-</div>
+
+
+
+    <div class="card-list">
+        <div class="card" (click)="goToDetailNegocios(negocio.id)" *ngFor="let negocio of negocios">
+            <div class="card-header">
+                <img class="logo" [src]="negocio.logo" alt="Logo de {{negocio.nombre}}" />
+                <h2 class="nombre">{{negocio.nombre}}</h2>
+            </div>
+            <div class="card-body">
+                <p class="descripcion" [ngClass]="{'expanded': negocio.expanded}">
+                    <span [innerHTML]="getLimitedDescription(negocio)"></span>
+                    <button *ngIf="shouldShowReadMore(negocio)" class="read-more-btn"
+                        (click)="toggleDescription(negocio); $event.stopPropagation()">
+                        {{ negocio.expanded ? 'Ver menos' : 'Ver más' }}
+                    </button>
+                </p>
+
+            </div>
+            <div class="card-footer">
+                {{negocio.direccion}}
+                <span class="icono"><i class="bi bi-pin-map-fill"></i></span>
+            </div>
+        </div>
+    </div>
 
 </div>
 

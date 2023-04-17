@@ -14,7 +14,7 @@ export class NegociosComponent {
 
   negocios: Negocios[];
   busqueda: string = '';
-  
+
   categorias = [
     { nombre: 'Restaurantes y comidas rápidas', icono: 'fas fa-hamburger', color: '#FF5733' },
     { nombre: 'Panaderías y heladerías', icono: 'fas fa-birthday-cake', color: '#FFC300' },
@@ -41,7 +41,7 @@ export class NegociosComponent {
 
   categoriaActiva = -1;
 
-  
+
 
   setCategoriaActiva(index: number) {
     this.categoriaActiva = index;
@@ -54,7 +54,7 @@ export class NegociosComponent {
   }
 
   buscarNegocios() {
-  console.log(this.busqueda)
+    console.log(this.busqueda)
     if (this.busqueda.trim() !== '') {
       const busquedaNormalizada = this.normalizarTexto(this.busqueda);
       const palabrasBusqueda = busquedaNormalizada.split(' ');
@@ -62,7 +62,7 @@ export class NegociosComponent {
         this.negocios = res.filter(negocio => {
           const descripcionNormalizada = this.normalizarTexto(negocio.descripcion);
           const nombreNormalizado = this.normalizarTexto(negocio.nombre);
-          return palabrasBusqueda.some(palabra => descripcionNormalizada.includes(palabra) || nombreNormalizado.includes(palabra));
+          return palabrasBusqueda.every(palabra => descripcionNormalizada.includes(palabra) || nombreNormalizado.includes(palabra));
         });
       });
     } else {
@@ -116,9 +116,9 @@ export class NegociosComponent {
 
   getLimitedDescription(negocio) {
     if (negocio.expanded || negocio.descripcion.length <= this.descriptionLimit) {
-      return this.formatDescription(negocio.descripcion)
+      return this.getFormattedDescription(negocio.descripcion)
     }
-    return this.formatDescription(negocio.descripcion.slice(0, this.descriptionLimit) + '...')
+    return this.getFormattedDescription(negocio.descripcion.slice(0, this.descriptionLimit) + '...')
   }
 
   shouldShowReadMore(negocio) {
@@ -129,12 +129,33 @@ export class NegociosComponent {
     negocio.expanded = !negocio.expanded;
   }
 
-  formatDescription(description: string): string {
-    return description
-      .toLowerCase()
-      .split('. ')
-      .map(sentence => sentence.charAt(0).toUpperCase() + sentence.slice(1))
-      .join('. ');
+  getFormattedDescription(description: string): string {
+    // Aplicar el formateo de las oraciones (mayúsculas y minúsculas)
+    const formattedDescription = this.formatDescription(description);
+
+    // Reemplazar los caracteres \n por etiquetas HTML <br>
+    return formattedDescription.replace(/\\n/g, '<br>');
   }
+
+  formatDescription(description: string): string {
+    // Convertir todo el texto en minúsculas
+    const lowerCaseDescription = description.toLowerCase();
+
+    // Convertir las letras encerradas entre asteriscos en mayúsculas
+    const regex = /\*([a-zA-Z])\*/g;
+    const formattedDescription = lowerCaseDescription.replace(regex, (match, letter) => letter.toUpperCase());
+
+    const sentences = formattedDescription.split('. ');
+
+    for (let i = 0; i < sentences.length; i++) {
+      const firstChar = sentences[i].charAt(0).toUpperCase();
+      const remainingChars = sentences[i].slice(1);
+      sentences[i] = firstChar + remainingChars;
+    }
+
+    return sentences.join('. ');
+  }
+
+
 
 }

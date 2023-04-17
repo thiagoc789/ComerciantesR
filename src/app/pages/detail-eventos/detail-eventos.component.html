@@ -3,17 +3,14 @@
 <div class="container" [@fade]>
     <div class="d-flex align-items-center ">
         <div class="col-md-8 col-sm-10 text-center mx-auto ml-sm-2 my-3 my-sm-0" style="margin-right: 0;">
+            <!--NOMBRE-->
             <h1 class="display-4 " style="font-weight:bold;color:#000000; margin-top: 4px;">{{evento?.nombre}}</h1>
             <hr style="border-top: 3px solid #bbb; width: 100%;">
+            <!--DESCRIPCION-->
             <p class="lead" style="font-size:20px;color:#000000;">{{evento?.descripcion}}</p>
 
+            <!--ESPECIAL PARA EVENTO 2, TELEFONO-->
             <p class="lead" style="color:#000000;" *ngIf="evento.id == 2">Adquiere tu boleta <i
-                    class="fa-regular fa-hand-point-right fa-shake" style="margin-right: 1em ; margin-left: 1em; "></i>
-                <a *ngIf="evento.telefono" href="https://wa.me/+57{{evento.telefono}}"
-                    class="btn btn-outline-success btn-lg zoom"><i class="bi bi-whatsapp"
-                        style="margin-right: 0.5em;"></i>{{evento.telefono}}</a>
-            </p>
-            <p class="lead" style="color:#000000;" *ngIf="evento.id == 1">Registrate aquí <i
                     class="fa-regular fa-hand-point-right fa-shake" style="margin-right: 1em ; margin-left: 1em; "></i>
                 <a *ngIf="evento.telefono" href="https://wa.me/+57{{evento.telefono}}"
                     class="btn btn-outline-success btn-lg zoom"><i class="bi bi-whatsapp"
@@ -22,7 +19,7 @@
         </div>
     </div>
 
-
+<!--FECHA-->
     <div class="d-flex align-middle justify-content-center" style="margin-top: 25px;">
         <img src="https://cdn-icons-png.flaticon.com/512/8344/8344064.png"
             class="rounded-circle shadow-lg mx-auto d-block" alt="Logo de persona" class="mx-2"
@@ -32,12 +29,13 @@
 
     </div>
 
+    <!--HORA-->
     <h5 *ngIf="evento.hora" class="display-4 d-flex align-middle justify-content-center"
         style="font-weight:bold;color:#333;font-size: 25px; ">Hora: {{evento?.hora}}
     </h5>
 
-
-    <div class="d-flex align-middle justify-content-center" style="margin-top: 25px;">
+<!--ORGANIZADOR-->
+    <div *ngIf="evento?.organizador" class="d-flex align-middle justify-content-center" style="margin-top: 25px;">
         <img src="https://cdn-icons-png.flaticon.com/512/10047/10047935.png"
             class="rounded-circle shadow-lg mx-auto d-block" alt="Logo de persona" class="mx-2"
             style="width: 40px; height: 100%;">
@@ -46,7 +44,9 @@
         </h5>
     </div>
 
+
     <div class="row justify-content-center">
+        <!--UBICACION-->
         <div *ngIf="evento.ubicacion" class="col-md-8 text-center ">
             <hr style="border-top: 3px solid #bbb; width: 100%;">
             <h1 class="display-4 " style="font-weight:bold;color:#000000; margin-top: 4px; font-size: xx-large;">

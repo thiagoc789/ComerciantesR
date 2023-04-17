@@ -82,17 +82,6 @@ h1 {
     font-size: 16px;
 }
 
-
-
-.bi {
-    color: #000000;
-    padding: 10px 10px;
-    border: none;
-    cursor: pointer;
-    font-size: 16px;
-
-}
-
 .search-buttons {
     display: flex;
     align-items: center;
@@ -117,6 +106,15 @@ h1 {
     font-size: 1.2em;
     color: gray;
     margin-bottom: 30px;
+}
+
+.botonSearch {
+    justify-content: center;
+    font-size: 1.2em;
+    color: rgb(145, 19, 19);
+    margin-top: 0.6em;
+    margin-left: 0.6em;
+    
 }
 
 .zoom {

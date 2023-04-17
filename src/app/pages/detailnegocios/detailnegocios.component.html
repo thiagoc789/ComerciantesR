@@ -46,13 +46,15 @@
         </div>
         <div class="col-md-8 text-center">
             <div class="btn-group flex-wrap" role="group">
-                <a href="https://wa.me/+57{{negocio?.whatsapp1}}" class="btn btn-outline-success btn-lg  zoom"><i
-                        class="bi bi-whatsapp"></i>
+                <a href="https://wa.me/+57{{negocio?.whatsapp1}}?text=Hola!%20Encontr%C3%A9%20tu%20negocio%20en%20YoComproEnRestrepo.com%20quiero%20saber%20m%C3%A1s%20informaci%C3%B3n%20acerca%20de%20tu%20negocio%20y%20que%20servicios%20tienes.!"
+                    class="btn btn-outline-success btn-lg  zoom"><i class="bi bi-whatsapp"></i>
                     {{negocio?.whatsapp1}}</a>
-                <a *ngIf="negocio?.whatsapp2" href="https://wa.me/+57{{negocio.whatsapp2}}"
+                <a *ngIf="negocio?.whatsapp2"
+                    href="https://wa.me/+57{{negocio.whatsapp2}}?text=Hola!%20Encontr%C3%A9%20tu%20negocio%20en%20YoComproEnRestrepo.com%20quiero%20saber%20m%C3%A1s%20informaci%C3%B3n%20acerca%20de%20tu%20negocio%20y%20que%20servicios%20tienes.!"
                     class="btn btn-outline-success btn-lg zoom"><i class="bi bi-whatsapp"></i>{{negocio.whatsapp2}}</a>
             </div>
         </div>
+
         <div class="col-md-15 col-xs-15 col-sm-15 text-center mt-4">
             <div class="btn-group flex-wrap " style="width: 50%;" role="group">
                 <a *ngIf="negocio?.instagram" href="https://{{negocio.instagram}}"
