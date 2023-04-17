@@ -168,7 +168,7 @@ h1 {
 
 @media (max-width: 800px) {
     .container {
-        zoom: 70%;
+        zoom: 85%;
 
     }
 }

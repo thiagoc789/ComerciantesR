@@ -287,8 +287,15 @@
     overflow-x: auto;
     -webkit-overflow-scrolling: touch;
     scroll-snap-type: x mandatory;
-    margin-bottom: 3em;
+
     padding-bottom: 10px;
+}
+
+.desliza{
+    margin-bottom: 2em;
+    color: #f30606;
+    font-weight: bold;
+
 }
 
 .cardCat {
@@ -307,8 +314,8 @@
     border-radius: 8px;
     background: #fff;
     align-items: center;
-    max-width: 11em;
-    height: 11em;
+    max-width: 8em;
+    height: 8em;
 
 }
 
