@@ -54,23 +54,35 @@ export class NegociosComponent {
   }
 
   buscarNegocios() {
-    console.log(this.busqueda)
+    console.log(this.busqueda);
     if (this.busqueda.trim() !== '') {
       const busquedaNormalizada = this.normalizarTexto(this.busqueda);
-      const palabrasBusqueda = busquedaNormalizada.split(' ');
-      this.firestore.getCollection<Negocios>('Comerciantes').subscribe(res => {
-        this.negocios = res.filter(negocio => {
-          const descripcionNormalizada = this.normalizarTexto(negocio.descripcion);
-          const nombreNormalizado = this.normalizarTexto(negocio.nombre);
-          return palabrasBusqueda.every(palabra => descripcionNormalizada.includes(palabra) || nombreNormalizado.includes(palabra));
+      const palabrasBusqueda = busquedaNormalizada.split(' ').filter(palabra => !this.palabrasExcluidas.includes(palabra));
+
+      if (palabrasBusqueda.length > 0) {
+        this.firestore.getCollection<Negocios>('Comerciantes').subscribe(res => {
+          this.negocios = res.filter(negocio => {
+            const descripcionSinHTML = this.eliminarEtiquetasHTML(negocio.descripcion);
+            const nombreSinHTML = this.eliminarEtiquetasHTML(negocio.nombre);
+            const descripcionNormalizada = this.normalizarTexto(descripcionSinHTML);
+            const nombreNormalizado = this.normalizarTexto(nombreSinHTML);
+            console.log(descripcionSinHTML);
+            return palabrasBusqueda.some(palabra => descripcionNormalizada.includes(palabra) || nombreNormalizado.includes(palabra));
+          });
         });
-      });
+      } else {
+        this.firestore.getCollection<Negocios>('Comerciantes').subscribe(res => {
+          this.negocios = res;
+        });
+      }
     } else {
       this.firestore.getCollection<Negocios>('Comerciantes').subscribe(res => {
         this.negocios = res;
       });
     }
   }
+
+
 
   buscarEventos(categoria: string) {
 
@@ -154,6 +166,15 @@ export class NegociosComponent {
     }
 
     return sentences.join('. ');
+  }
+
+  private palabrasExcluidas = [
+    'y', 'o', 'de', 'la', 'el', 'en', 'los', 'las', 'un', 'una', 'con', 'por', 'para', ' ', ''
+  ];
+
+  private eliminarEtiquetasHTML(texto: string): string {
+    // Utiliza una expresión regular para eliminar las etiquetas de negrita y mayúsculas
+    return texto.replace(/<b>|<\/b>|\*/g, '');
   }
 
 
