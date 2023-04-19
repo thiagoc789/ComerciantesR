@@ -166,3 +166,49 @@ body {
     padding-bottom: 0;
     margin-bottom: 0;
 }
+
+/* Estilos CSS para el componente Horarios de Misa */
+.horarios-misa {
+    background-color: #f5f5f5;
+    border-radius: 10px;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.horarios-misa .card-header {
+    background-color: rgba(117, 132, 212, 0.219);
+    color: #000000;
+    padding: 10px;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+
+.horarios-misa h2 {
+    font-size: 28px;
+    margin-bottom: 10px;
+}
+
+.horarios-misa .card-body {
+    padding: 20px;
+}
+
+.horarios-misa .church-icon {
+    font-size: 48px;
+    color: #031654;
+    margin-bottom: 10px;
+}
+
+.horarios-misa .church-icon i {
+    vertical-align: middle;
+}
+
+.horarios-misa h3 {
+    font-size: 22px;
+    margin-bottom: 10px;
+}
+
+.horarios-misa .card-body p {
+    font-size: 20px;
+    margin-bottom: 5px;
+}
