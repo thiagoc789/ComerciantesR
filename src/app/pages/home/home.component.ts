@@ -22,28 +22,28 @@ import { mapTo, delay } from 'rxjs/operators';
 export class HomeComponent implements OnInit {
 
   categorias = [
-    { nombre: 'Agropecuarias y mascotas', icono: 'fas fa-paw', color: '#1ABC9C' },
-    { nombre: 'Educación', icono: 'fas fa-graduation-cap', color: '#E6E6FA' },
-    { nombre: 'Ferreterias y electricidad', icono: 'fas fa-screwdriver-wrench', color: '#1ABC9C' },
-    { nombre: 'Hospedaje y hoteles', icono: 'fa-solid fa-hotel', color: '#F5B7B1' },
-    { nombre: 'Manualidades', icono: 'fas fa-palette', color: '#DAF7A6' },
-    { nombre: 'Medicamentos y aseo', icono: 'fas fa-pills', color: '#581845' },
-    { nombre: 'Organización de eventos ', icono: 'fas fa-champagne-glasses', color: '#FFC300' },
-    { nombre: 'Papelerias y misceláneas', icono: 'fas fa-pencil-ruler', color: '#F5B7B1' },
-    { nombre: 'Panaderías y heladerías', icono: 'fas fa-birthday-cake', color: '#FFC300' },
-    { nombre: 'Repuestos para vehiculos', icono: 'fas fa-car-burst', color: '#7FDBFF' },
-    { nombre: 'Servicio de grua y transporte', icono: 'fas fa-truck', color: '#7FDBFF' },
-    { nombre: 'Recreación', icono: 'fa-regular fa-face-laugh-beam', color: '#6C3483' },
-    { nombre: 'Reparaciones y mantenimientos', icono: 'fas fa-wrench', color: '#7FDBFF' },
-    { nombre: 'Restaurantes y comidas rápidas', icono: 'fas fa-hamburger', color: '#FF5733' },
-    { nombre: 'Ropa y calzado', icono: 'fas fa-tshirt', color: '#581845' },
-    { nombre: 'Salud y belleza', icono: 'fas fa-spa', color: '#FFDC00' },
-    { nombre: 'Servicios empresariales', icono: 'fas fa-briefcase', color: '#FF5733' },
-    { nombre: 'Tiendas y supermercados', icono: 'fas fa-shopping-cart', color: '#DAF7A6' },
-    { nombre: 'Tecnología', icono: 'fa-solid fa-microchip', color: '#FF5733' },
-    { nombre: 'Variedades, detalles y accesorios', icono: 'fas fa-gift', color: '#FFE4E1' },
-
+    { nombre: 'Agropecuarias y mascotas', icono: 'fas fa-paw', color: '#FF0000' },
+    { nombre: 'Educación', icono: 'fas fa-graduation-cap', color: '#FF7F00' },
+    { nombre: 'Ferreterias y electricidad', icono: 'fas fa-screwdriver-wrench', color: '#FFFF00' },
+    { nombre: 'Hospedaje y hoteles', icono: 'fa-solid fa-hotel', color: '#00FF00' },
+    { nombre: 'Manualidades', icono: 'fas fa-palette', color: '#0000FF' },
+    { nombre: 'Medicamentos y aseo', icono: 'fas fa-pills', color: '#4B0082' },
+    { nombre: 'Organización de eventos ', icono: 'fas fa-champagne-glasses', color: '#8B00FF' },
+    { nombre: 'Papelerias y misceláneas', icono: 'fas fa-pencil-ruler', color: '#FF0000' },
+    { nombre: 'Panaderías y heladerías', icono: 'fas fa-birthday-cake', color: '#FF7F00' },
+    { nombre: 'Repuestos para vehiculos', icono: 'fas fa-car-burst', color: '#FFFF00' },
+    { nombre: 'Servicio de grua y transporte', icono: 'fas fa-truck', color: '#00FF00' },
+    { nombre: 'Recreación', icono: 'fa-regular fa-face-laugh-beam', color: '#0000FF' },
+    { nombre: 'Reparaciones y mantenimientos', icono: 'fas fa-wrench', color: '#4B0082' },
+    { nombre: 'Restaurantes y comidas rápidas', icono: 'fas fa-hamburger', color: '#8B00FF' },
+    { nombre: 'Ropa y calzado', icono: 'fas fa-tshirt', color: '#FF0000' },
+    { nombre: 'Salud y belleza', icono: 'fas fa-spa', color: '#FF7F00' },
+    { nombre: 'Servicios empresariales', icono: 'fas fa-briefcase', color: '#FFFF00' },
+    { nombre: 'Tiendas y supermercados', icono: 'fas fa-shopping-cart', color: '#00FF00' },
+    { nombre: 'Tecnología', icono: 'fa-solid fa-microchip', color: '#0000FF' },
+    { nombre: 'Variedades, detalles y accesorios', icono: 'fas fa-gift', color: '#4B0082' },
   ];
+
 
 
 

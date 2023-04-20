@@ -11,15 +11,17 @@
         <div>
             <h6 class="display-7" style="color:#9b9898;">{{negocio?.eslogan}}</h6>
         </div>
-        <div>
+        <div class="cont-descr">
             <hr style="border-top: 3px solid #bbb; width: 100%;">
             <p class="description" [innerHTML]="getFormattedDescription(negocio?.descripcion)">
             </p>
+            <!--UNA IMAGEN PARA LA DESCRIPCION-->
             <div *ngIf="negocio.descripcion_imagen">
-            <img src="{{negocio?.descripcion_imagen}}" alt="{{negocio?.nombre}}" class="shadow-lg mx-auto d-block"
-                style="max-width:100%; max-height: 100px; margin-top: 0.5em; margin-bottom: 0.5em;">
-                </div>
+                <img src="{{negocio?.descripcion_imagen}}" alt="{{negocio?.nombre}}" class="shadow-lg mx-auto d-block"
+                    style="max-width:100%; max-height: 100px; margin-top: 0.5em; margin-bottom: 0.5em;">
+            </div>
         </div>
+        <!--UN AUDIO PARA LA DESCRIPCION-->
         <div *ngIf="negocio.audioUrl">
             <audio controls>
                 <source
@@ -28,7 +30,9 @@
                 Tu navegador no soporta la etiqueta de audio.
             </audio>
         </div>
+
     </div>
+    
     <div class="row justify-content-center">
         <div class="col-md-8 text-center">
             <p class="lead mb-5">Comunicate con
@@ -52,22 +56,22 @@
             </div>
         </div>
 
-    <div class="col-md-15 col-xs-15 col-sm-15 text-center mt-4">
-        <div class="btn-group flex-wrap " style="width: 50%;" role="group">
-            <a *ngIf="negocio?.instagram" href="https://{{negocio.instagram}}" class="btn btn-instagram btn-lg zoom"><i
-                    class="bi bi-instagram mr-2"></i> Instagram</a>
-    
-            <a *ngIf="negocio?.facebook" href="https://{{negocio.facebook}}" class="btn btn-outline-primary btn-lg zoom"><i
-                    class="bi bi-facebook mr-2"></i> Facebook</a>
-            <a *ngIf="negocio?.web" href="https://{{negocio.web}}" class="btn btn-outline-info btn-lg zoom"><i
-                    class="bi bi-globe2 mr-2"></i> Sitio web</a>
-    
-            <!-- Botón de correo -->
-            <a *ngIf="negocio?.correo" href="mailto:{{negocio.correo}}" class="btn btn-outline-info btn-lg zoom"><i
-                    class="bi bi-envelope mr-2"></i> Enviar correo</a>
+        <div class="col-md-15 col-xs-15 col-sm-15 text-center mt-4">
+            <div class="btn-group flex-wrap " style="width: 50%;" role="group">
+                <a *ngIf="negocio?.instagram" href="https://{{negocio.instagram}}"
+                    class="btn btn-instagram btn-lg zoom"><i class="bi bi-instagram mr-2"></i> Instagram</a>
+
+                <a *ngIf="negocio?.facebook" href="https://{{negocio.facebook}}"
+                    class="btn btn-outline-primary btn-lg zoom"><i class="bi bi-facebook mr-2"></i> Facebook</a>
+                <a *ngIf="negocio?.web" href="https://{{negocio.web}}" class="btn btn-outline-info btn-lg zoom"><i
+                        class="bi bi-globe2 mr-2"></i> Sitio web</a>
+
+                <!-- Botón de correo -->
+                <a *ngIf="negocio?.correo" href="mailto:{{negocio.correo}}" class="btn btn-outline-info btn-lg zoom"><i
+                        class="bi bi-envelope mr-2"></i> Enviar correo</a>
+            </div>
+            <hr style="border-top: 3px solid #bbb; width: 100%;">
         </div>
-        <hr style="border-top: 3px solid #bbb; width: 100%;">
-    </div>
 
         <div class="row justify-content-center">
 
@@ -81,7 +85,12 @@
                     class="rounded-circle shadow-lg mx-auto d-block" alt="Icono direccion" class="mx-2"
                     style="width: 40px; height: 40px;">{{negocio?.direccion}}
             </h5>
-            <div id="map" style="margin-top: 10px;"></div>
+<div id="map" style="margin-top: 10px;"></div>
+<button (click)="openInGoogleMaps()" class="directions-btn">
+    <i class="fa fa-arrow-right arrow-icon"></i> ¿Cómo llegar? ¡Haz clic aquí!
+</button>
+
+
         </div>
 
         <button class="btn btn-outline-success btn-lg zoom" onclick="window.history.back();"

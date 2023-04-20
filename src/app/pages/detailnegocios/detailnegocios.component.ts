@@ -24,7 +24,6 @@ export class DetailnegociosComponent implements OnInit {
 
   ngOnInit() {
     window.scrollTo(0, 0);
-
     const negocioId = this.route.snapshot.paramMap.get('id');
     this.firestore.getDoc<Negocios>('Comerciantes', negocioId).subscribe(res => {
       this.negocio = res;
@@ -101,6 +100,18 @@ export class DetailnegociosComponent implements OnInit {
 
     return sentences.join('. ');
   }
+  openInGoogleMaps(): void {
+    if (this.currentPosition) {
+      const origin = `${this.currentPosition.lat},${this.currentPosition.lng}`;
+      const destination = `${this.negocio.lat},${this.negocio.long}`;
+      const googleMapsUrl = `https://www.google.com/maps/dir/?api=1&origin=${origin}&destination=${destination}`;
+      window.open(googleMapsUrl, '_blank');
+    } else {
+      alert('No se pudo obtener la ubicación actual');
+    }
+  }
+
+
 
 
 
