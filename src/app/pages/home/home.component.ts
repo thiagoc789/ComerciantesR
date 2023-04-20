@@ -30,6 +30,9 @@ export class HomeComponent implements OnInit {
     { nombre: 'Medicamentos y aseo', icono: 'fas fa-pills', color: '#581845' },
     { nombre: 'Organización de eventos ', icono: 'fas fa-champagne-glasses', color: '#FFC300' },
     { nombre: 'Papelerias y misceláneas', icono: 'fas fa-pencil-ruler', color: '#F5B7B1' },
+    { nombre: 'Panaderías y heladerías', icono: 'fas fa-birthday-cake', color: '#FFC300' },
+    { nombre: 'Repuestos para vehiculos', icono: 'fas fa-car-burst', color: '#7FDBFF' },
+    { nombre: 'Servicio de grua y transporte', icono: 'fas fa-truck', color: '#7FDBFF' },
     { nombre: 'Recreación', icono: 'fa-regular fa-face-laugh-beam', color: '#6C3483' },
     { nombre: 'Reparaciones y mantenimientos', icono: 'fas fa-wrench', color: '#7FDBFF' },
     { nombre: 'Restaurantes y comidas rápidas', icono: 'fas fa-hamburger', color: '#FF5733' },
@@ -39,8 +42,7 @@ export class HomeComponent implements OnInit {
     { nombre: 'Tiendas y supermercados', icono: 'fas fa-shopping-cart', color: '#DAF7A6' },
     { nombre: 'Tecnología', icono: 'fa-solid fa-microchip', color: '#FF5733' },
     { nombre: 'Variedades, detalles y accesorios', icono: 'fas fa-gift', color: '#FFE4E1' },
-    { nombre: 'Panaderías y heladerías', icono: 'fas fa-birthday-cake', color: '#FFC300' },
-    { nombre: 'Repuestos para vehiculos', icono: 'fas fa-car-burst', color: '#7FDBFF' },
+
   ];
 
 
