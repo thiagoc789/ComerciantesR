@@ -156,7 +156,8 @@ h1 {
     background: #fff;
     align-items: center;
     max-width: 11em;
-    height: 11em;
+    height: 8em;
+    margin-top: 1em;
 
 }
 
@@ -166,12 +167,32 @@ h1 {
     overflow: hidden;
 }
 
+.categorias {
+    width: 80%;
+    background-color: #e4e3e3;
+}
+
 @media (max-width: 800px) {
     .container {
         zoom: 85%;
 
     }
+
+    .categorias{
+        width: 100%;
+       
+    }
 }
+
+@media (max-width: 1400px) {
+
+    .categorias {
+        width: 100%;
+
+    }
+}
+
+
 
 .cardCat-title {
     margin: 10px;
@@ -185,7 +206,7 @@ h1 {
 }
 
 .cardCat.active {
-    background-color: #170bcde5;
+    background-color: #4357c7e5;
     color: rgb(0, 0, 0);
 
 }

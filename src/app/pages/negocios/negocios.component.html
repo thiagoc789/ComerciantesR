@@ -30,9 +30,9 @@
     <p class="textoSearch" style="text-align: center; margin-top: 10px;">Puedes ingresar una palabra, frase, nombre o
         loque sea que estés buscando!</p>
 
-    <div class="row ">
-        <div class="col-sm-12">
-            <div class="card-group container-fluid ">
+    <div class="categorias row mx-auto d-block ">
+        <div class="col-sm-12 " >
+            <div class="card-group ">
                 <div class="cardCat zoom6 " [ngClass]="{'active': categoriaActiva === -1}"
                     (click)="setCategoriaActiva(-1); buscarEventos('')">
                     <div class="cardCat-body">
@@ -40,7 +40,7 @@
                         <h5 class="cardCat-title" [ngClass]="{'active': categoriaActiva === -1}">Ver Todos</h5>
                     </div>
                 </div>
-                <div class="cardCat zoom6" *ngFor="let categoria of categorias; let i = index"
+                <div class="cardCat zoom6 " *ngFor="let categoria of categorias; let i = index"
                     [ngClass]="{'active': categoriaActiva === i}"
                     (click)="setCategoriaActiva(i); buscarEventos(categoria.nombre)">
                     <div class="cardCat-body">

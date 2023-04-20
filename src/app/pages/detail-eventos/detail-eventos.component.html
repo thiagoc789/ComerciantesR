@@ -1,5 +1,5 @@
-<img src="{{evento?.imagen}}" alt="{{evento?.nombre}}" class="shadow-lg mx-auto d-block"
-    style="max-width: 80%; margin-top: 10px;">
+<img src="{{evento?.imagen}}" alt="{{evento?.nombre}}" class="imagen mx-auto d-block"
+    style=" margin-top: 10px; margin-bottom: 1em; max-height: 22em;">
 <div class="container" [@fade]>
     <div class="d-flex align-items-center ">
         <div class="col-md-8 col-sm-10 text-center mx-auto ml-sm-2 my-3 my-sm-0" style="margin-right: 0;">
@@ -12,9 +12,9 @@
             <!--ESPECIAL PARA EVENTO 2, TELEFONO-->
             <p class="lead" style="color:#000000;" *ngIf="evento.id == 2">Adquiere tu boleta <i
                     class="fa-regular fa-hand-point-right fa-shake" style="margin-right: 1em ; margin-left: 1em; "></i>
-                <a *ngIf="evento.telefono" href="https://wa.me/+57{{evento.telefono}}"
+                <a *ngIf="evento.telefono" href="https://wa.me/+57{{evento?.telefono}}"
                     class="btn btn-outline-success btn-lg zoom"><i class="bi bi-whatsapp"
-                        style="margin-right: 0.5em;"></i>{{evento.telefono}}</a>
+                        style="margin-right: 0.5em;"></i>{{evento?.telefono}}</a>
             </p>
         </div>
     </div>

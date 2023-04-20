@@ -48,14 +48,11 @@
             </button>
 
             <!--TITULO-->
-            <div class="carousel-title text-center" [@fade]
-                style="display: flex; align-items: center; justify-content: center;">
-                <img src="https://cdn-icons-png.flaticon.com/512/1968/1968790.png" alt="Icono eventos proximos "
-                    style="height: 60px; margin-right: 10px;">
-                <h1 [@fade] style="text-align: center; margin: 0; font-size: 2rem; line-height: 1.2;">
-                    Eventos <br>
-                    próximos
-                </h1>
+            <div class="section-background container-fluid" style="margin-top: 1em;">
+                <div class="section-title">
+                    <i class="fa-regular fa-rectangle-list" style="font-size: 1em; margin-right: 20px;"></i>
+                    <h1>Eventos próximos</h1>
+                </div>
             </div>
             <hr class="separador">
 
@@ -73,10 +70,12 @@
                     </div>
 
                 </div>
-                <ol class="carousel-indicators">
-                    <li *ngFor="let item of eventos; let i = index" [attr.data-bs-target]="'#myCarousel'"
-                        [attr.data-bs-slide-to]="i" [class.active]="i === 0"></li>
-                </ol>
+                <div>
+                    <ol class="carousel-indicators">
+                        <li *ngFor="let item of eventos; let i = index" [attr.data-bs-target]="'#myCarousel'"
+                            [attr.data-bs-slide-to]="i" [class.active]="i === 0"></li>
+                    </ol>
+                </div>
                 <a class="carousel-control-prev zoom3" href="#myCarousel" role="button" data-bs-slide="prev">
                     <span class="bi bi-chevron-compact-left"></span>
                     <span class="visually-hidden">Previo</span>
@@ -86,24 +85,16 @@
                     <span class="visually-hidden">Siguiente</span>
                 </a>
             </div>
-
-
-
+            <hr class="separador " style="margin-top: 3.5em;">        
             <!--Titulo-->
-
-            <div class="carousel-title text-center " [@fade] style="margin-top: 40px;">
-                <img src="https://cdn-icons-png.flaticon.com/512/869/869687.png" alt="Icono subtitulo nuestras marcas"
-                    style="height: 60px; margin-right: 10px;">
-                <h1 [@fade] style="text-align: center; margin: 0; font-size: 2rem; line-height: 1.2; margin-top: 20px;">
-                    Nuestras <br>
-                    Categorías
-                </h1>
+            <div class="section-background container-fluid">
+                <div class="section-title">
+                    <i class="fa-regular fa-object-ungroup" style="font-size: 1em; margin-right: 20px;"></i>
+                    <h1>Nuestras categorías</h1>
+                </div>
 
             </div>
             <hr class="separador">
-
-
-
 
             <!--Categorias-->
             <div class="row ">
@@ -129,13 +120,14 @@
                         </div>
                     </div>
                     <div class="desliza container-fluid">
-                        <p>DESLIZA HACIA LA DERECHA <i class="fa-solid fa-right-long fa-beat"></i> PARA VER TODAS LAS CATEGORIAS</p>
+                        <p>DESLIZA HACIA LA DERECHA <i class="fa-solid fa-right-long fa-beat"></i> PARA VER TODAS LAS
+                            CATEGORIAS</p>
                     </div>
                 </div>
             </div>
-            
-            
-            
+
+
+
 
 
             <!--MARCAS-->
@@ -163,11 +155,10 @@
                                             <i class="bi bi-telephone"></i>
                                             <p class="textCard">Llamar</p>
                                         </a>
-                                        <a  href="https://wa.me/+57{{negocio.whatsapp1}}?text=Hola!%20Encontr%C3%A9%20tu%20negocio%20en%20YoComproEnRestrepo.com%20quiero%20saber%20m%C3%A1s%20informaci%C3%B3n%20acerca%20de%20tu%20negocio%20y%20que%20servicios%20tienes.!" target="_blank"
-                                            class="btn btn-success zoom6 botonesCard"
-                                            style="max-height: 3.3em; width: 7em;"
-                                             (click)="$event.stopPropagation()">
-                                           
+                                        <a href="https://wa.me/+57{{negocio.whatsapp1}}?text=Hola!%20Encontr%C3%A9%20tu%20negocio%20en%20YoComproEnRestrepo.com%20quiero%20saber%20m%C3%A1s%20informaci%C3%B3n%20acerca%20de%20tu%20negocio%20y%20que%20servicios%20tienes.!"
+                                            target="_blank" class="btn btn-success zoom6 botonesCard"
+                                            style="max-height: 3.3em; width: 7em;" (click)="$event.stopPropagation()">
+
                                             <i class="bi bi-whatsapp "></i>
                                             <p class="textCard">WhatsApp</p>
                                         </a>

@@ -12,6 +12,10 @@
     box-shadow: 0px 0px 10px 10px rgba(0, 0, 0, 0.233);
 }
 
+.imagen{
+    box-shadow: 0 0 15px rgb(0, 0, 0);
+}
+
 @media (max-width: 500px) {
 
     .btn {
