@@ -84,11 +84,7 @@
 
 }
 
-.section-background {
-    background-image: radial-gradient(at center, #ffffff, rgba(117, 132, 212, 0.219));
-    padding: 1em 0;
-    border-radius: 15px;
-}
+
 
 .section-title {
     display: flex;
