@@ -32,7 +32,7 @@
         </div>
 
     </div>
-    
+
     <div class="row justify-content-center">
         <div class="col-md-8 text-center">
             <p class="lead mb-5">Comunicate con
@@ -73,7 +73,7 @@
             <hr style="border-top: 3px solid #bbb; width: 100%;">
         </div>
 
-        <div class="row justify-content-center">
+        <div *ngIf="negocio?.lat" class="row justify-content-center">
 
 
             <h1 class="display-4 "
@@ -85,10 +85,10 @@
                     class="rounded-circle shadow-lg mx-auto d-block" alt="Icono direccion" class="mx-2"
                     style="width: 40px; height: 40px;">{{negocio?.direccion}}
             </h5>
-<div id="map" style="margin-top: 10px;"></div>
-<button (click)="openInGoogleMaps()" class="directions-btn">
-    <i class="fa fa-arrow-right arrow-icon"></i> ¿Cómo llegar? ¡Haz clic aquí!
-</button>
+            <div id="map" style="margin-top: 10px;"></div>
+            <button (click)="openInGoogleMaps()" class="directions-btn">
+                <i class="fa fa-arrow-right arrow-icon"></i> ¿Cómo llegar? ¡Haz clic aquí!
+            </button>
 
 
         </div>

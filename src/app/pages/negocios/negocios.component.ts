@@ -67,8 +67,8 @@ export class NegociosComponent {
             const nombreSinHTML = this.eliminarEtiquetasHTML(negocio.nombre);
             const descripcionNormalizada = this.normalizarTexto(descripcionSinHTML);
             const nombreNormalizado = this.normalizarTexto(nombreSinHTML);
-            console.log(descripcionSinHTML);
-            return palabrasBusqueda.some(palabra => descripcionNormalizada.includes(palabra) || nombreNormalizado.includes(palabra));
+            const id = negocio.id.toString()
+            return palabrasBusqueda.some(palabra => descripcionNormalizada.includes(palabra) || nombreNormalizado.includes(palabra) || id.includes(palabra)) ;
           });
         });
       } else {
