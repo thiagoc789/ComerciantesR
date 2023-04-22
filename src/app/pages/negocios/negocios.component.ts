@@ -25,7 +25,7 @@ export class NegociosComponent {
     { nombre: 'Organización de eventos ', icono: 'fas fa-champagne-glasses', color: '#8B00FF' },
     { nombre: 'Papelerias y misceláneas', icono: 'fas fa-pencil-ruler', color: '#FF0000' },
     { nombre: 'Panaderías y heladerías', icono: 'fas fa-birthday-cake', color: '#FF7F00' },
-    { nombre: 'Repuestos para vehiculos', icono: 'fas fa-car-burst', color: '#FFFF00' },
+    { nombre: 'Repuestos para vehiculos', icono: 'fa-regular fa-gas-pump', color: '#FFFF00' },
     { nombre: 'Servicio de grua y transporte', icono: 'fas fa-truck', color: '#00FF00' },
     { nombre: 'Recreación', icono: 'fa-regular fa-face-laugh-beam', color: '#0000FF' },
     { nombre: 'Reparaciones y mantenimientos', icono: 'fas fa-wrench', color: '#4B0082' },
