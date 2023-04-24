@@ -30,7 +30,7 @@ export class HomeComponent implements OnInit {
     { nombre: 'Medicamentos y aseo', icono: 'fas fa-pills', color: '#4B0082' },
     { nombre: 'Organización de eventos ', icono: 'fas fa-champagne-glasses', color: '#8B00FF' },
     { nombre: 'Papelerias y misceláneas', icono: 'fas fa-pencil-ruler', color: '#FF0000' },
-    { nombre: 'Panaderías y heladerías', icono: 'fas fa-birthday-cake', color: '#FF7F00' },
+    { nombre: 'Panaderías, pastelerias y heladerías', icono: 'fas fa-birthday-cake', color: '#FF7F00' },
     { nombre: 'Repuestos para vehiculos', icono: 'fas fa-gas-pump', color: '#000000' },
     { nombre: 'Servicio de grua y transporte', icono: 'fas fa-truck', color: '#00FF00' },
     { nombre: 'Recreación', icono: 'fa-regular fa-face-laugh-beam', color: '#0000FF' },

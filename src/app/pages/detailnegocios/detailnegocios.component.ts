@@ -83,6 +83,11 @@ export class DetailnegociosComponent implements OnInit {
   }
 
   formatDescription(description: string): string {
+    // Verificar si la descripción es null o indefinida antes de continuar
+    if (!description) {
+      return '';
+    }
+
     // Convertir todo el texto en minúsculas
     const lowerCaseDescription = description.toLowerCase();
 
@@ -100,6 +105,7 @@ export class DetailnegociosComponent implements OnInit {
 
     return sentences.join('. ');
   }
+
   openInGoogleMaps(): void {
     if (this.currentPosition) {
       const origin = `${this.currentPosition.lat},${this.currentPosition.lng}`;

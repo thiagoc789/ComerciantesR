@@ -16,13 +16,13 @@
             <p class="description" [innerHTML]="getFormattedDescription(negocio?.descripcion)">
             </p>
             <!--UNA IMAGEN PARA LA DESCRIPCION-->
-            <div *ngIf="negocio.descripcion_imagen">
+            <div *ngIf="negocio?.descripcion_imagen">
                 <img src="{{negocio?.descripcion_imagen}}" alt="{{negocio?.nombre}}" class="shadow-lg mx-auto d-block"
                     style="max-width:100%; max-height: 100px; margin-top: 0.5em; margin-bottom: 0.5em;">
             </div>
         </div>
         <!--UN AUDIO PARA LA DESCRIPCION-->
-        <div *ngIf="negocio.audioUrl">
+        <div *ngIf="negocio?.audioUrl">
             <audio controls>
                 <source
                     src="https://26643.live.streamtheworld.com/CARACOL_RADIOAAC.aac?csegid=2000&dist=caracol_co-web-playperm-live_str_play&tdsdk=js-2.9&swm=false&pname=TDSdk&pversion=2.9&banners=none&gdpr=0&burst-time=15&sbmid=72bc8fdd-82be-4c24-8d8d-6d664c7b966d"
@@ -73,7 +73,7 @@
             <hr style="border-top: 3px solid #bbb; width: 100%;">
         </div>
 
-        <div *ngIf="negocio?.lat" class="row justify-content-center">
+        <div class="row justify-content-center">
 
 
             <h1 class="display-4 "
