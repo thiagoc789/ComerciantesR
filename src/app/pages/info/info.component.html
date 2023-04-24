@@ -144,7 +144,6 @@
         <thead>
             <tr>
                 <th>Disciplina Deportiva</th>
-                <th>Monitor</th>
                 <th>Lunes</th>
                 <th>Martes</th>
                 <th>Miercoles</th>
@@ -156,7 +155,6 @@
         <tbody>
             <tr *ngFor="let item of polideportivo">
                 <td>{{ item.disciplina }}</td>
-                <td>{{ item.monitor }}</td>
                 <td [ngClass]="{'bg-primary': semana === 1}">{{ item.lunes }}</td>
                 <td [ngClass]="{'bg-primary': semana === 2}">{{ item.martes }}</td>
                 <td [ngClass]="{'bg-primary': semana === 3}">{{ item.miercoles }}</td>
@@ -181,7 +179,6 @@
         <thead>
             <tr>
                 <th>Disciplina Deportiva</th>
-                <th>Monitor</th>
                 <th>Lunes</th>
                 <th>Martes</th>
                 <th>Miercoles</th>
@@ -193,7 +190,6 @@
         <tbody>
             <tr *ngFor="let item of estadio">
                 <td>{{ item.disciplina }}</td>
-                <td>{{ item.monitor }}</td>
                 <td [ngClass]="{'bg-primary': semana === 1}">{{ item.lunes }}</td>
                 <td [ngClass]="{'bg-primary': semana === 2}">{{ item.martes }}</td>
                 <td [ngClass]="{'bg-primary': semana === 3}">{{ item.miercoles }}</td>
