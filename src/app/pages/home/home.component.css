@@ -448,3 +448,14 @@
         object-fit: cover;
     }
 }
+
+
+@media (max-width: 358px) {
+
+    .card-img-top {
+        height: 6em;
+        width: 6em;
+
+
+    }
+}
