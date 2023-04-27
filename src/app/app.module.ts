@@ -22,7 +22,9 @@ import { ServiceWorkerModule } from '@angular/service-worker';
 import { AngularFireMessagingModule } from '@angular/fire/compat/messaging';
 import { SitemapComponentComponent } from './sitemap-component/sitemap-component.component';
 import { HttpClientModule } from '@angular/common/http';
-import { CommonModule } from '@angular/common';  
+import { CommonModule } from '@angular/common'; 
+import { LazyLoadImageModule } from 'ng-lazyload-image';
+import { ModalComponent } from './modal/modal.component'; 
 
 //RUTAS
 const routes: Routes = [
@@ -38,6 +40,7 @@ const routes: Routes = [
 
 @NgModule({
   imports: [
+    LazyLoadImageModule,
     CommonModule,
     AngularFireMessagingModule,
     GoogleMapsModule,
@@ -64,7 +67,8 @@ const routes: Routes = [
     NegociosComponent,
     DetailEventosComponent,
     DetailnegociosComponent,
-    InfoComponent
+    InfoComponent,
+    ModalComponent
   ],
   bootstrap: [AppComponent]
 })

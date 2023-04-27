@@ -60,7 +60,7 @@
     <div class="card-list">
         <div class="card" (click)="goToDetailNegocios(negocio.id)" *ngFor="let negocio of negocios">
             <div class="card-header">
-                <img class="logo" [src]="negocio.logo" alt="Logo de {{negocio.nombre}}" />
+                <img [lazyLoad]="negocio.logo" class="card-img-top" alt="{{negocio.nombre}}" />
                 <h2 class="nombre">{{negocio.nombre}}</h2>
             </div>
             <div class="card-body">

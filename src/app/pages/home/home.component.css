@@ -120,6 +120,16 @@
 
 }
 
+.boton-instalar{
+    display: block;
+        margin: 0 auto;
+        color: rgb(131, 127, 127);
+        font-weight: bold;
+        border-radius: 5px;
+        padding: 10px 20px;
+        margin-top: 10px;
+}
+
 
 .carousel-caption {
     bottom: 0;

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { AngularFireMessaging } from '@angular/fire/compat/messaging';
 import { Router } from '@angular/router';
 
@@ -9,6 +9,8 @@ import { finalize, map, mergeMapTo, timeoutWith } from 'rxjs/operators';
 import { LoadStatusService } from 'src/app/load-status.service';
 import { forkJoin, race, timer, filter, tap, of } from 'rxjs';
 import { mapTo, delay } from 'rxjs/operators';
+import { ModalComponent } from 'src/app/modal/modal.component';
+import * as bootstrap from 'bootstrap';
 
 
 
@@ -20,6 +22,7 @@ import { mapTo, delay } from 'rxjs/operators';
   animations: [fade]
 })
 export class HomeComponent implements OnInit {
+  @ViewChild(ModalComponent) modalComponent: ModalComponent;
 
   categorias = [
     { nombre: 'Agropecuarias y mascotas', icono: 'fas fa-paw', color: '#FF0000' },
@@ -44,9 +47,6 @@ export class HomeComponent implements OnInit {
     { nombre: 'Variedades, detalles y accesorios', icono: 'fas fa-gift', color: '#4B0082' },
   ];
 
-
-
-
   botonClicado = false;
   negocios: Negocios[];
   negociosFiltrados = [];
@@ -64,49 +64,51 @@ export class HomeComponent implements OnInit {
   setCategoriaActiva(index: number) {
     this.categoriaActiva = index;
   }
+  openModal() {
+    const modal = new bootstrap.Modal(document.getElementById('myModal'), {
+      keyboard: false
+    });
+    modal.show();
+  }
 
   ngOnInit() {
     const botonClicado = localStorage.getItem('botonClicado');
     if (botonClicado === 'true') {
       this.botonClicado = true;
     }
+    console.log(localStorage.getItem('botonClicado'));
+    const modalShown = localStorage.getItem('modalShown');
+    if (!modalShown) {
+      // Muestra la ventana modal solo si no ha sido mostrada antes.
+      setTimeout(() => {
+        this.openModal();
+        this.isLoading = false;
+        this.loadStatusService.isFirstLoad = false;
+      }, 5000);
+    } else {
+      this.isLoading = false;
+      this.loadStatusService.isFirstLoad = false;
+    }
 
     const loadNegocios$ = this.firestore.getCollection<Negocios>('Comerciantes');
     const loadEventos$ = this.firestore.getCollection<Eventos>('Eventos');
 
-    let completedQueries = 0;
-    const checkQueriesCompleted = () => {
-      completedQueries++;
-      if (completedQueries === 2) {
-        this.isLoading = false;
-        this.loadStatusService.isFirstLoad = false;
-      }
-    };
-
     loadNegocios$.subscribe(res => {
       this.negocios = res;
-      checkQueriesCompleted();
+      
     });
 
     loadEventos$.subscribe(res => {
       this.eventos = res;
-      checkQueriesCompleted();
+      
     });
 
     // Después de 5 segundos, verifica si todas las consultas han finalizado.
-    setTimeout(() => {
-      if (completedQueries < 2) {
-        this.isLoading = false;
-        this.loadStatusService.isFirstLoad = false;
-      }
-    }, 5000);
   }
-
 
   requestPermission() {
     this.botonClicado = true;
     localStorage.setItem('botonClicado', 'true');
-
     this.afMessaging.requestPermission
       .pipe(mergeMapTo(this.afMessaging.tokenChanges))
       .subscribe(
@@ -120,8 +122,6 @@ export class HomeComponent implements OnInit {
       console.log("token: ", res);
 
     });
-
-
   }
 
   goToDetailNegocios(Id: number) {
@@ -166,12 +166,5 @@ export class HomeComponent implements OnInit {
     this.busqueda = '';
     this.buscarEventos('');
   }
-
-  get isFirstLoad(): boolean {
-    return this.loadStatusService.isFirstLoad;
-  }
-
-
-
 
 }
