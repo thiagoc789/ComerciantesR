@@ -71,4 +71,17 @@ export class DetailEventosComponent implements OnInit {
 
   }
 
+  openInGoogleMaps(): void {
+    if (this.currentPosition) {
+      const origin = `${this.currentPosition.lat},${this.currentPosition.lng}`;
+      const destination = `${this.evento.lat},${this.evento.long}`;
+      const googleMapsUrl = `https://www.google.com/maps/dir/?api=1&origin=${origin}&destination=${destination}`;
+      window.open(googleMapsUrl, '_blank');
+    } else {
+      alert('No se pudo obtener la ubicación actual');
+    }
+  }
+
+  
+
 }

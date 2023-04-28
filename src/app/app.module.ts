@@ -56,7 +56,7 @@ const routes: Routes = [
     AngularFireModule.initializeApp(environment.firebaseConfig,),
     ServiceWorkerModule.register('ngsw-worker.js', {
       enabled: true,
-      registrationStrategy: 'registerWithDelay:1000'
+      registrationStrategy: 'registerImmediately'
     }),
 
   ],

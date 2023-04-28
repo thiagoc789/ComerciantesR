@@ -11,6 +11,7 @@ import { forkJoin, race, timer, filter, tap, of } from 'rxjs';
 import { mapTo, delay } from 'rxjs/operators';
 import { ModalComponent } from 'src/app/modal/modal.component';
 import * as bootstrap from 'bootstrap';
+import { SwUpdate } from '@angular/service-worker';
 
 
 

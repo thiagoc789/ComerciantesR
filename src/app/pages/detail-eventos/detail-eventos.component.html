@@ -1,4 +1,12 @@
-<img src="{{evento?.imagen}}" alt="{{evento?.nombre}}" class="imagen mx-auto d-block"
+<!--VIDEO-->
+<div *ngIf="evento?.video" class="video-container">
+    <video width="90%" height="90%" controls>
+        <source src="{{evento.video}}" type="video/mp4">
+    </video>
+</div>
+
+<!--IMAGEN-->
+<img *ngIf="evento?.imagen" src="{{evento?.imagen}}" alt="{{evento?.nombre}}" class="imagen mx-auto d-block"
     style=" margin-top: 10px; margin-bottom: 1em; max-height: 22em;">
 <div class="container" [@fade]>
     <div class="d-flex align-items-center ">
@@ -7,10 +15,18 @@
             <h1 class="display-4 " style="font-weight:bold;color:#000000; margin-top: 4px;">{{evento?.nombre}}</h1>
             <hr style="border-top: 3px solid #bbb; width: 100%;">
             <!--DESCRIPCION-->
-            <p class="lead" style="font-size:20px;color:#000000;">{{evento?.descripcion}}</p>
+            <p style="font-size: large;" [innerHTML]="evento?.descripcion"></p>
+
 
             <!--ESPECIAL PARA EVENTO 2, TELEFONO-->
-            <p class="lead" style="color:#000000;" *ngIf="evento.id == 2">Adquiere tu boleta <i
+            <p class="lead" style="color:#000000;" *ngIf="evento?.id == 2">Adquiere tu boleta <i
+                    class="fa-regular fa-hand-point-right fa-shake" style="margin-right: 1em ; margin-left: 1em; "></i>
+                <a *ngIf="evento.telefono" href="https://wa.me/+57{{evento?.telefono}}"
+                    class="btn btn-outline-success btn-lg zoom"><i class="bi bi-whatsapp"
+                        style="margin-right: 0.5em;"></i>{{evento?.telefono}}</a>
+            </p>
+
+            <p class="lead" style="color:#000000;" *ngIf="evento?.id == 3">Comunicate con nosotros <i
                     class="fa-regular fa-hand-point-right fa-shake" style="margin-right: 1em ; margin-left: 1em; "></i>
                 <a *ngIf="evento.telefono" href="https://wa.me/+57{{evento?.telefono}}"
                     class="btn btn-outline-success btn-lg zoom"><i class="bi bi-whatsapp"
@@ -19,7 +35,7 @@
         </div>
     </div>
 
-<!--FECHA-->
+    <!--FECHA-->
     <div class="d-flex align-middle justify-content-center" style="margin-top: 25px;">
         <img src="https://cdn-icons-png.flaticon.com/512/8344/8344064.png"
             class="rounded-circle shadow-lg mx-auto d-block" alt="Logo de persona" class="mx-2"
@@ -30,11 +46,11 @@
     </div>
 
     <!--HORA-->
-    <h5 *ngIf="evento.hora" class="display-4 d-flex align-middle justify-content-center"
+    <h5 *ngIf="evento?.hora" class="display-4 d-flex align-middle justify-content-center"
         style="font-weight:bold;color:#333;font-size: 25px; ">Hora: {{evento?.hora}}
     </h5>
 
-<!--ORGANIZADOR-->
+    <!--ORGANIZADOR-->
     <div *ngIf="evento?.organizador" class="d-flex align-middle justify-content-center" style="margin-top: 25px;">
         <img src="https://cdn-icons-png.flaticon.com/512/10047/10047935.png"
             class="rounded-circle shadow-lg mx-auto d-block" alt="Logo de persona" class="mx-2"
@@ -47,7 +63,7 @@
 
     <div class="row justify-content-center">
         <!--UBICACION-->
-        <div *ngIf="evento.ubicacion" class="col-md-8 text-center ">
+        <div *ngIf="evento?.lugar" class="col-md-8 text-center ">
             <hr style="border-top: 3px solid #bbb; width: 100%;">
             <h1 class="display-4 " style="font-weight:bold;color:#000000; margin-top: 4px; font-size: xx-large;">
                 Ubicación:
@@ -58,6 +74,9 @@
                     style="width: 40px; height: 40px;">{{evento?.lugar}}
             </h5>
             <div id="map" style="margin-top: 10px;"></div>
+            <button (click)="openInGoogleMaps()" class="directions-btn">
+                <i class="fa fa-arrow-right arrow-icon"></i> ¿Cómo llegar? ¡Haz clic aquí!
+            </button>
             <button class="btn btn-outline-success btn-lg zoom" onclick="window.history.back();"
                 style="margin-top: 2em;">Volver
                 a la página anterior</button>

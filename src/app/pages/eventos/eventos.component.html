@@ -38,7 +38,7 @@
                 <h2 class="nombre">{{evento.nombre}}</h2>
             </div>
             <div class="card-body">
-                <p class="descripcion">{{evento.descripcion}}</p>
+                <p class="descripcion"[innerHTML]="(evento.descripcion)"></p>
             </div>
             <div class="card-footer">
                 <i class="bi bi-pin-map-fill"></i>

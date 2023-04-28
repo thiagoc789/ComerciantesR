@@ -20,7 +20,7 @@ export class AppComponent {
     // Comprobar si hay actualizaciones cada hora
     setInterval(() => {
       this.swUpdate.checkForUpdate();
-    }, 120000); // Cada hora
+    }, 60000); // Cada hora
 
     // Asegurarse de que el Service Worker esté listo antes de enviar el mensaje
     navigator.serviceWorker.ready.then((registration) => {
