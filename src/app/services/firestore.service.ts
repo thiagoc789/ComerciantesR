@@ -1,12 +1,19 @@
 import { Injectable } from '@angular/core';
 import { AngularFirestore } from '@angular/fire/compat/firestore';
+import { Observable } from 'rxjs';
+import {Negocios } from '../models/models';
 
 @Injectable({
   providedIn: 'root'
 })
 export class FirestoreService {
 
-  constructor(private firestore: AngularFirestore) { this.enablePersistence(); }
+  private negocios$: Observable<any[]>;
+
+  constructor(private firestore: AngularFirestore) { 
+    this.enablePersistence(); 
+    this.loadNegocios();
+}
 
   async enablePersistence() {
     try {
@@ -43,6 +50,16 @@ export class FirestoreService {
   getCollection2<tipo>(path: string) {
     const collection = this.firestore.collection<tipo>(path);
     return collection.valueChanges();
+  }
+
+  private loadNegocios() {
+    const collection = this.firestore.collection<Negocios>('Comerciantes', ref => ref.orderBy('nombre'));
+    this.negocios$ = collection.valueChanges();
+  
+  }
+
+  public getNegocios(): Observable<any[]> {
+    return this.negocios$;
   }
 
   

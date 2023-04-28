@@ -4,8 +4,12 @@
         <div class="modal-content">
             <div class="modal-header">
                 <h3>Instala nuestra aplicación en tu dispositivo</h3>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+
+
             </div>
+            <button class="install-button" *ngIf="showInstallButton" (click)="onInstallButtonClick()">
+                <i class="fa-solid fa-hand-point-right fa-beat" style="margin-right: 1em;"></i> Instalar aplicación Android / PC<i class="fa-solid fa-hand-point-left fa-beat" style="margin-left: 1em;"></i>
+            </button>
             <div class="modal-body">
                 <p>Debes ingresar a nuestra aplicacion usando Chrome en Android o Safari en iOs para poder instalarla</p>
                 <div class="install-section">
@@ -23,6 +27,7 @@
                             <div class="d-flex flex-column align-items-center">
                                 <i class="fa-brands fa-apple"></i>
                                 <h4>iPhone</h4>
+                                <p>Debes agregar la aplicación a la pantalla principal <i class="fa-solid fa-hand-point-down fa-beat"></i></p>
                                 <img src="assets/pwa-iph.jpg" alt="iPhone" class="device-image img-fluid">
                             </div>
                         </div>

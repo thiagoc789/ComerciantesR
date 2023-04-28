@@ -120,14 +120,18 @@
 
 }
 
-.boton-instalar{
+.boton-instalar {
     display: block;
-        margin: 0 auto;
-        color: rgb(131, 127, 127);
-        font-weight: bold;
-        border-radius: 5px;
-        padding: 10px 20px;
-        margin-top: 10px;
+    margin: 0 auto;
+    padding: 10px 20px;
+    margin-top: 10px;
+    background-color: #4caf50;
+    border: none;
+    color: white;
+    text-decoration: none;
+    cursor: pointer;
+    border-radius: 8px;
+    transition-duration: 0.4s;
 }
 
 
@@ -308,7 +312,7 @@
     -webkit-overflow-scrolling: touch;
     scroll-snap-type: x mandatory;
     padding-bottom: 10px;
-    
+
 }
 
 .desliza {
@@ -321,7 +325,7 @@
 .cardCat {
     flex: 0 0 auto;
     margin-right: 1rem;
-    
+
 }
 
 .cardCat:last-child {
@@ -337,7 +341,7 @@
     align-items: center;
     width: 8em;
     height: 9em;
-    
+
 
 }
 

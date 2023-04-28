@@ -49,13 +49,12 @@ export class NegociosComponent {
   }
 
   ngOnInit() {
-    this.firestore.getCollection<Negocios>('Comerciantes').subscribe(res => {
+    this.firestore.getNegocios().subscribe((res) => {
       this.negocios = res;
     });
   }
 
   buscarNegocios() {
-    console.log(this.busqueda);
     if (this.busqueda.trim() !== '') {
       const busquedaNormalizada = this.normalizarTexto(this.busqueda);
       const palabrasBusqueda = busquedaNormalizada.split(' ').filter(palabra => !this.palabrasExcluidas.includes(palabra));
@@ -86,10 +85,7 @@ export class NegociosComponent {
 
 
   buscarEventos(categoria: string) {
-
-    console.log(categoria)
     this.busqueda = categoria;
-    console.log(this.busqueda)
     if (this.busqueda.trim() !== '') {
       const busquedaNormalizada = this.normalizarTexto(this.busqueda);
       const palabrasBusqueda = busquedaNormalizada.split(' ');
@@ -177,7 +173,5 @@ export class NegociosComponent {
     // Utiliza una expresión regular para eliminar las etiquetas de negrita y mayúsculas
     return texto.replace(/<b>|<\/b>|\*/g, '');
   }
-
-
 
 }

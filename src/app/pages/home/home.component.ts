@@ -91,13 +91,10 @@ export class HomeComponent implements OnInit {
       this.loadStatusService.isFirstLoad = false;
     }
 
-    const loadNegocios$ = this.firestore.getCollection<Negocios>('Comerciantes');
-    const loadEventos$ = this.firestore.getCollection<Eventos>('Eventos');
-
-    loadNegocios$.subscribe(res => {
+    this.firestore.getNegocios().subscribe((res) => {
       this.negocios = res;
-      
     });
+    const loadEventos$ = this.firestore.getCollection<Eventos>('Eventos');
 
     loadEventos$.subscribe(res => {
       this.eventos = res;
