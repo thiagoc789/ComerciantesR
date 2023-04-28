@@ -34,7 +34,7 @@
     <div class="card-list">
         <div class="card" (click)="goToDetailEventos(evento.id)" *ngFor="let evento of eventos">
             <div class="card-header">
-                <img class="logo" [src]="evento.imagen" alt="Logo de {{evento.nombre}}" />
+                <img class="logo" [src]="evento.logo" alt="Logo de {{evento.nombre}}" />
                 <h2 class="nombre">{{evento.nombre}}</h2>
             </div>
             <div class="card-body">

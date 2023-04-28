@@ -469,3 +469,13 @@
 
     }
 }
+
+@media (min-width: 1600px) {
+
+    .carousel-item img {
+        height: 650px;
+        width: 100%;
+        max-width: 100%;
+
+    }
+}
