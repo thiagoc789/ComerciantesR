@@ -35,6 +35,7 @@ export class InfoComponent {
     if (hora >= 6 || (hora === 5 && minutos >= 0)) {
       this.diaActual = fecha.getDate();
       this.diaActual2 = this.diaActual.toString();
+      
     }
     // Si no, usa el día anterior
     else {
@@ -42,6 +43,14 @@ export class InfoComponent {
       this.diaActual = fecha.getDate();
       this.diaActual2 = this.diaActual.toString();
     }
+
+    
+    if(this.diaActual2.length == 1){
+      this.diaActual2 = '0'+this.diaActual2;
+    }
+
+    
+      
 
     
     this.firestore.getCollection<Droguerias>('Droguerias').subscribe(res => {
