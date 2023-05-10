@@ -28,7 +28,7 @@
     width: 80%;
 }
 
-.imagen{
+.imagen {
     box-shadow: 0 0 15px rgb(0, 0, 0);
 }
 
@@ -39,11 +39,51 @@
 
     }
 
-    .lead{
+    .lead {
         font-size: 1.0em;
     }
 
+}
 
+.imagen {
+   max-width: 100%;
+    height: 300px;
+}
+
+@media screen and (max-width: 400px) {
+
+    /* Aumentar el width en pantallas con un ancho mínimo de 768px */
+    .imagen {
+        width: 100%;
+        height: 200px;
+    }
+}
+
+@media screen and (min-width: 568px) {
+
+    /* Aumentar el width en pantallas con un ancho mínimo de 768px */
+    .imagen {
+        width: 100%;
+        height: 350px;
+    }
+}
+
+@media screen and (min-width: 768px) {
+
+    /* Aumentar el width en pantallas con un ancho mínimo de 768px */
+    .imagen {
+        width: 80%;
+        height: 400px;
+    }
+}
+
+@media screen and (min-width: 1024px) {
+
+    /* Aumentar el height en pantallas con un ancho mínimo de 1024px */
+    .imagen {
+        width: 80%;
+        height: 500px;
+    }
 }
 
 @media (max-width: 350px) {
