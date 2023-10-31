@@ -24,7 +24,8 @@ import { SitemapComponentComponent } from './sitemap-component/sitemap-component
 import { HttpClientModule } from '@angular/common/http';
 import { CommonModule } from '@angular/common'; 
 import { LazyLoadImageModule } from 'ng-lazyload-image';
-import { ModalComponent } from './modal/modal.component'; 
+import { ModalComponent } from './modal/modal.component';
+import { EncuestaComponent } from './pages/encuesta/encuesta.component'; 
 
 //RUTAS
 const routes: Routes = [
@@ -35,6 +36,7 @@ const routes: Routes = [
   {path: 'detailNegocios/:id', component: DetailnegociosComponent},
   {path: 'detailEventos/:id', component: DetailEventosComponent},
   {path: 'info', component: InfoComponent},
+  { path: 'encuesta', component: EncuestaComponent },    
   { path: 'sitemap.xml', component: SitemapComponentComponent }
 ];
 
@@ -68,7 +70,8 @@ const routes: Routes = [
     DetailEventosComponent,
     DetailnegociosComponent,
     InfoComponent,
-    ModalComponent
+    ModalComponent,
+    EncuestaComponent
   ],
   bootstrap: [AppComponent]
 })

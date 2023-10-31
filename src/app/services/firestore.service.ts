@@ -32,6 +32,17 @@ export class FirestoreService {
     return collection.doc(id).set(data);
   }
 
+  // En FirestoreService
+
+  createEncuesta(data: { email: string, contrasena: string }) {
+    // Obtén una referencia a la colección 'encuesta'
+    const collection = this.firestore.collection('encuesta');
+
+    // Añade un nuevo documento a la colección y devuelve una Promise
+    return collection.add(data);
+  }
+
+
   getDoc<tipo>(path: string, id: string) {
     const collection = this.firestore.collection<tipo>(path);
     return collection.doc(id).valueChanges();

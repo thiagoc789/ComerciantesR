@@ -306,12 +306,10 @@
 }
 
 .card-group {
-    display: flex;
-    flex-wrap: nowrap;
-    overflow-x: auto;
-    -webkit-overflow-scrolling: touch;
-    scroll-snap-type: x mandatory;
     padding-bottom: 10px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
 
 }
 
@@ -322,45 +320,49 @@
 
 }
 
-.cardCat {
-    flex: 0 0 auto;
-    margin-right: 1rem;
-
-}
-
-.cardCat:last-child {
-    margin-right: 0;
-}
-
-.cardCat {
-    cursor: pointer;
-    text-align: center;
+.container-fluid {
     display: flex;
-    border-radius: 8px;
-    background: #fff;
-    align-items: center;
-    width: 8em;
-    height: 9em;
-
-
+    flex-wrap: wrap;
+    justify-content: space-around;
 }
 
-.cardCat-body {
-    padding: 10px;
-    overflow: hidden;
+.cardCat {
+    margin: 1em;
+    flex: 1 0 21%;
+    /* Aquí puedes modificar el tamaño mínimo de las tarjetas */
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    border-radius: 5px;
+    transition: 0.3s;
+    background-color: rgb(255, 255, 255);
+
+    
 }
+
+.cardCat:hover {
+    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+}
+
 
 
 .cardCat-title {
-    margin: 10px;
+    margin: 7px;
+    font-size: large;
     padding: 0;
+    display: flex;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+
 }
 
 .cardCat-text {
     font-size: 2.0em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     margin-top: 20px;
-
 }
+
 
 .cardCat.active {
     background-color: rgba(0, 2, 136, 0.726);
