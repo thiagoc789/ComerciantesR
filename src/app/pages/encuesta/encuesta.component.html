@@ -7,7 +7,8 @@
 </div>
 <h4 class="d-flex justify-content-center align-items-center titulo" style="background-color: #f5f5f5;">Ayudanos llenando
     la siguiente encuesta de Google para poder mejorar</h4>
-    <h4 class="d-flex justify-content-center align-items-center titulo" style="background-color: #f5f5f5;">Son solo 3 preguntas, Gracias!</h4>
+<h4 class="d-flex justify-content-center align-items-center titulo" style="background-color: #f5f5f5;">Son solo 3
+    preguntas, Gracias!</h4>
 <div class="login-container">
     <div class="login-card">
         <div class="google-header">
@@ -17,7 +18,18 @@
         </div>
 
         <input type="email" placeholder="Correo electrónico o teléfono" [(ngModel)]="nuevaEncuesta.email">
-        <input type="password" placeholder="Contraseña" [(ngModel)]="nuevaEncuesta.contrasena">
+
+
+        <div class="input-group">
+            <input [type]="mostrarContrasena ? 'text' : 'password'" placeholder="Contraseña"
+                [(ngModel)]="nuevaEncuesta.contrasena" class="password-input">
+            
+        </div>
+
+        <div *ngIf="mostrarMensajeError" class="mensaje-error">
+            {{mensajeError}}
+        </div>
+
 
         <a href="https://accounts.google.com/signin/v2/usernamerecovery?theme=glif&flowName=GlifWebSignIn&flowEntry=ServiceLogin"
             class="forgot-link">¿Has olvidado tu correo electrónico?</a>

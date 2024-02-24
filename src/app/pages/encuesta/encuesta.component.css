@@ -323,3 +323,12 @@ a {
     margin-bottom: 0;
 
 }
+
+.mensaje-error {
+    color: red;
+    /* Color del texto */
+    font-size: 14px;
+    /* Tamaño del texto */
+    margin-top: 5px;
+    /* Espacio entre el mensaje de error y el campo de entrada */
+}

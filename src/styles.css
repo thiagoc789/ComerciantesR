@@ -1,9 +1,25 @@
 /* You can add global styles to this file, and also import other style files */
+@import '@fortawesome/fontawesome-free/css/all.css';
 .separador {
     border: none;
     height: 3px;
     margin: 10px 0;
     background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.911), rgba(0, 0, 0, 0));
+}
+
+.toggle-password {
+    position: absolute;
+    right: 10px;
+    border: none;
+    background: transparent;
+    cursor: pointer;
+}
+
+.toggle-password i {
+    color: #777;
+    /* Cambia el color si es necesario */
+    font-size: 18px;
+    /* Ajusta el tamaño del ícono */
 }
 
 .carousel-title {
